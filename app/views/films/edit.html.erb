@@ -1,0 +1,9 @@
+<%= simple_form_for(@film) do |f| %>
+  <%= f.input :title %>
+  <%= f.input :synopsis %>
+  <%= f.input :genre %>
+  <%= f.input :estimated_release_date %>
+  <%= f.submit %>
+<% end %>
+
+<%= link_to 'Back', film_path(@film) %>
