@@ -1,0 +1,11 @@
+
+<div>
+  <h2>Create a New Project</h2>
+  <%= simple_form_for(@film) do |f| %>
+      <%= f.input :title, class: "new-input"%>
+      <%= f.input :synopsis, class: "new-input" %>
+      <%= f.input :genre, class: "new-input" %>
+      <%= f.input :estimated_release_date, class: "new-input" %>
+      <%= f.submit class: "new-island-btn" %>
+    <% end %>
+</div>
