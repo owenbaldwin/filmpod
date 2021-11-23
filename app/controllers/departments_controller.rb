@@ -13,10 +13,14 @@ class DepartmentsController < ApplicationController
     @film = Film.find(params[:film_id])
     @department.film = @film
     if @department.save
-      redirect_to department_path(@department)
+      redirect_to films_path(@film)
     else
       render :new
     end
+  end
+
+  def show
+    @department = Department.find(params[:id])
   end
 
   private
