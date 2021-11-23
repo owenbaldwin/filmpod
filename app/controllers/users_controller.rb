@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   def show
     @user = current_user
-    # @films = @user.films ADD ONCE FILMS CREATED
+    @films = @user.films
   end
 
   def create

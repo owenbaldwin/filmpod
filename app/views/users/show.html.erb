@@ -6,19 +6,15 @@
       </div>
       <div>
         <ul>
-          <li>
-            <p>Avatar 36</p>
-          </li>
-          <li>
-            <p>Titanic 3</p>
-          </li>
-          <li>
-            <p>Aliens 11</p>
-          </li>
+          <% @films.each do |film| %>
+            <li>
+              <h4><%= link_to film.name, film_path(film)  %></h4>
+            </li>
+          <% end %>
         </ul>
       </div>
       <div>
-        <h3>+ Create new project</h3>
+        <h3><%= link_to '+ Create new project', new_film_path  %></h3>
       </div>
     </div>
 
@@ -31,7 +27,9 @@
     <div class="col-3 border">
       <div>
         <h3>My profile</h3>
+        <%= image_tag "StanK.jpg", class: "profile-pic"%>
       </div>
+
     </div>
   </div>
 </div>
