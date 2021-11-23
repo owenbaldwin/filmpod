@@ -13,12 +13,16 @@
   <%= @film.estimated_release_date %>
 </div>
 
-<div>
-  <% @departments.each do |department| %>
-    <%= department.name %>
-  <% end %>
-</div>
-
 <%= link_to 'Edit', edit_film_path(@film) %>
 <%= link_to "Delete", film_path(@film), method: :delete %>
 <%= link_to 'Back', films_path %>
+
+
+<div class="departments-side-bar">
+  <% @departments.each do |department| %>
+  <div class="each-department-on-film-show">
+      <%=link_to department.name, department_path(department)%>
+  </div>
+  <% end %>
+  <%= link_to "Add department", new_film_department_path(@film) %>
+</div>
