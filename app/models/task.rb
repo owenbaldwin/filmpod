@@ -1,5 +1,6 @@
 class Task < ApplicationRecord
   belongs_to :department
   belongs_to :user
-  has_many :submissions
+  has_many :submissions, dependent: :destroy
+
 end
