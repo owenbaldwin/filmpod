@@ -1,1 +1,7 @@
-<h1><%= @department.name %></h1>
+<div>
+  <h1><%= @department.name %>
+</div>
+
+<%= link_to 'Edit', edit_department_path(@department) %>
+<%= link_to "Delete", department_path(@department), method: :delete %>
+<%= link_to 'Back', film_path %>
