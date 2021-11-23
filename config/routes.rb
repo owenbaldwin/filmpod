@@ -31,5 +31,5 @@ Rails.application.routes.draw do
 
   resources :comments, only: [:edit, :update, :index, :destroy]
 
-
+  resources :users, only: [:show]
 end
