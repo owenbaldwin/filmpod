@@ -1,18 +1,10 @@
-
-<%= @tasks.each do |task| %>
-    <% if task.status = "sent"  %>
-      <%= task.title  %>
-      <%= task.description  %>
-    <% elsif task.status = "in progress"  %>
-      <%= task.title  %>
-    <% else task.status = "done"  %>
-      <%= task.title  %>
-    <% end %>
+ <%= @tasks.each do |task| %>
+  <% if task.status = "sent"  %>
+    <%= task.title  %>
+    <%= task.description  %>
+  <% elsif task.status = "in progress"  %>
+    <%= task.title  %>
+  <% else task.status = "done"  %>
+    <%= task.title  %>
   <% end %>
-
-
-
-
-<%# sent
-in progress
-done %>
+  <% end %>
