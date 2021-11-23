@@ -10,7 +10,7 @@ class TasksController < ApplicationController
     @task.department = @department
     @task.user = current_user
     if @task.save
-      redirect_to departments_path(@department)
+      redirect_to department_path(@department)
     else
       render :new
     end
