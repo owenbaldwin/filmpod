@@ -7,4 +7,5 @@ class User < ApplicationRecord
   has_many :comments
   has_many :tasks
   has_many :grants
+  has_many :DepartmentsUsers
 end
