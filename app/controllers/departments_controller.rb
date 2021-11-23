@@ -17,6 +17,7 @@ class DepartmentsController < ApplicationController
 
   def show
     @department = Department.find(params[:id])
+    @tasks = @department.tasks
   end
 
   private
