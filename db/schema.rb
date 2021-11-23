@@ -10,10 +10,71 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_23_111156) do
+ActiveRecord::Schema.define(version: 2021_11_23_120650) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "comments", force: :cascade do |t|
+    t.text "content"
+    t.bigint "submission_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["submission_id"], name: "index_comments_on_submission_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "departments", force: :cascade do |t|
+    t.string "name"
+    t.bigint "film_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["film_id"], name: "index_departments_on_film_id"
+  end
+
+  create_table "films", force: :cascade do |t|
+    t.string "title"
+    t.text "synopsis"
+    t.string "genre"
+    t.date "estimated_release_date"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "grants", force: :cascade do |t|
+    t.string "rank_level"
+    t.bigint "user_id", null: false
+    t.bigint "film_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["film_id"], name: "index_grants_on_film_id"
+    t.index ["user_id"], name: "index_grants_on_user_id"
+  end
+
+  create_table "submissions", force: :cascade do |t|
+    t.bigint "task_id", null: false
+    t.bigint "user_id", null: false
+    t.string "title"
+    t.text "content"
+    t.string "status"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["task_id"], name: "index_submissions_on_task_id"
+    t.index ["user_id"], name: "index_submissions_on_user_id"
+  end
+
+  create_table "tasks", force: :cascade do |t|
+    t.bigint "department_id", null: false
+    t.bigint "user_id", null: false
+    t.string "title"
+    t.text "content"
+    t.string "status"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["department_id"], name: "index_tasks_on_department_id"
+    t.index ["user_id"], name: "index_tasks_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,8 +84,23 @@ ActiveRecord::Schema.define(version: 2021_11_23_111156) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.string "skills"
+    t.bigint "department_id", null: false
+    t.index ["department_id"], name: "index_users_on_department_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "comments", "submissions"
+  add_foreign_key "comments", "users"
+  add_foreign_key "departments", "films"
+  add_foreign_key "grants", "films"
+  add_foreign_key "grants", "users"
+  add_foreign_key "submissions", "tasks"
+  add_foreign_key "submissions", "users"
+  add_foreign_key "tasks", "departments"
+  add_foreign_key "tasks", "users"
+  add_foreign_key "users", "departments"
 end
