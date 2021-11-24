@@ -1,1 +1,11 @@
 <h1><%= @department.name %></h1>
+
+
+<h3><%= @department.name %> department's tasks</h3>
+<ul>
+<% @tasks.each do |task| %>
+  <li> <%=link_to task.title, task_path(task)%> </li>
+<% end %>
+  <%= link_to "Add task", new_department_task_path(@department) %>
+</div>
+</ul>
