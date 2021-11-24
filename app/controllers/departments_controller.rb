@@ -18,6 +18,7 @@ class DepartmentsController < ApplicationController
   def show
     @department = Department.find(params[:id])
     @tasks = @department.tasks
+    @film = @department.film
   end
 
   def edit
@@ -26,16 +27,15 @@ class DepartmentsController < ApplicationController
 
   def update
     @department = Department.find(params[:id])
-    @department.update(department_path)
-
-    redirect_to film_path(@film)
+    @department.update!(department_params)
+    redirect_to department_path(@department)
   end
 
   def destroy
     @department = Department.find(params[:id])
     @department.destroy
-
-    redirect_to film_path(@film)
+    @film = @department.film
+    redirect_to film_path(@film) # redirects to index should redirect to show page !
   end
 
   private
