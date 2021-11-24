@@ -1,42 +1,64 @@
-<div class="container">
+<div class="profile-page-container">
   <div class="row">
-    <div class="col-2 border">
-      <div>
+    <div class="sidebar col-2">
+      <p>text</p>
+      <%# <div>
         <h3>My Projects</h3>
       </div>
       <div>
         <ul>
           <% @user.films.each do |film| %>
-            <li> <%= link_to film.title, film_path(film) %> </li>
-          <% end %>
-        </ul>
+            <%# <li> <%= link_to film.title, film_path(film) %> </li>
+          <%# <% end %>
+        <%# </ul>
       </div>
       <div>
         <h5><%= link_to '+ Create new project', new_film_path  %></h5>
-      </div>
     </div>
 
+    <div class="profile-page-main col-10">
+      <h1> Welcome, <%= @user.first_name.capitalize %>!</h1>
 
-    <div class="col-7 border">
-      <h1> hello <%= @user.email %></h1>
-
-      <div>
-        <h5>Open recent</h5>
-        <div>
-          <%# <%= link_to @films.last.title, film_path(@films.last)  %> %>
+      <div class="recent-films-box">
+        <p>Open recent</p>
+        <div class="profile-movie-cards">
+          <% if @films.length > 0 %>
+          <% @films.each do |film|%>
+              <div class="profile-movie-card">
+              <p><%= link_to film.title, film_path(film)%></p>
+              </div>
+            <% end %>
+          <% end %>
+            <div class="profile-movie-card">
+              <p><%= link_to "+", new_film_path%></p>
+            </div>
         </div>
       </div>
+
+      <div class="profile-page-notifications-box">
+        <p>Notifications</p>
+        <div class="notification-card">
+          <p> Notification</p>
+        </div>
+        <div class="notification-card">
+          <p> Notification</p>
+        </div>
+        <div class="notification-card">
+          <p> Notification</p>
+        </div>
+
+      </div>
     </div>
+  </div>
 
 
-    <div class="col-3 border">
+    <%# <div class="col-3 border">
       <div>
         <h3>My profile</h3>
         <%= image_tag "StanK.jpg", class: "profile-pic"%>
-      </div>
-
-    </div>
-  </div>
+      <%# </div>
+    </div> %>
+  <%# </div> %>
 </div>
 
 
