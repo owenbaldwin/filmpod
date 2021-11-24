@@ -1,3 +1,4 @@
+
 <h1><%= @department.name %></h1>
 
 
@@ -9,3 +10,8 @@
   <%= link_to "Add task", new_department_task_path(@department) %>
 </div>
 </ul>
+
+
+<%= link_to 'Edit', edit_department_path(@department) %>
+<%= link_to "Delete", department_path(@department), method: :delete %>
+<%= link_to 'Back', film_path %>
