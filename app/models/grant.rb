@@ -1,5 +1,6 @@
 class Grant < ApplicationRecord
-  RANKS = ["direction", "head", "crew"].freeze
+  RANKS = ["Direction", "Head of department", "Crew member"].freeze
   belongs_to :user
   belongs_to :film
 end
+# Add something for when fired
