@@ -11,6 +11,10 @@ class User < ApplicationRecord
   has_many :films, through: :grants
 
   def full_name
-    "#{first_name} #{last_name} "
+    "#{first_name} #{last_name}"
+  end
+
+  def user_skills
+    "#{skills}"
   end
 end

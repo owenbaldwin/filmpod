@@ -1,11 +1,16 @@
 <div>
+  <h5><%= link_to 'Film homepage', film_path(@film) %></h5>
+</div>
+
+
+<div>
   <% @grants.each do |grant| %>
     <div>
       <% if grant.nil? %>
         <p>Define your rank below</p>
       <% else %>
         <p>USERS:</p>
-        <p><%= grant.user_id%> - <%= grant.rank_level%></p>
+        <p><%= grant.user.full_name%> - <%= grant.rank_level%> - <%= grant.user.user_skills%></p>
       <% end %>
   <% end %>
 </div>
