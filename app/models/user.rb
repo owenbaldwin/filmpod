@@ -9,4 +9,8 @@ class User < ApplicationRecord
   has_many :grants
   has_many :DepartmentsUsers
   has_many :films, through: :grants
+
+  def full_name
+    "#{first_name} #{last_name} "
+  end
 end
