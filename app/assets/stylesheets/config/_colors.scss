@@ -1,13 +1,17 @@
 // Define variables for your color scheme
 
 // For example:
-$red: #FD1015;
-$blue: #167FFB;
-$yellow: #FFC65A;
-$orange: #E67E22;
-$green: #1EDD88;
-$gray: #0E0000;
-$light-gray: #F4F4F4;
+$black: rgb(20, 20, 20);
+$dark-gray: rgb(41, 41, 41);
+$middle-gray: rgb(51, 51, 51);
+$light-gray: rgb(61, 61, 61);
+$bright-white-color: rgba(255, 255, 255, 0.9);
+$basic-white-color: rgba(255, 255, 255, 0.7);
 
-$background: #1f1e1ef3;
-$navbar: #313131f3;
+$background: rgb(51, 51, 51);
+$navbar: rgb(61, 61, 61);
+
+
+$color-to-do: rgba(180, 46, 46, 0.9);
+$color-in-progress: rgba(184, 114, 48, 0.9);
+$color-done: rgba(62, 180, 72, 0.9);
