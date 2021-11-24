@@ -6,7 +6,6 @@
       </div>
       <div>
         <ul>
-          <%= @user.films %>
           <% @user.films.each do |film| %>
             <li>
               <h5><%= link_to film.title, film_path(film)  %></h5>
