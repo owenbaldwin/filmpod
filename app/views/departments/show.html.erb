@@ -1,8 +1,9 @@
 
 <h1><%= @department.name %></h1>
 
-
+<div class="basic-card">
 <h3> department's tasks</h3>
+</div>
 <ul>
 <% @tasks.each do |task| %>
   <li> <%=link_to task.title, task_path(task)%> </li>
