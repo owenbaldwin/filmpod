@@ -1,0 +1,155 @@
+.sidebar{
+  background-color: $middle-gray;
+  display: flex;
+  justify-content: center;
+  width: 15%;
+}
+
+
+.departments-side-bar {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+}
+
+.each-department-on-film-show {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  background-color: $light-gray;
+  border-radius: 5px;
+  border: 1px solid $basic-white-color;
+  a {
+    color: $basic-white-color;
+    transition: 0.3s;
+
+  }
+  transition: 0.3s;
+}
+
+.each-department-on-film-show:hover {
+  border: 1px solid $bright-white-color;
+  a {
+    color: $bright-white-color;
+    text-decoration: none;
+  }
+}
+
+.sidebar-inner {
+  width: 100%;
+}
+
+.sidebar-film-title {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+  margin-bottom: 24px;
+}
+
+.add-dpt-btn {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  background-color: $dark-gray;
+  border-radius: 5px;
+  border: 1px solid $basic-white-color;
+  a {
+    color: $basic-white-color;
+    transition: 0.3s;
+
+  }
+  transition: 0.3s;
+}
+
+.add-dpt-btn:hover {
+  border: 1px solid $color-new;
+  a {
+    color: $color-new;
+    text-decoration: none;
+  }
+}
+
+.sidebar-danger-btn {
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  background-color: $dark-gray;
+  border-radius: 5px;
+  border: 1px solid $basic-white-color;
+  a {
+    color: $basic-white-color;
+    transition: 0.3s;
+
+  }
+  transition: 0.3s;
+}
+
+.sidebar-danger-btn:hover {
+  border: 1px solid $color-to-do;
+  a {
+    color: $color-to-do;
+    text-decoration: none;
+  }
+}
+
+.sidebar-back-btn {
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  background-color: $dark-gray;
+  border-radius: 5px;
+  border: 1px solid $basic-white-color;
+  a {
+    color: $basic-white-color;
+    transition: 0.3s;
+
+  }
+  transition: 0.3s;
+}
+
+.sidebar-back-btn:hover {
+  border: 1px solid $color-done;
+  a {
+    color: $color-done;
+    text-decoration: none;
+  }
+}
+
+.sidebar-edit-btn {
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  background-color: $dark-gray;
+  border-radius: 5px;
+  border: 1px solid $basic-white-color;
+  a {
+    color: $basic-white-color;
+    transition: 0.3s;
+
+  }
+  transition: 0.3s;
+}
+
+.sidebar-edit-btn:hover {
+  border: 1px solid $color-in-progress;
+  a {
+    color: $color-in-progress;
+    text-decoration: none;
+  }
+}
