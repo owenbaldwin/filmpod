@@ -6,7 +6,6 @@ class GrantsController < ApplicationController
 
   def index
     @grants = Grant.all
-
     @film = Film.find(params[:film_id])
     @grant = Grant.new
   end
