@@ -1,0 +1,22 @@
+<div>
+  <div class="center">
+    <h2> Add members to your team:</h2>
+    <%= simple_form_for [ @film, @grant ] do |f| %>
+      <div class ="grant-form">
+        <div class="form-inputs">
+          <%# <%= f.input :user_id, placeholder: 'user@domain.com'%>
+          <%= f.association :user, label_method: :full_name, value_method: :id %>
+          <%# user_id???? %>
+          <%# <%= f.input :end_date, label: "Check-out"%>
+          <%= f.input :rank_level, collection: Grant::RANKS%>
+
+
+        </div>
+
+        <div class="form-actions">
+            <%= f.button :submit, "Submit user", class: "btn-book" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

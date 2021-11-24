@@ -18,6 +18,12 @@
   width: 40px;
 }
 
-.navbar-lewagon a p {
+.navbar-lewagon{
+  a, p {
+    color: $light-gray;
+  }
+}
+
+h1 {
   color: white;
 }

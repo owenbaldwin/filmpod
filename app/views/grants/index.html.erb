@@ -1,0 +1,32 @@
+<div>
+  <% @grants.each do |grant| %>
+    <div>
+      <% if grant.nil? %>
+        <p>Define your rank below</p>
+      <% else %>
+        <p>USERS:</p>
+        <p><%= grant.user_id%> - <%= grant.rank_level%></p>
+      <% end %>
+  <% end %>
+</div>
+
+
+<div>
+  <div class="center">
+    <h2> Add members to your team:</h2>
+    <%= simple_form_for [ @film, @grant ] do |f| %>
+      <div class ="grant-form">
+        <div class="form-inputs">
+          <%= f.association :user, label_method: :full_name, value_method: :id %>
+          <%= f.input :rank_level, collection: Grant::RANKS%>
+
+
+        </div>
+
+        <div class="form-actions">
+            <%= f.button :submit, "Submit user", class: "btn-book" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

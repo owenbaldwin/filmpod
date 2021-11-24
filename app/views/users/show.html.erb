@@ -6,21 +6,28 @@
       </div>
       <div>
         <ul>
-          <% @films.each do |film| %>
+          <% @user.films.each do |film| %>
             <li>
-              <h4><%= link_to film.name, film_path(film)  %></h4>
+              <h5><%= link_to film.title, film_path(film)  %></h5>
             </li>
           <% end %>
         </ul>
       </div>
       <div>
-        <h3><%= link_to '+ Create new project', new_film_path  %></h3>
+        <h5><%= link_to '+ Create new project', new_film_path  %></h5>
       </div>
     </div>
 
 
     <div class="col-7 border">
       <h1> hello <%= @user.email %></h1>
+
+      <div>
+        <h5>Open recent</h5>
+        <div>
+          <%# <%= link_to @films.last.title, film_path(@films.last)  %> %>
+        </div>
+      </div>
     </div>
 
 
@@ -33,3 +40,8 @@
     </div>
   </div>
 </div>
+
+<%= @user %>
+
+
+<%# embedded form in new film linking the create action of grant into in to link the current user, the film being created and the top rank level %>
