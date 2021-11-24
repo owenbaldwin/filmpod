@@ -1,0 +1,8 @@
+
+<h3> Edit your task </h3>
+
+<%= simple_form_for(@task) do |f| %>
+  <%= f.input :title %>
+  <%= f.input :content%>
+  <%= f.submit %>
+<% end %>
