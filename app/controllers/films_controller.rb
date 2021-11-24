@@ -19,7 +19,7 @@ class FilmsController < ApplicationController
   def show
     @film = Film.find(params[:id])
     @departments = @film.departments
-    @user = @film.user
+    @users = @film.users
   end
 
   def edit
