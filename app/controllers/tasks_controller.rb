@@ -18,12 +18,30 @@ class TasksController < ApplicationController
 
   def show
     @task = Task.find(params[:id])
+    @department = @task.department
   end
 
   def index
     @tasks = Task.all
   end
 
+  def edit
+    @task = Task.find(params[:id])
+  end
+
+  def update
+    @task = Task.find(params[:id])
+    @task.update(task_params)
+    @department = @task.department
+    redirect_to department_path(@department)
+  end
+
+  def destroy
+    @task = Task.find(params[:id])
+    @task.destroy
+    @department = @task.department
+    redirect_to department_path(@department)
+  end
 
 
   private
