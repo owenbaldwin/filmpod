@@ -5,7 +5,6 @@ class GrantsController < ApplicationController
   # end
 
   def index
-
     @film = Film.find(params[:film_id])
     @grants = @film.grants
     @grant = Grant.new

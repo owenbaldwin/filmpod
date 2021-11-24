@@ -7,9 +7,7 @@
       <div>
         <ul>
           <% @user.films.each do |film| %>
-            <li>
-              <h5><%= link_to film.title, film_path(film)  %></h5>
-            </li>
+            <li> <%= link_to film.title, film_path(film) %> </li>
           <% end %>
         </ul>
       </div>
@@ -40,8 +38,6 @@
     </div>
   </div>
 </div>
-
-<%= @user %>
 
 
 <%# embedded form in new film linking the create action of grant into in to link the current user, the film being created and the top rank level %>

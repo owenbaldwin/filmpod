@@ -1,5 +1,23 @@
-<%= simple_form_for([@department, @task]) do |f| %>
-  <%= f.input :title %>
-  <%= f.input :content %>
-  <%= f.submit %>
-<% end %>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-12 col-sm-4">
+      <div class="task-new-card">
+          <div class="task-center">
+          <%= simple_form_for([@department, @task]) do |f| %>
+            <div class="task-title">
+              <%= f.input :title %>
+            </div>
+            <div class="task-content">
+            <%= f.input :content %>
+            </div>
+            <div class="task-status">
+            <%= f.input :status, :collection => %w[to-do in-progress done] %>
+            </div>
+            <%= f.submit %>
+          <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

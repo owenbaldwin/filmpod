@@ -1,28 +1,61 @@
-<div>
-  <h1><%= @film.title %></h1>
-</div>
-<div>
-  <%= @film.genre %>
-</div>
-
-<div>
-  <%= @film.synopsis %>
-</div>
-
-<div>
-  <%= @film.estimated_release_date %>
-</div>
-
-<%= link_to 'Edit', edit_film_path(@film) %>
-<%= link_to "Delete", film_path(@film), method: :delete %>
-<%= link_to 'Back', films_path %>
+<div class="film-moodboard-container">
+  <div class="film-moodboard-inner-container">
+    <div class="sidebar">
+      <div class="sidebar-inner">
+        <div class="sidebar-film-title">
+          <div>
+            <h1><%= @film.title %></h1>
+          </div>
+        </div>
 
 
-<div class="departments-side-bar">
-  <% @departments.each do |department| %>
-  <div class="each-department-on-film-show">
-      <%=link_to department.name, department_path(department)%>
+
+        <div class="departments-side-bar">
+          <% @departments.each do |department| %>
+          <div class="each-department-on-film-show">
+              <%=link_to department.name, department_path(department)%>
+          </div>
+          <% end %>
+          <div class="add-dpt-btn">
+            <%= link_to "+ Add department", new_film_department_path(@film) %>
+          </div>
+        </div>
+
+        <div>
+          <div class="sidebar-back-btn">
+            <%= link_to 'Back', films_path %>
+          </div>
+          <div class="sidebar-edit-btn">
+            <%= link_to 'Edit Film', edit_film_path(@film) %>
+          </div>
+          <div class="sidebar-danger-btn">
+            <%= link_to "Delete Film", film_path(@film), method: :delete %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="film-moodboard-main ">
+      <div class="film-moodboard-card-container">
+        <div class="film-moodboard-card-1">
+          <h3>Music Department</h3>
+        </div>
+        <div class="film-moodboard-card-2">
+          <h3>Costumes</h3>
+        </div>
+        <div class="film-moodboard-card-3">
+          <h3>Sets</h3>
+        </div>
+        <div class="film-moodboard-card-4">
+          <h3>Photography</h3>
+        </div>
+        <div class="film-moodboard-card-5">
+          <h3>Make-up Department</h3>
+        </div>
+        <div class="film-moodboard-card-6">
+          <h3>Sound Department</h3>
+        </div>
+      </div>
+    </div>
   </div>
-  <% end %>
-  <%= link_to "Add department", new_film_department_path(@film) %>
 </div>
