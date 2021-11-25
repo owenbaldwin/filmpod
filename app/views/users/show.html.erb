@@ -48,14 +48,14 @@
       <div class="profile-page-notifications-box">
         <p>Notifications</p>
         <div class="notification-cards">
-          <% @tasks.each do |task| %>
+          <% @recent_tasks.reverse.each do |task| %>
             <div class="notification-card">
               <div>
               <%= image_tag "profile-pic1.jpg", class: "avatar" %>
               </div>
               <div>
                 <div class="notification-message">
-                <p><%= task.user.first_name%> just marked the task "<%= task.title %>" in <em><%= task.department.name %></em> as <em><%= task.status %></em></p>
+                <p><%= task.user.first_name.capitalize %> just marked the task "<%= task.title %>" in <strong><%= task.department.name.capitalize %></strong> as: <b><%= task.status.capitalize %></b></p>
                 </div>
                 <div class="notification-message-time">
                 <p><%=  task.updated_at.strftime("%A, %d %b %Y %l:%M %p")%></p>
