@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   resources :departments, only: [:show] do
     resources :tasks, only: [:new, :create]
+    resources :departments_users, only: [:new, :create, :index]
     member do
       get :moodboard
     end

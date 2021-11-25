@@ -7,8 +7,9 @@ class User < ApplicationRecord
   has_many :comments
   has_many :tasks
   has_many :grants
-  has_many :DepartmentsUsers
+  has_many :departments_users
   has_many :films, through: :grants
+  has_many :departments, through: :departments_users
 
   def full_name
     "#{first_name} #{last_name}"
@@ -17,4 +18,11 @@ class User < ApplicationRecord
   def user_skills
     "#{skills}"
   end
+
+  def users_dept(film_id)
+    # Department.joins(:departments_user).where(["user_id = ? and film_id = ?", self.id, film_id])
+    dpt = self.departments.filter { |x| x.film_id == film_id}
+    # dpt[:name]
+  end
+
 end
