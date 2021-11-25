@@ -17,20 +17,54 @@
 
 .profile-movie-cards {
   display: grid;
-  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 16px;
 }
 
 .profile-movie-card {
-  display: flex;
-  height: 150px;
-  width: 100%;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
-  color: $bright-white-color;
-  border-radius: 8px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  a {
+    display: flex;
+    height: 150px;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    color: $basic-white-color;
+    background-color: $middle-gray;
+    border-radius: 8px;
+  }
+}
+
+
+.new-profile-movie-card {
+  a {
+    display: flex;
+    height: 150px;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    color: $basic-white-color;
+    background-color: $middle-gray;
+    border-radius: 8px;
+  }
+}
+
+
+
+
+.profile-movie-card {
+  a:hover {
+    color: $bright-white-color;
+    text-decoration: none;
+  }
+}
+
+.new-profile-movie-card {
+  a:hover {
+    color: $bright-white-color;
+    text-decoration: none;
+  }
 }
 
 .recent-films-box p {

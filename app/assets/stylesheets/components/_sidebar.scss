@@ -153,3 +153,43 @@
     text-decoration: none;
   }
 }
+
+
+.films-side-bar {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.each-film-on-profile-show {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  background-color: $light-gray;
+  border-radius: 5px;
+  border: 1px solid $basic-white-color;
+  a {
+    color: $basic-white-color;
+    transition: 0.3s;
+
+  }
+  transition: 0.3s;
+}
+
+.sidebar-films-title {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+  margin-bottom: 24px;
+}
+
+.each-film-on-profile-show:hover {
+  border: 1px solid $bright-white-color;
+  a {
+    color: $bright-white-color;
+    text-decoration: none;
+  }
+}

@@ -2,19 +2,28 @@
 <div class="profile-page-container">
   <div class="row">
     <div class="sidebar col-2">
-      <p>text</p>
-      <%# <div>
-        <h3>My Projects</h3>
+      <div class="sidebar-inner">
+          <div class="sidebar-films-title">
+            <div>
+              <h1>Films</h1>
+            </div>
+          </div>
+        <div class="films-side-bar">
+          </div>
+            <% @films.reverse.each do |film| %>
+              <div class="each-film-on-profile-show">
+                <%=link_to film.title, film_path(film)%>
+              </div>
+            <% end %>
+            <div class="add-dpt-btn">
+              <%= link_to "+ Add film", new_film_path %>
+            </div>
+            <div class="sidebar-back-btn">
+              <%= link_to 'Back', films_path %>
+            </div>
+          </div>
+        <div>
       </div>
-      <div>
-        <ul>
-          <% @user.films.each do |film| %>
-            <%# <li> <%= link_to film.title, film_path(film) %> </li>
-          <%# <% end %>
-        <%# </ul>
-      </div>
-      <div>
-        <h5><%= link_to '+ Create new project', new_film_path  %></h5>
     </div>
 
     <div class="profile-page-main col-10">
@@ -24,13 +33,13 @@
         <p>Open recent</p>
         <div class="profile-movie-cards">
           <% if @films.length > 0 %>
-          <% @films.each do |film|%>
+          <% @recentfilms.reverse.each do |film|%>
               <div class="profile-movie-card">
               <p><%= link_to film.title, film_path(film)%></p>
               </div>
             <% end %>
           <% end %>
-            <div class="profile-movie-card">
+            <div class="new-profile-movie-card">
               <p><%= link_to "+", new_film_path%></p>
             </div>
         </div>
