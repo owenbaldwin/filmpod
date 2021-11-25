@@ -43,6 +43,12 @@ class TasksController < ApplicationController
     redirect_to department_path(@department)
   end
 
+  def move
+    @task = Task.find(params[:id])
+    @task.insert_at(params[:position].to_i)
+    @task.update(status: params[:status])
+    head :ok
+  end
 
   private
 

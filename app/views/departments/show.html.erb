@@ -17,30 +17,35 @@
         <br>
         <h4> project tasks... </h4>
 
-      <div class="department-showpage-all-tasks-container">
+      <div data-controller="drag" data-drag-url="/tasks/:id/move" class="department-showpage-all-tasks-container">
 
         <div class="department-showpage-task-types to-do">
           <p> To-do 🔴 </p>
             <div class="department-showpage-tasks">
+
               <div class="single-task" id="to-do-new">
-                <%= link_to " + new task", new_department_task_path(@department), class: "single-task" %>
+                <%= link_to " + new task", new_department_task_path(@department) %>
               </div>
-              <% @tasks.each do |task| %>
-                <% if task.status == "to-do"  %>
-                    <div class="single-task">
-                      <%= link_to task.title, task_path(task) %>
-                    </div>
-                  <% end %>
-              <% end %>
+
+              <div data-drag-target="tasks" data-status="to-do">
+                <% @tasks.order(position: :asc).each do |task| %>
+                  <% if task.status == "to-do"  %>
+                      <div data-id="<%= task.id %>" class="single-task">
+                        <%= link_to task.title, task_path(task) %>
+                      </div>
+                    <% end %>
+                <% end %>
+              </div>
+
           </div>
         </div>
 
         <div class="department-showpage-task-types in-progress">
           <p> In-progress 🟠 </p>
-            <div class="department-showpage-tasks">
+            <div data-drag-target="tasks" data-status="in-progress" class="department-showpage-tasks" id="itemlist">
               <% @tasks.each do |task| %>
                 <% if task.status == "in-progress"  %>
-                    <div class="single-task">
+                    <div data-id="<%= task.id %>" class="single-task">
                       <%= link_to task.title, task_path(task) %>
                     </div>
                   <% end %>
@@ -51,10 +56,10 @@
 
         <div class="department-showpage-task-types done">
           <p> Done 🟢 </p>
-          <div class="department-showpage-tasks">
+          <div data-drag-target="tasks" data-status="done" class="department-showpage-tasks">
             <% @tasks.each do |task| %>
               <% if task.status == "done"  %>
-                  <div class="single-task">
+                  <div data-id="<%= task.id %>" class="single-task">
                     <%= link_to task.title, task_path(task) %>
                   </div>
               <% end %>
