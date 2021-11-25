@@ -1,0 +1,18 @@
+<div>
+  <div class="center">
+    <h2> Add members to this department:</h2>
+    <%# <%= simple_form_for ([ @department, @department_user ]) do |f| %>
+    <%= simple_form_for([@department, @departments_user]) do |f| %>
+      <div class ="grant-form">
+        <div class="form-inputs">
+          <%= f.association :user, label_method: :full_name, value_method: :id %>
+          <%= f.association :department, label_method: :name, value_method: :id %>
+        </div>
+
+        <div class="form-actions">
+            <%= f.button :submit, "Submit user", class: "btn-primary" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
