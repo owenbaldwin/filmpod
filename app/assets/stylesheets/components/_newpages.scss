@@ -1,0 +1,38 @@
+.new-container {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  background-color: $dark-gray;
+}
+
+.new-inner-container {
+  margin-top: 24px;
+  padding: 32px 64px;
+  background-color: $middle-gray;
+  border-radius: 10px;
+  border: 1px solid $basic-white-color;
+  height: 600px;
+  display: flex;
+  align-items: center;
+}
+
+.new-film-btn {
+  background-color: $middle-gray;
+  height: 50px;
+  width: 200px;
+  border-radius: 10px;
+  color: $basic-white-color;
+  transition: 0.3s;
+}
+
+.new-film-btn:hover {
+    color: white;
+    background-color: $light-gray;
+
+  }
+
+
+.btndiv {
+  display: flex;
+  justify-content: center;
+}
