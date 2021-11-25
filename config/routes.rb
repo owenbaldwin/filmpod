@@ -20,8 +20,12 @@ Rails.application.routes.draw do
   resources :departments, only: [:index, :destroy, :edit, :update]
 
   resources :tasks, except: [:new, :create] do
+    member do
+      patch :move
+    end
     resources :submissions, only: [:new, :create]
   end
+
 
 
   resources :submissions, only: [:show] do
