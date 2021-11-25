@@ -1,2 +1,46 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<%# <h1>Pages#home</h1>
+<p>Find me in app/views/pages/home.html.erb</p> %>
+
+<div class="home-container">
+  <div class="home-inner-container">
+    <div class="banner">
+      <div>
+        <h4>MAKING GREAT FILMS TODAY</h4>
+        <%= link_to "SIGN UP", new_user_session_path, class: "home-su-btn" %>
+      </div>
+    </div>
+
+
+    <div class="homecards">
+      <div class="homecards-inner">
+        <div class="landingcard">
+          <div>
+            <h6>SEND TASKS TO YOUR TEAM</h6>
+          </div>
+          <div>
+            <p>Send tasks and receive submissions from your team, all in one place. Say goodbye to the thousands of unorganised emails!</p>
+          </div>
+        </div>
+        <div class="landingcard">
+          <div>
+            <h6>KEEP TRACK OF THE EVOLUTION OF YOUR FILM</h6>
+          </div>
+          <div>
+            <p>Organise tasks and submissions in Kanban charts with each departments. Know what is done and what needs attention at a glance.</p>
+          </div>
+        </div>
+        <div class="landingcard">
+          <div>
+            <h6>DISPLAY MOODBOARDS</h6>
+          </div>
+          <div>
+            <p>Share your vision with your team as early in the pre-production process by displaying every submission on moodboards. Everyone knows in what direction you want to go.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+</div>
