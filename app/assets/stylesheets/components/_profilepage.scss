@@ -49,6 +49,18 @@
   border: 1px solid $basic-white-color;
   border-radius: 8px;
   margin: 8px 0;
-  padding: 4px 4px;
+  padding: 8px 10px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  p {
+    margin: 0;
+    padding: 0 12px;
+  }
+}
+
+.notification-message {
+  font-size: 18px;
+}
+
+.notification-message-time {
+  font-size: 12px;
 }
