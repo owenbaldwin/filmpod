@@ -10,7 +10,7 @@
 .department-showpage-all-tasks-container {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   font-family: $body-font;
 }
 
@@ -23,8 +23,9 @@
   color: $basic-white-color;
   font-weight: bolder;
   font-family: $body-font;
-  height: 400px;
-  box-shadow: 2px 2px 2px rgba(250, 250, 250, 0.041)
+  height: auto;
+  min-height: 400px;
+  box-shadow: 2px 2px 2px rgba(250, 250, 250, 0.041);
 }
 
 .department-showpage-task-types:hover {
@@ -38,7 +39,14 @@
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  min-height: 400px;
+  justify-content: flex-start;
 }
+
+    // min-height: 400px;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: flex-start;
 
 .single-task {
   a {
@@ -53,7 +61,7 @@
     font-weight: bolder;
     text-decoration: none;
     justify-content: center;
-    height: fit-content;
+    height: 75px;
     border: 1px rgba(255, 255, 255, 0.363);
   }
 }
