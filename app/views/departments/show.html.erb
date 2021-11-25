@@ -21,7 +21,7 @@
         <div class="department-showpage-task-type to-do">
           <p> To-do 🔴 </p>
           <% @tasks.each do |task| %>
-            <% if task.status = "to-do"  %>
+            <% if task.status == "to-do"  %>
                  <div class="single-task"> <%= link_to task.title, task_path(task) %> </div>
               <% end %>
           <% end %>
@@ -30,7 +30,7 @@
         <div class="department-showpage-task-type in-progress">
           <p> In-progress 🟠 </p>
           <% @tasks.each do |task| %>
-            <% if task.status = "in-progress"  %>
+            <% if task.status == "in-progress"  %>
                 <div class="single-task"> <%= link_to task.title, task_path(task) %> </div>
               <% end %>
           <% end %>
@@ -39,7 +39,7 @@
         <div class="department-showpage-task-type done">
           <p> Done 🟢 </p>
           <% @tasks.each do |task| %>
-            <% if task.status = "done"  %>
+            <% if task.status == "done"  %>
                 <div class="single-task"> <%= link_to task.title, task_path(task) %> </div>
             <% end %>
           <% end %>
