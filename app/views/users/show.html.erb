@@ -47,31 +47,23 @@
 
       <div class="profile-page-notifications-box">
         <p>Notifications</p>
-        <div class="notification-card">
-          <div>
-          <%= image_tag "profile-pic1.jpg", class: "avatar" %>
-          </div>
-          <div>
-            <p> Notification</p>
-          </div>
+        <div class="notification-cards">
+          <% @tasks.each do |task| %>
+            <div class="notification-card">
+              <div>
+              <%= image_tag "profile-pic1.jpg", class: "avatar" %>
+              </div>
+              <div>
+                <div class="notification-message">
+                <p><%= task.user.first_name%> just marked the task "<%= task.title %>" in <em><%= task.department.name %></em> as <em><%= task.status %></em></p>
+                </div>
+                <div class="notification-message-time">
+                <p><%=  task.updated_at.strftime("%A, %d %b %Y %l:%M %p")%></p>
+                </div>
+              </div>
+            </div>
+            <% end %>
         </div>
-        <div class="notification-card">
-          <div>
-            <%= image_tag "profile-pic2.jpg", class: "avatar" %>
-          </div>
-          <div>
-            <p> Notification</p>
-          </div>
-        </div>
-        <div class="notification-card">
-          <div>
-            <%= image_tag "profile-pic3.jpg", class: "avatar" %>
-          </div>
-          <div>
-            <p> Notification</p>
-          </div>
-        </div>
-
       </div>
     </div>
   </div>
