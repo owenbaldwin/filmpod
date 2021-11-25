@@ -12,3 +12,113 @@
   color: $bright-white-color;
 
 }
+
+.banner {
+  background-image:
+   linear-gradient(to bottom, rgba(0, 0, 0, 0.1),rgba(0,0,0,0.6)),
+    url("filmpodbanner3.png");
+  background-size: cover;
+  // background-repeat: no-repeat;
+  height: 680px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  text-shadow: 4px 4px 10px #000000;
+  h4 {
+    padding-bottom: 24px;
+    letter-spacing: 5px;
+  }
+}
+
+.home-container {
+  width: 100vw;
+  height: 100vh;
+}
+
+.home-inner-container {
+  width: 100vw;
+  height: 100vh;
+}
+
+.home-su-btn {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5px;
+  background-color: $dark-gray;
+  border-radius: 5px;
+  border: 1px solid $basic-white-color;
+  margin-bottom: 24px;
+
+
+  // transition: 0.3s;
+  position: relative;
+  color: $basic-white-color;
+  overflow: hidden;
+
+
+
+  transition: 0.5s;
+  letter-spacing: 5px;
+
+}
+
+// a {
+//   // transition: 0.3s;
+// }
+
+.home-su-btn:hover {
+  // background-color: $light-gray;
+  text-decoration: none;
+  color: $bright-white-color;
+}
+
+.home-su-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg,transparent,#fff,transparent);
+  transition: 0.5s;
+
+}
+.home-su-btn:hover::before {
+  left: 100%;
+}
+
+.homecards{
+padding: 20px;
+background-color: $middle-gray;
+
+}
+
+.homecards-inner{
+  display: flex;
+  justify-content: space-around;
+}
+
+.landingcard {
+  margin: 10px;
+  padding: 10px;
+  background-color: $light-gray;
+  height: 250px;
+  width: 25%;
+  border: 1px solid $basic-white-color;
+  border-radius: 10px;
+  box-shadow: 4px 4px 10px #000000ad;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-around;
+  h5{
+    letter-spacing: 2px;
+    padding-bottom: 30px;
+    color: $bright-white-color;
+  }
+  p {
+    color: $basic-white-color;
+  }
+}
