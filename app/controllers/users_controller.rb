@@ -3,6 +3,7 @@ class UsersController < ApplicationController
     @user = current_user
     @films = @user.films
     @tasks = @user.tasks
+    @recentfilms = @user.films.last(3)
   end
 
   def create

@@ -14,35 +14,52 @@
         <div class = "department-showpage-timeline">
         </div>
       </div>
+        <br>
         <h4> project tasks... </h4>
-        <%= link_to "Add new task", new_department_task_path(@department) %>
 
       <div class="department-showpage-all-tasks-container">
-        <div class="department-showpage-task-type to-do">
+
+        <div class="department-showpage-task-types to-do">
           <p> To-do 🔴 </p>
-          <% @tasks.each do |task| %>
-            <% if task.status = "to-do"  %>
-                 <div class="single-task"> <%= link_to task.title, task_path(task) %> </div>
+            <div class="department-showpage-tasks">
+              <div class="single-task" id="to-do-new">
+                <%= link_to " + new task", new_department_task_path(@department), class: "single-task" %>
+              </div>
+              <% @tasks.each do |task| %>
+                <% if task.status == "to-do"  %>
+                    <div class="single-task">
+                      <%= link_to task.title, task_path(task) %>
+                    </div>
+                  <% end %>
               <% end %>
-          <% end %>
+          </div>
         </div>
 
-        <div class="department-showpage-task-type in-progress">
+        <div class="department-showpage-task-types in-progress">
           <p> In-progress 🟠 </p>
-          <% @tasks.each do |task| %>
-            <% if task.status = "in-progress"  %>
-                <div class="single-task"> <%= link_to task.title, task_path(task) %> </div>
+            <div class="department-showpage-tasks">
+              <% @tasks.each do |task| %>
+                <% if task.status == "in-progress"  %>
+                    <div class="single-task">
+                      <%= link_to task.title, task_path(task) %>
+                    </div>
+                  <% end %>
+
               <% end %>
-          <% end %>
+            </div>
         </div>
 
-        <div class="department-showpage-task-type done">
+        <div class="department-showpage-task-types done">
           <p> Done 🟢 </p>
-          <% @tasks.each do |task| %>
-            <% if task.status = "done"  %>
-                <div class="single-task"> <%= link_to task.title, task_path(task) %> </div>
+          <div class="department-showpage-tasks">
+            <% @tasks.each do |task| %>
+              <% if task.status == "done"  %>
+                  <div class="single-task">
+                    <%= link_to task.title, task_path(task) %>
+                  </div>
+              <% end %>
             <% end %>
-          <% end %>
+          </div>
         </div>
 
       </div>

@@ -38,7 +38,7 @@ class FilmsController < ApplicationController
     @film = Film.find(params[:id])
     @film.destroy
 
-    redirect_to films_path
+    redirect_to user_path
   end
 
   private
