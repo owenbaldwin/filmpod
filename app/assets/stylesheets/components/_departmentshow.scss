@@ -2,9 +2,12 @@
   background-color: $dark-gray;
 }
 
-
 .department-showpage-main-container {
   padding-right: 30px;
+}
+
+.department-showpage-inner-container {
+  display: flex;
 }
 
 .department-showpage-all-tasks-container {
