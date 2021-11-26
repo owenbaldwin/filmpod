@@ -16,9 +16,28 @@
 }
 
 .task-show-title {
-  display: block;
+  display: flex;
   margin-left: 10px;
+  margin-bottom: 20px;
+  justify-content: space-between;
 }
+
+.task-show-title-sub a{
+   border-radius: 8px;
+    font-size: 13px;
+    height: 28px;
+    line-height: 28px;
+    padding: 0 16px;
+    font-family: $body-font;
+    color: $basic-white-color;
+    font-weight: bolder;
+    text-decoration: none;
+    border: 1px solid $light-light-gray;
+    margin-top: 5px;
+    text-align: center;
+}
+
+
 
 .task-show-task-type {
   display:flex;
