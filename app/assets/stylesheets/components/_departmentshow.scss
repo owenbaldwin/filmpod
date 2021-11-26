@@ -127,7 +127,8 @@ h1 {
   border: 1px solid $basic-white-color;
   width: 10%;
   text-decoration: none;
-  margin-right: 28px;
+  margin-right: 10px;
+  padding: 0 35px;
 
   a {
     color: $basic-white-color
@@ -145,11 +146,11 @@ h1 {
 .delete-link-button {
   height: 35px;
   display: flex;
+  padding: 0 35px;
   align-items: center;
   justify-content: center;
   margin-top: 5px;
   margin-bottom: 5px;
-  padding: 0 8px;
   background-color: $dark-gray;
   border-radius: 5px;
   border: 1px solid $basic-white-color;

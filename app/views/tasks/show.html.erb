@@ -3,12 +3,17 @@
     <div class="inner-task-show-container">
 
         <div class="task-show-title">
-          <h2> <%= @task.title.capitalize %> </h2> <br>
+          <div class ="task-show-title-sub">
+            <h2> <%= @task.title.capitalize %> </h2>
+          </div>
+          <div class ="task-show-title-sub">
+            <%= link_to 'Delete',task_path(action: :delete,id: @task.id),method: :delete, data: {confirm: "Are you sure?"}, class: "task-show-title-sub-link" %>
+          </div>
         </div>
 
         <div class="task-show-task-type">
           <div class="task-show-label">
-            <p> Due date </p>
+            <p> 📅 Due date </p>
           </div>
           <div class="task-show-value">
             <p> 10 December 2021 </p>
@@ -17,22 +22,22 @@
 
         <div class="task-show-task-type">
           <div class="task-show-label">
-            <p> Status </p>
+            <p> 🤔 Status </p>
           </div>
           <div class="task-show-value">
             <% if @task.status == "to-do"%>
-              <p> <%= @task.status %> 🟢 </p>
+              <p> <%= @task.status  %>  🔴</p>
             <% elsif @task.status == "in-progress"%>
-              <p> <%= @task.status %> 🟠 </p>
+              <p> <%= @task.status  %>  🟠 </p>
             <% else @task.status == "done"%>
-              <p> <%= @task.status %> 🔴 </p>
+              <p> <%= @task.status  %>  🟢 </p>
             <%end%>
           </div>
         </div>
 
         <div class="task-show-task-type">
           <div class="task-show-label">
-            <p> Assignee </p>
+            <p> 👤 Assignee </p>
           </div>
           <div class="task-show-value">
             <p> Zoe Bell </p>
@@ -41,7 +46,7 @@
 
         <div class="task-show-task-type">
           <div class="task-show-label">
-            <p> Description </p>
+            <p> 🖇 Description </p>
           </div>
           <div class="task-show-value content-box">
           </div>
