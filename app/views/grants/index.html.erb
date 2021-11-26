@@ -11,7 +11,7 @@
         <% else %>
             <h3>Team members:</h3>
           <% @grants.each do |grant| %>
-            <p><%= grant.user.full_name%> - <%= grant.rank_level%> - <%= grant.user.user_skills%> - <%= grant.user.users_dept(@film.id)%></p>
+            <p><%= grant.user.full_name%> - <%= grant.rank_level%> - <%= grant.user.user_skills%> - <%= grant.user.users_dept(@film.id).first&.name%></p>
           <% end %>
         <% end %>
       </div>
