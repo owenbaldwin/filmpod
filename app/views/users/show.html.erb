@@ -58,23 +58,32 @@
       </div>
 
       <div class="profile-page-notifications-box">
-        <p>Notifications</p>
+        <p style="font-size: 20px;">Notifications</p>
         <div class="notification-cards">
           <% @recent_tasks.reverse.each do |task| %>
+            <%= link_to task_path(task), class: "to-each-task" do %>
             <div class="notification-card">
               <div>
-              <%= image_tag "profile-pic1.jpg", class: "avatar" %>
+                <%= image_tag "profile-pic1.jpg", class: "avatar" %>
               </div>
               <div>
-                <div class="notification-message">
-                <p><%= task.user.first_name.capitalize %> just marked the task "<%= task.title %>" in <strong><%= task.department.name.capitalize %></strong> as: <b><%= task.status.capitalize %></b></p>
+                <div class="d-flex notification-message">
+                  <p><%= task.user.first_name.capitalize %> just marked the task "<%= task.title %>" in <strong><%= task.department.name.capitalize %></strong> as:</p>
+                  <% if task.status == "to-do" %>
+                    <p><b style="color: rgba(180, 46, 46, 0.9);"><%= task.status.capitalize %></b></p>
+                  <% elsif task.status == "in-progress" %>
+                    <p ><b style="color: rgba(184, 114, 48, 0.9);"><%= task.status.capitalize %></b></p>
+                  <% else %>
+                    <p ><b style="color: rgba(62, 180, 72, 0.9);"><%= task.status.capitalize %></b></p>
+                  <% end %>
                 </div>
                 <div class="notification-message-time">
-                <p><%=  task.updated_at.strftime("%A, %d %b %Y %l:%M %p")%></p>
+                  <p><%=  task.updated_at.strftime("%A, %d %b %Y %l:%M %p")%></p>
                 </div>
               </div>
             </div>
             <% end %>
+          <% end %>
         </div>
       </div>
     </div>
