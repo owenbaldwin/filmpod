@@ -3,20 +3,17 @@
     <div class="col-12 col-sm-4">
       <div class="task-new-card">
           <div class="task-center">
-          <%= simple_form_for([@department, @task]) do |f| %>
             <div class="task-title">
-            <%= f.input :title %>
+            <h2> <%= @task.title %> </h2>
             </div>
             <div class="task-content">
-            <%= f.input :content %>
+            <p> <%= @task.content%> </p>
             </div>
             <div class="task-status">
-            <%= f.input :status, :collection => %w[to-do in-progress done] %>
+           <p> <%= @task.status %> 🔴 </p>
             </div>
             <%# <div class="glass-button" href="#">Submit %>
-            <%= f.submit %>
-            </div>
-          <% end %>
+          <%=link_to "Back to tasks", new_department_task_path(@department) %>
           </div>
         </div>
       </div>

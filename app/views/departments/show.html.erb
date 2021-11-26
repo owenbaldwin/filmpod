@@ -10,12 +10,35 @@
       <h3> Track your progress </h3>
 
       <div class="department-showpage-timeline-container">
+      <%= render partial: 'tasks/modal', locals: {department: @department, task: @task} %>
+      <%# <%= render partial: 'tasks/modal', locals: {department: @department, task: @task} %>
         <h4> project timeline... </h4>
+         <%# <%=link_to "Add new task", new_department_task_path(@department) %>
         <div class = "department-showpage-timeline">
         </div>
       </div>
         <h4> project tasks... </h4>
-        <%= link_to "Add new task", new_department_task_path(@department) %>
+      <div class=add-task-modal>
+        <button
+        type="button"
+        id="new-task-button"
+        class="glass-button "
+        data-toggle="modal"
+        data-target="#adding_task"
+        >Add Task</button>
+      </div>
+
+      <%# <div class=updating-task-modal>
+        <button
+        type="button"
+        id="updtes-task-button"
+        class="glass-button "
+        data-toggle="modal"
+        data-target="#updating_task"
+        >Add Task</button>
+      </div>
+      </div> %>
+
 
       <div class="department-showpage-all-tasks-container">
         <div class="department-showpage-task-type to-do">
@@ -47,14 +70,70 @@
 
       </div>
 
+
+	>
+
       <br>
 
       <%= link_to 'Edit', edit_department_path(@department) %>
       <br>
-      <%= link_to "Delete", department_path(@department), method: :delete %>
+      <%# <%= link_to "Delete", department_path(@department), method: :delete %>
+      <%= link_to 'Delete',department_path(@department), method: :delete, data: {confirm: "Are you sure?"} %>
       <br>
       <%= link_to 'Back', film_path(@film) %>
 
     </div>
   </div>
 </div>
+
+  <div class="modal" tabindex="-1" role="dialog" id='adding_task'>
+    <div class="modal-dialog" role="document">
+      <%# <h5 class="modal-title">Add a task</h5> %>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="task-new-card">
+      <div class="modal-body">
+        <%= simple_form_for([@department, @task_new]) do |f| %>
+          <div class="task-title">
+            <%= f.input :title %>
+          </div>
+          <div class="task-title">
+            <%= f.input :content %>
+          </div>
+          <div class="task-title">
+            <%= f.input :status, :collection => %w[to-do in-progress done] %>
+          </div>
+          <%# <div class="glass-button" href="#">Submit %>
+            <%= f.submit %>
+          </div>
+        <% end %>
+    </div>
+  </div>
+
+  <%# <div class="modal" tabindex="-1" role="dialog" id='updating_task'>
+    <div class="modal-dialog" role="document">
+      <%# <h5 class="modal-title">Add a task</h5> %>
+      <%# <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="task-new-card">
+      <div class="modal-body">
+          <div class="task-title">
+         <%# <h2> <%= @task.title %>
+            <%# </div>
+          <%= simple_form_for([@department, @task_update]) do |f| %>
+            <%# <div class="task-content">
+             <%= f.input :content %>
+            <%# </div> %>
+            <%# <div class="task-status"> %>
+              <%# <%= f.input :status, :collection => %w[to-do in-progress done] %>
+            <%# </div> %>
+          <%# <div class="glass-button" href="#">Submit %>
+            <%# <%= f.submit %>
+          <%# </div> %>
+        <%# <% end %>
+    <%# </div> %>
+  <%# </div> %>

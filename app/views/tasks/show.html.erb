@@ -1,7 +1,27 @@
-<h2> <%= @task.title %> </h2> <br>
-<p> <%= @task.content%> </p>
-
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-12 col-sm-4">
+      <div class="task-new-card">
+          <div class="task-center">
+            <div class="task-title">
+            <h2> <%= @task.title %> </h2>
+            </div>
+            <div class="task-content">
+            <p> <%= @task.content%> </p>
+            </div>
+            <div class="task-status">
+           <p> <%= @task.status %> 🔴 </p>
+            </div>
+            <%# <div class="glass-button" href="#">Submit %>
+          <%=link_to "Back to tasks", new_department_task_path(@department) %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <%= link_to 'Edit', edit_task_path(@task) %>
-<%= link_to "Delete", task_path(@task), method: :delete %>
+<%# <%= link_to "Delete", task_path(@task), method: :delete %>
+<%= link_to 'Delete',task_path(@task), method: :delete, data: {confirm: "Are you sure?"} %>
 <%= link_to 'Back', department_path(@department) %>
