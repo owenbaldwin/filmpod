@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   def show
     @user = current_user
     @films = @user.films
-    @tasks = @user.tasks
+    @tasks = Task.all
     @recent_tasks = @tasks.last(5)
     @recentfilms = @films.last(3)
   end

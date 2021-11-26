@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon border-bottom border-secondary">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon ">
   <%= link_to root_path, class: "navbar-brand" do %>
     <%= image_tag "FilmPod.png" %>
   <% end %>
@@ -18,7 +18,13 @@
           <%= link_to "Messages", "#", class: "nav-link text-light" %>
         </li>
         <li class="nav-item dropdown">
-          <%= image_tag "StanK.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <% if current_user.photo.present? %>
+            <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <% else %>
+            <%= image_tag "stock-profile.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <% end %>
+
+
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Action", "#", class: "dropdown-item text-dark" %>
             <%= link_to "Another action", "#", class: "dropdown-item text-dark" %>
