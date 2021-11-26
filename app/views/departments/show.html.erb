@@ -39,17 +39,18 @@
 
 
     <div class="department-showpage-main-container col-10">
-      <h1><%= @department.name.capitalize  %> Department </h1>
 
-      <div class="link-container">
-        <div class="edit-link-button">
-         <%= link_to 'Edit', edit_department_path(@department) %>
+      <div class = "department-showpage-header">
+        <div class = "department-showpage-header-title">
+          <h1><%= @department.name.capitalize  %> Department </h1>
         </div>
-        <div class="delete-link-button">
-        <%= link_to 'Delete',department_path(action: :delete,id: @department.id),method: :delete, data: {confirm: "Are you sure?"} %>
-        </div>
-        <div class="back-link-button">
-        <%= link_to 'Back', film_path(@film) %>
+        <div class="link-container">
+          <div class="edit-link-button">
+          <%= link_to 'Edit', edit_department_path(@department)%>
+          </div>
+          <div class="delete-link-button">
+            <%= link_to 'Delete',department_path(action: :delete,id: @department.id),method: :delete, data: {confirm: "Are you sure?"} %>
+          </div>
         </div>
       </div>
 
@@ -57,12 +58,12 @@
       <h3> Track your progress </h3>
 
       <div class="department-showpage-timeline-container">
-        <h4> project timeline... </h4>
+        <h4> Project timeline... </h4>
         <div class = "department-showpage-timeline">
         </div>
       </div>
         <br>
-        <h4> project tasks... </h4>
+        <h4> Project tasks... </h4>
 
       <div data-controller="drag" data-drag-url="/tasks/:id/move" class="department-showpage-all-tasks-container">
 
