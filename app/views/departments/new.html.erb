@@ -3,7 +3,8 @@
     <div>
       <h2>Create a New Department</h2>
       <%= simple_form_for([@film, @department]) do |f| %>
-        <%= f.input :name %>
+        <%# <%= f.input :name %>
+        <%= f.input :name, collection: Department::DPTNAMES%>
         <div class="btndiv">
           <%= f.submit class: "new-film-btn" %>
         </div>

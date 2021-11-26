@@ -8,12 +8,7 @@
 
 
 .film-moodboard-card-1 {
-  background-position: 0 -300px;
-
-  background-image:
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.4),rgba(0,0,0,0.4)),
-    url("https://d1t3zg51rvnesz.cloudfront.net/p/images/cms2/1066/sa-hope-full-orchestra_0186.jpg");
-  // background-size: auto;
+  // background-position: 0 -300px;
   background-size: cover;
   // background-repeat: no-repeat;
   height: 400px;
@@ -26,108 +21,8 @@
   margin-bottom: 10px;
   border-radius: 10px;
   box-shadow: 4px 4px 10px #000000;
-}
-
-.film-moodboard-card-2 {
-  background-position: 0 -200px;
-  background-image:
-    linear-gradient( rgba(0, 0, 0, 0.4),rgba(0,0,0,0.4)),
-    url("https://www.gannett-cdn.com/-mm-/8cfda5d5badf3ee18e4e8135a4dff17ae4634406/c=0-81-2071-2842/local/-/media/2018/02/13/CarolinaGroup/Asheville/636541382501829201-Biltmore-Titanic-002.JPG");
-  // background-size: auto;
-  background-size: cover;
-  // background-repeat: no-repeat;
-  height: 400px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-shadow: 4px 4px 10px #000000;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  border-radius: 10px;
-  box-shadow: 4px 4px 10px #000000;
 
 }
-
-.film-moodboard-card-3 {
-  background-position: 0 -150px;
-
-  background-image:
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.4),rgba(0,0,0,0.4)),
-    url("https://variety.com/wp-content/uploads/2019/12/titanic-movie-1997.jpg");
-  // background-size: auto;
-  background-size: cover;
-  // background-repeat: no-repeat;
-  height: 400px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-shadow: 4px 4px 10px #000000;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  border-radius: 10px;
-  box-shadow: 4px 4px 10px #000000;
-
-}
-
-.film-moodboard-card-4 {
-  background-position: 0 -250px;
-
-  background-image:
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.4),rgba(0,0,0,0.4)),
-    url("https://i.pinimg.com/originals/21/aa/d9/21aad905cda5ebc48cf97ed820a893be.jpg");
-  // background-size: auto;
-  background-size: cover;
-  // background-repeat: no-repeat;
-  height: 400px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-shadow: 4px 4px 10px #000000;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  border-radius: 10px;
-  box-shadow: 4px 4px 10px #000000;
-
-}
-
-.film-moodboard-card-5 {
-  background-position: 0 -250px;
-
-  background-image:
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.5),rgba(0,0,0,0.5)),
-    url("https://delamaracademy.co.uk/wp-content/uploads/2017/12/Delamar_photo_00065.jpeg");
-  // background-size: auto;
-  background-size: cover;
-  // background-repeat: no-repeat;
-  height: 400px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-shadow: 4px 4px 10px #000000;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  border-radius: 10px;
-  box-shadow: 4px 4px 10px #000000;
-
-}
-
-.film-moodboard-card-6 {
-  background-position: 0 -250px;
-
-  background-image:
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.4),rgba(0,0,0,0.4)),
-    url("https://dt7v1i9vyp3mf.cloudfront.net/styles/news_large/s3/imagelibrary/S/SF_Nov_05-IWxQDkxduN7bfDM48O2R30TDqBSupc.v.jpg");
-  // background-size: auto;
-  background-size: cover;
-  // background-repeat: no-repeat;
-  height: 400px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-shadow: 4px 4px 10px #000000;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  border-radius: 10px;
-  box-shadow: 4px 4px 10px #000000;
-
-}
+.btn-card:hover {
+    text-decoration: none;
+  }

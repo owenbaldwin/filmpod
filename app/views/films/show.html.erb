@@ -40,7 +40,16 @@
 
     <div class="film-moodboard-main ">
       <div class="film-moodboard-card-container">
-        <div class="film-moodboard-card-1">
+        <% @departments.each do |department| %>
+          <%=link_to department_path(department), class:"btn-card" do %>
+            <% dptphoto = "#{department.name}.jpg" %>
+            <div class="film-moodboard-card-1" style= "background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url('<%= asset_path dptphoto  %>');" >
+
+              <h3><%= department.name %></h3>
+            </div>
+          <% end %>
+        <% end %>
+        <%# <div class="film-moodboard-card-1">
           <h3>Music Department</h3>
         </div>
         <div class="film-moodboard-card-2">
@@ -57,7 +66,7 @@
         </div>
         <div class="film-moodboard-card-6">
           <h3>Sound Department</h3>
-        </div>
+        </div> %>
       </div>
     </div>
   </div>
