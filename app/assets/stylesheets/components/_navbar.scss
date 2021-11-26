@@ -1,7 +1,16 @@
 .navbar {
   display: flex;
   justify-content: space-between !important;
+  box-shadow: inset 0px 0px 20px #5c5b5b;
 }
+
+// .navbartop {
+//   width: 100%;
+//   height: 10px;
+//   // background-color: orangered;
+//   box-shadow: 30px 30px 50px #f50202;
+//   margin-bottom: 10px;
+// }
 
 
 .navbar-lewagon {
@@ -14,6 +23,7 @@
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
   padding-right: 20px;
+
 }
 
 .navbar-lewagon .navbar-brand img {
