@@ -6,7 +6,11 @@
     <div class="banner">
       <div>
         <h4>MAKING GREAT FILMS TODAY</h4>
-        <%= link_to "SIGN UP", new_user_session_path, class: "home-su-btn" %>
+        <% if user_signed_in? %>
+          <%= link_to "SIGN UP", user_path(current_user), class: "home-su-btn" %>
+        <% else %>
+          <%= link_to "SIGN UP", new_user_session_path, class: "home-su-btn" %>
+        <% end %>
       </div>
     </div>
 
