@@ -1,7 +1,9 @@
 .navbar {
   display: flex;
   justify-content: space-between !important;
-  box-shadow: inset 0px 0px 20px #5c5b5b;
+  // box-shadow: inset 0px 0px 10px #bebebe;
+  box-shadow: inset -2px 2px 15px 0px rgba(255, 255, 255, 0.363), inset 0.5px -0.5px 1px 0px rgba(204, 204, 204, 0.233);
+
 }
 
 // .navbartop {
