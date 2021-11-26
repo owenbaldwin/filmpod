@@ -33,15 +33,27 @@
         <p>Open recent</p>
         <div class="profile-movie-cards">
           <% if @films.length > 0 %>
-          <% @recentfilms.reverse.each do |film|%>
-              <div class="profile-movie-card">
-              <p><%= link_to film.title, film_path(film)%></p>
-              </div>
+            <% @recentfilms.reverse.each do |film|%>
+              <%= link_to film_path(film), class: "to-each-film" do %>
+                <div class="profile-movie-card">
+                  <div class="film-title-background">
+                    <p><%= film.title %></p>
+                  </div>
+                </div>
+              <% end %>
             <% end %>
           <% end %>
-            <div class="new-profile-movie-card">
-              <p><%= link_to "+", new_film_path%></p>
+          <%= link_to new_film_path, class: "to-new-film" do %>
+            <div class="profile-new-movie-card">
+              <div class="new-film-title-background">
+              </div>
+              <div class="plus-background">
+                <div>
+                  <p>+</p>
+                </div>
+              </div>
             </div>
+          <% end %>
         </div>
       </div>
 
