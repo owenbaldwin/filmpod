@@ -1,14 +1,7 @@
-// .profile-pic {
-//   height: 200px;
-//   // width: 50px;
-//   border-radius: 50%;
-// }
-
 .profile-page-main {
   padding: 20px 30px;
   background: $dark-gray;
 }
-
 
 .recent-films-box {
   background-color: $light-gray;
@@ -23,56 +16,129 @@
 }
 
 .profile-movie-card {
-  a {
-    display: flex;
-    height: 150px;
-    width: 100%;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    color: $basic-white-color;
-    background-color: $middle-gray;
-    border-radius: 8px;
-    border: 1px solid $basic-white-color;
-    font-weight: bolder;
+  display: flex;
+  height: 150px;
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+  align-items: end;
+  color: $basic-white-color;
+  background-color: $middle-gray;
+  border-radius: 8px;
+  border: 1px solid $basic-white-color;
+  font-weight: bolder;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+.film-title-background {
+  background-color: $light-gray;
+  width: 100%;
+  border-radius: 0 0 8px 8px;
+  p {
+    padding-top: 8px;
+    padding-bottom: 18px;
+    margin: 0;
   }
 }
 
 
-.new-profile-movie-card {
-  a {
-    font-size: 60px;
-    display: flex;
-    height: 150px;
-    width: 100%;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    color: $basic-white-color;
-    background-color: $middle-gray;
-    border-radius: 8px;
-    border: 1px solid $basic-white-color;
-  }
-}
-
-
-
-
-.profile-movie-card {
-  a:hover {
+.profile-movie-card:hover {
+  .film-title-background {
     color: $bright-white-color;
-    text-decoration: none;
-    background-color: $light-gray;
-    transition: 0.3s;
+    background-color: $light-light-gray;
+  }
+  background-color: $light-gray;
+  transition: 0.3s;
+}
+
+.to-each-film:hover {
+  text-decoration: none;
+}
+
+.profile-new-movie-card {
+  font-size: 60px;
+  display: flex;
+  position: relative;
+  height: 150px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  color: $basic-white-color;
+  background-color: $middle-gray;
+  border-radius: 8px;
+  border: 1px solid $basic-white-color;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  transition: 0.3s;
+  .plus-background {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $light-light-gray;
+    border-radius: 50%;
+    height: 70px;
+    width: 70px;
+    margin-top: 30px;
+    z-index: 2;
+    border: 8px solid $light-gray;
+    p {
+      margin: 0;
+      font-size: 40px;
+      z-index: 1;
+      font-weight: lighter;
+    }
   }
 }
 
-.new-profile-movie-card {
-  a:hover {
+.new-film-title-background {
+  width: 100%;
+  position: absolute;
+  height: 58px;
+  bottom: 0;
+  background-color: $light-gray;
+  border-radius: 0 0 8px 8px;
+}
+
+.profile-new-movie-card:hover {
+  .new-film-title-background {
     color: $bright-white-color;
-    text-decoration: none;
-    background-color: $light-gray;
+    background-color: $light-light-gray;
   }
+  .plus-background {
+    background-color: $bright-white-color;
+    border: 8px solid $light-light-gray;
+    p {
+      color: $light-light-gray;
+    }
+  }
+  background-color: $light-gray;
+  transition: 0.3s;
+}
+
+// .new-film-title-background {
+//   display:flex;
+//   justify-content: center;
+//   align-items: center;
+//   background-color: $light-gray;
+//   width: 100%;
+//   border-radius: 0 0 8px 8px;;
+//   .plus-background {
+//   background-color: $basic-white-color;
+//   width: 30px;
+//   border-radius: 50%;
+//   height: 30px;
+//   margin: 0 0 34px 0;
+//     p {
+//       // padding-top: 8px;
+//       // padding-bottom: 18px;
+//       margin: 0;
+
+//     }
+//   }
+// }
+
+.to-new-film:hover {
+  text-decoration: none;
 }
 
 .recent-films-box p {
