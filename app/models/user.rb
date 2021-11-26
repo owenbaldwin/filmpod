@@ -10,6 +10,7 @@ class User < ApplicationRecord
   has_many :departments_users
   has_many :films, through: :grants
   has_many :departments, through: :departments_users
+  has_one_attached :photo
 
   def full_name
     "#{first_name} #{last_name}"
