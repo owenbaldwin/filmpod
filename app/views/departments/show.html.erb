@@ -41,6 +41,19 @@
     <div class="department-showpage-main-container col-10">
       <h1><%= @department.name.capitalize  %> Department </h1>
 
+      <div class="link-container">
+        <div class="edit-link-button">
+         <%= link_to 'Edit', edit_department_path(@department) %>
+        </div>
+        <div class="delete-link-button">
+        <%= link_to 'Delete',department_path(action: :delete,id: @department.id),method: :delete, data: {confirm: "Are you sure?"} %>
+        </div>
+        <div class="back-link-button">
+        <%= link_to 'Back', film_path(@film) %>
+        </div>
+      </div>
+
+
       <h3> Track your progress </h3>
 
       <div class="department-showpage-timeline-container">
@@ -104,12 +117,6 @@
       </div>
 
       <br>
-
-      <%= link_to 'Edit', edit_department_path(@department) %>
-      <br>
-      <%= link_to 'Delete',department_path(action: :delete,id: @department.id),method: :delete, data: {confirm: "Are you sure?"} %>
-      <br>
-      <%= link_to 'Back', film_path(@film) %>
 
     </div>
   </div>

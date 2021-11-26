@@ -110,3 +110,81 @@ h1 {
   height: 150px;
   padding: 8px 10px 10px;
 }
+
+.edit-link-button {
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  background-color: $dark-gray;
+  border-radius: 5px;
+  border: 1px solid $basic-white-color;
+  width: 10%;
+  text-decoration: none;
+
+  a {
+    color: $basic-white-color
+  }
+}
+
+.edit-link-button:hover {
+  border: 1px solid $color-in-progress;
+  a {
+    color: $color-in-progress;
+    text-decoration: none;
+  }
+}
+
+.delete-link-button {
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  background-color: $dark-gray;
+  border-radius: 5px;
+  border: 1px solid $basic-white-color;
+  width: 10%;
+  text-decoration: none;
+
+  a {
+    color: $basic-white-color
+  }
+}
+
+.delete-link-button:hover {
+  border: 1px solid $color-to-do;
+  a {
+    color: $color-to-do;
+    text-decoration: none;
+  }
+}
+
+.back-link-button {
+   height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  background-color: $dark-gray;
+  border-radius: 5px;
+  border: 1px solid $basic-white-color;
+  width: 10%;
+  text-decoration: none;
+
+  a {
+    color: $basic-white-color
+  }
+}
+
+.back-link-button:hover {
+  border: 1px solid $color-new;
+  a {
+    color: $color-new;
+    text-decoration: none;
+  }
+}
