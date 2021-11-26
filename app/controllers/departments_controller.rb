@@ -19,6 +19,7 @@ class DepartmentsController < ApplicationController
     @department = Department.find(params[:id])
     @tasks = @department.tasks
     @film = @department.film
+    @departments = Department.all
   end
 
   def edit

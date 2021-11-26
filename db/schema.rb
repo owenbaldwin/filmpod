@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 2021_11_26_124836) do
     t.bigint "film_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "image"
     t.index ["film_id"], name: "index_departments_on_film_id"
   end
 
