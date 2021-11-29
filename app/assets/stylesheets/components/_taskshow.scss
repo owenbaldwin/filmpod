@@ -21,6 +21,13 @@
   margin-bottom: 20px;
   justify-content: space-between;
 }
+.task-show-title-sub {
+  display: flex;
+}
+
+.task-show-delete {
+  margin-left: 5px;
+}
 
 .task-show-title-sub a{
    border-radius: 8px;

@@ -1,0 +1,8 @@
+<h3> Edit your submission </h3>
+
+<%= simple_form_for(@submission) do |f| %>
+  <%= f.input :title %>
+  <%= f.input :content%>
+  <%= f.input :status, :collection => %w[to-do in-progress submitted approved] %>
+  <%= f.submit %>
+<% end %>
