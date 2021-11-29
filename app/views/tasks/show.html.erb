@@ -74,16 +74,22 @@
         </div>
 
         <div class="task-show-task-type">
-          <div class="task-show-submissions">
-            <p> submissions </p>
-          <ul>
-            <% @submissions.each do |submission|%>
-              <li> <%= link_to submission.title, submission_path(submission) %>
-              <p> submitted by: <%=submission.user.first_name %> </p>
-              <%= submission.status %> </li>
-            <% end %>
-          </ul>
+
+          <div class="task-show-submission-main-container">
+            <p> Submissions </p>
+            <div class="task-show-submissions">
+              <div>
+                <% @submissions.each do |submission|%>
+                <div class ="task-show-single-submission">
+                  <%= link_to submission.title, submission_path(submission) %> <br>
+                  <p> submitted by: <%=submission.user.first_name %> </p> <br>
+                  <%= submission.status %>
+                </div>
+                <% end %>
+              </div>
+            </div>
           </div>
+
         </div>
 
         </div>
