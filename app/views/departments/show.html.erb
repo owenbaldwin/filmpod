@@ -10,7 +10,7 @@
         </div>
 
         <div class="departments-side-bar">
-          <% @departments.each do |department| %>
+          <% @film.departments.each do |department| %>
           <div class="each-department-on-film-show">
               <%=link_to department.name, department_path(department)%>
           </div>
