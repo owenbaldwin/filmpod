@@ -7,7 +7,12 @@
             <h2> <%= @task.title.capitalize %> </h2>
           </div>
           <div class ="task-show-title-sub">
-            <%= link_to 'Delete',task_path(action: :delete,id: @task.id),method: :delete, data: {confirm: "Are you sure?"}, class: "task-show-title-sub-link" %>
+            <div class = "task-show-edit">
+              <%= link_to 'Edit', edit_task_path(@task), class: "task-show-title-sub-link" %>
+            </div>
+            <div class = "task-show-delete">
+              <%= link_to 'Delete', task_path(action: :delete,id: @task.id),method: :delete, data: {confirm: "Are you sure?"}, class: "task-show-title-sub-link" %>
+            </div>
           </div>
         </div>
 
@@ -64,7 +69,20 @@
 
         <div class="task-show-task-type">
           <div class="add-submission-btn">
-            <p> + Add submission </p>
+            <%= link_to '+ Add submission', new_task_submission_path(@task) %>
+          </div>
+        </div>
+
+        <div class="task-show-task-type">
+          <div class="task-show-submissions">
+            <p> submissions </p>
+          <ul>
+            <% @submissions.each do |submission|%>
+              <li> <%= link_to submission.title, submission_path(submission) %>
+              <p> submitted by: <%=submission.user.first_name %> </p>
+              <%= submission.status %> </li>
+            <% end %>
+          </ul>
           </div>
         </div>
 

@@ -1,0 +1,7 @@
+
+<%= simple_form_for ([@task, @submission]) do |f| %>
+  <%= f.input :title %>
+  <%= f.input :content %>
+  <%= f.input :status, :collection => %w[to-do in-progress submitted approved] %>
+  <%= f.submit %>
+<% end %>
