@@ -25,7 +25,11 @@
   text-align: center;
   align-items: end;
   color: $basic-white-color;
+  background-size: cover;
+  // height: 100%;
   background-color: $middle-gray;
+  background-repeat: no-repeat;
+  background-position: center;
   border-radius: 8px;
   border: 1px solid $basic-white-color;
   font-weight: bolder;
