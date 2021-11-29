@@ -1,5 +1,5 @@
 .grants-container {
-  height: 100vh;
+  height: 90vh;
   width: 100vw;
   background-color: $dark-gray;
   display: flex;
@@ -11,12 +11,13 @@
   display: flex;
   justify-content: center;
   margin-top: 32px;
+  // height: 82vh;
 }
 
-.grants-index-mid {
-  display: flex;
-  justify-content: center;
-}
+// .grants-index-mid {
+//   display: flex;
+//   justify-content: center;
+// }
 
 .grants-index-inner {
   background-color: $light-gray;
@@ -40,6 +41,7 @@
   background-color: $light-gray;
   margin-top: 8px;
   padding: 32px;
+  width: 80%;
   height: 400px;
   border-radius: 10px;
   box-shadow: 4px 4px 10px #000000ad;
@@ -71,6 +73,16 @@
 //   }
 
 // }
+
+.grants-each-member {
+  display:flex;
+  align-items: center;
+  margin: 12px 0;
+  p {
+    margin-left: 10px;
+  }
+}
+
 
 .grants-links {
   height: 60px;
