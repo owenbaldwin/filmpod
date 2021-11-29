@@ -20,6 +20,7 @@ class DepartmentsController < ApplicationController
     @tasks = @department.tasks
     @film = @department.film
     @departments = Department.all
+    @new_task = Task.new
   end
 
   def edit
