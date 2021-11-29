@@ -1,5 +1,5 @@
 class DepartmentsController < ApplicationController
-  before_action :get_film, only: [:new, :create]
+  before_action :find_film, only: [:new, :create]
 
   def new
     @department = Department.new
@@ -41,11 +41,13 @@ class DepartmentsController < ApplicationController
   end
 
   def moodboard
+    @department = Department.find(params[:id])
+    @tasks = @department.tasks
   end
 
   private
 
-  def get_film
+  def find_film
     @film = Film.find(params[:film_id])
   end
 
