@@ -3,6 +3,7 @@
 <%= simple_form_for(@submission) do |f| %>
   <%= f.input :title %>
   <%= f.input :content%>
+  <%= f.input :photo, as: :file %>
   <%= f.input :status, :collection => %w[to-do in-progress submitted approved] %>
   <%= f.submit %>
 <% end %>

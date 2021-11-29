@@ -1,0 +1,34 @@
+<div class="moodboard-container">
+  <div class="moodboard-grid">
+    <% @tasks.each do |task| %>
+      <% task.submissions.each do |submission| %>
+        <div class="submission-card">
+          <% if submission.photo.present? %>
+            <%= cl_image_tag submission.photo.key, class: "submission-photo" %>
+          <% else %>
+            <%= image_tag "stock-profile.jpg", class: "submission-photo" %>
+          <% end %>
+          <div class="submission-card-text">
+            <div class="submission-card-top-line">
+              <p><%= submission.title.capitalize%></p>
+              <% if submission.status == "to-do" %>
+                <p><b style="color: rgba(180, 46, 46, 0.9);"><%= submission.status.capitalize %></b></p>
+              <% elsif submission.status == "in-progress" %>
+                <p ><b style="color: rgba(184, 114, 48, 0.9);"><%= submission.status.capitalize %></b></p>
+              <% elsif submission.status == "submitted" %>
+                <p ><b style="color: rgba(184, 114, 48, 0.9);"><%= submission.status.capitalize %></b></p>
+              <% else %>
+                <p ><b style="color: rgba(62, 180, 72, 0.9);"><%= submission.status.capitalize %></b></p>
+              <% end %>
+            </div>
+            <% if submission.content? %>
+              <div class="submission-content">
+                <p><%= submission.content %></p>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>

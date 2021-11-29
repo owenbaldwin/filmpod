@@ -17,7 +17,7 @@ class User < ApplicationRecord
   end
 
   def user_skills
-    "#{skills}"
+    skills.to_s
   end
 
   def users_dept(film_id)
