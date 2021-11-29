@@ -1,42 +1,38 @@
 <div class="grants-container">
   <div class="grants-index">
-    <div class="grants-index-mid">
-
-
-
-
+    <%# <div class="grants-index-mid"> %>
       <div class="grants-index-inner">
         <% if @grants.empty? %>
           <p>No members yet</p>
         <% else %>
             <h3>Team members:</h3>
           <% @grants.each do |grant| %>
-            <p><%= grant.user.full_name%> - <%= grant.rank_level%> - <%= grant.user.user_skills%> - <%= grant.user.users_dept(@film.id).first&.name%></p>
+            <div class="grants-each-member">
+              <%= cl_image_tag grant.user.photo.key, class: "avatar" %>
+              <p>
+                <%= grant.user.full_name%> - <%= grant.rank_level%> - <%= grant.user.user_skills%> - <%= grant.user.users_dept(@film.id).first&.name%>
+              </p>
+            </div>
           <% end %>
         <% end %>
-      </div>
+      <%# </div> %>
     </div>
   </div>
 
   <div class="grants-new">
     <div class="grants-new-inner">
-      <div class="center">
         <h2> Add members to your team:</h2>
         <%= simple_form_for [ @film, @grant ] do |f| %>
           <div class ="grant-form">
             <div class="form-inputs">
               <%= f.association :user, label_method: :full_name, value_method: :id %>
               <%= f.input :rank_level, collection: Grant::RANKS%>
-
-
             </div>
-
             <div class="form-actions">
                 <%= f.button :submit, "Submit user",  class: "new-film-btn" %>
             </div>
           </div>
         <% end %>
-      </div>
       <div class="grants-links">
         <p><%= link_to 'Film homepage', film_path(@film),  class: "to-film-btn" %></p>
       </div>
