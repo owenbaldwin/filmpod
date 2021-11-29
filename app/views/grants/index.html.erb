@@ -6,14 +6,16 @@
 
 
       <div class="grants-index-inner">
-        <% if @grants.empty? %>
-          <p>No members yet</p>
-        <% else %>
-            <h3>Team members:</h3>
+        <% if @grants %>
+          <h3>Team members:</h3>
           <% @grants.each do |grant| %>
-            <p><%= grant.user.full_name%> - <%= grant.rank_level%> - <%= grant.user.user_skills%> - <%= grant.user.users_dept(@film.id).first&.name%></p>
+            <%# <%= grant.user.users_dept(@film.id).first&.name</p> %>
+            <p><%= grant.user.full_name%> - <%= grant.rank_level%> - <%= grant.user.user_skills%> - <%= grant.department.name%></p>
           <% end %>
+        <% else %>
+          <p>No members yet</p>
         <% end %>
+
       </div>
     </div>
   </div>
@@ -22,10 +24,15 @@
     <div class="grants-new-inner">
       <div class="center">
         <h2> Add members to your team:</h2>
+        <%# <% @userdepartment = @grant.user.users_dept(@film.id).first&.name %>
         <%= simple_form_for [ @film, @grant ] do |f| %>
           <div class ="grant-form">
-            <div class="form-inputs">
+            <div class="form-inputs" data-controller="drag">
               <%= f.association :user, label_method: :full_name, value_method: :id %>
+              <%# <%= f.input :user, id: "usersearch"%> %>
+                <%# <ul id="userresults"> %>
+                <%# </ul> %>
+              <%= f.input :department, collection: Department::DPTNAMES %>
               <%= f.input :rank_level, collection: Grant::RANKS%>
 
 

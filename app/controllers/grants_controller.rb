@@ -8,6 +8,7 @@ class GrantsController < ApplicationController
     @film = Film.find(params[:film_id])
     @grants = @film.grants
     @grant = Grant.new
+    @department = Department.new
   end
 
   def create
