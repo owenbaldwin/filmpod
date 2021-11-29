@@ -20,6 +20,7 @@ class SubmissionsController < ApplicationController
     @submission = Submission.find(params[:id])
     @task = @submission.task
     @submission.user = current_user
+    @comments = Comment.new
   end
 
   def edit

@@ -81,7 +81,7 @@
               <div>
                 <% @submissions.each do |submission|%>
                 <div class ="task-show-single-submission">
-                  <%= link_to submission.title, submission_path(submission) %> <br>
+                  <%= link_to submission.title, submission_path(submission) %>
                   <p> submitted by: <%=submission.user.first_name %> </p> <br>
                   <%= submission.status %>
                 </div>

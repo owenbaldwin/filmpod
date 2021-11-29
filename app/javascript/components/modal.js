@@ -5,15 +5,19 @@ const modalPopUp = () => {
   const modalContainer = document.querySelector(".modal-container")
   const newTaskBtn = document.querySelector(".new-film-btn")
 
-  newTaskButton.addEventListener("click", () => {
-    modalBox.classList.add("modal-show")
-    modalContainer.style.display = "flex"
-  })
+  if(newTaskButton){
+    newTaskButton.addEventListener("click", () => {
+      modalBox.classList.add("modal-show")
+      modalContainer.style.display = "flex"
+    })
+  }
 
-  newTaskBtn.addEventListener("click", () => {
-    modalBox.classList.remove("modal-show")
-    modalContainer.style.display = "none"
-  } )
+  if(newTaskBtn){
+    newTaskBtn.addEventListener("click", () => {
+      modalBox.classList.remove("modal-show")
+      modalContainer.style.display = "none"
+    })
+  }
 }
 
 
