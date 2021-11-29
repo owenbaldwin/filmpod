@@ -39,6 +39,9 @@ class DepartmentsController < ApplicationController
     redirect_to film_path(@film) # redirects to index should redirect to show page !
   end
 
+  def moodboard
+  end
+
   private
 
   def get_film

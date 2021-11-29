@@ -18,6 +18,7 @@ class TasksController < ApplicationController
 
   def show
     @task = Task.find(params[:id])
+    @submissions = @task.submissions
     @department = @task.department
   end
 
@@ -33,7 +34,7 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
     @task.update(task_params)
     @department = @task.department
-    redirect_to department_path(@department)
+    redirect_to task_path(@task)
   end
 
   def destroy

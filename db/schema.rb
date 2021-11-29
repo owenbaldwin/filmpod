@@ -79,7 +79,7 @@ ActiveRecord::Schema.define(version: 2021_11_29_112826) do
     t.bigint "film_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "department_id", null: false
+    t.bigint "department_id"
     t.index ["department_id"], name: "index_grants_on_department_id"
     t.index ["film_id"], name: "index_grants_on_film_id"
     t.index ["user_id"], name: "index_grants_on_user_id"

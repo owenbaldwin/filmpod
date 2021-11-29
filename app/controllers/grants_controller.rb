@@ -6,9 +6,10 @@ class GrantsController < ApplicationController
 
   def index
     @film = Film.find(params[:film_id])
-    @grants = @film.grants
+    @grants = @film.grants || []
     @grant = Grant.new
     @department = Department.new
+    @users = User.all
   end
 
   def create

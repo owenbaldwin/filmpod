@@ -1,0 +1,84 @@
+<div class="task-show-main-container">
+  <div class="task-show-container">
+    <div class="inner-task-show-container">
+
+        <div class="task-show-title">
+          <div class ="task-show-title-sub">
+            <h2> <%= @submission.title.capitalize %> </h2>
+          </div>
+          <div class ="task-show-title-sub">
+            <div class = "task-show-edit">
+              <%= link_to 'Edit', edit_submission_path(@submission), class: "task-show-title-sub-link" %>
+            </div>
+            <div class = "task-show-delete">
+              <%= link_to 'Delete',submission_path(action: :delete,id: @submission.id),method: :delete, data: {confirm: "Are you sure?"}, class: "task-show-title-sub-link" %>
+            </div>
+          </div>
+        </div>
+
+        <div class="task-show-task-type">
+          <div class="task-show-label">
+            <p> 📅 Submission date </p>
+          </div>
+          <div class="task-show-value">
+            <p> 10 December 2021 </p>
+          </div>
+        </div>
+
+        <div class="task-show-task-type">
+          <div class="task-show-label">
+            <p> 🤔 Status </p>
+          </div>
+          <div class="task-show-value">
+            <% status =  @submission.status %>
+              <% todo =  "to-do" %>
+              <% inprogress =  "in-progress" %>
+              <% submitted =  "submitted" %>
+              <% approved =  "approved" %>
+            <% case status %>
+              <% when todo %>
+                <p> <%= @submission.status  %>  🔴</p>
+              <% when inprogress %>
+                <p> <%= @submission.status  %>  🟠 </p>
+              <% when submitted %>
+                <p> <%= @submission.status  %>  🟣 </p>
+              <% when approved %>
+                <p> <%= @submisison.status  %>  🟢 </p>
+              <% else %>
+                <p> <%= @submission.status  %> </p>
+            <%end%>
+          </div>
+        </div>
+
+        <div class="task-show-task-type">
+          <div class="task-show-label">
+            <p> 👤 Submitted by  </p>
+          </div>
+          <div class="task-show-value">
+            <p> <%= @submission.user.first_name.capitalize %> </p>
+          </div>
+        </div>
+
+        <div class="task-show-task-type">
+          <div class="task-show-label">
+            <p> 🖇 Description </p>
+          </div>
+          <div class="task-show-value content-box">
+          </div>
+        </div>
+        <div class = "description-box">
+          <div class="task-show-value content-box">
+            <% if @submission.content == "" %>
+              <p><em> Add a description </em> </p>
+            <% else %>
+              <%= @submission.content %>
+              <%end%>
+            </p>
+          </div>
+        </div>
+
+        </div>
+      </div>
+   </div>
+  </div>
+</div>
