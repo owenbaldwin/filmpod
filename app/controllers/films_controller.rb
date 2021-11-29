@@ -9,8 +9,8 @@ class FilmsController < ApplicationController
 
   def create
     @film = Film.new(film_params)
-    if @film.save
-      Grant.create(user: current_user, film: @film, rank_level: "Direction")
+    if @film.save!
+      Grant.create!(user: current_user, film: @film, rank_level: "Direction", department: Department.first)
       redirect_to film_path(@film)
     else
       render :new
