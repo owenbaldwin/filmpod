@@ -5,6 +5,7 @@
   padding: 7px;
   width: 15%;
   box-shadow: inset -2px 2px 15px 0px rgba(255, 255, 255, 0.192), inset 0.5px -0.5px 1px 0px rgba(204, 204, 204, 0.082);
+  position: relative;
 }
 
 
@@ -20,8 +21,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: 8px;
+  margin-bottom: 8px;
   background-color: $light-gray;
   border-radius: 5px;
   border: 1px solid $basic-white-color;
@@ -43,6 +44,9 @@
 
 .sidebar-inner {
   width: 100%;
+  // position: sticky;
+  // top: 10px;
+  // height: 400px;
 }
 
 .sidebar-film-title {
@@ -57,7 +61,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 5px;
+  margin-top: 20px;
   margin-bottom: 5px;
   background-color: $dark-gray;
   border-radius: 5px;
@@ -154,6 +158,10 @@
     color: $color-in-progress;
     text-decoration: none;
   }
+}
+
+.dangerzone {
+  margin-top: 60px;
 }
 
 
