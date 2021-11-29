@@ -8,10 +8,15 @@
           <% @grants.each do |grant| %>
 
             <%# <%= grant.user.users_dept(@film.id).first&.name</p> %>
-            
+
 
             <div class="grants-each-member">
-              <%= cl_image_tag grant.user.photo.key, class: "avatar" %>
+
+              <% if grant.user.photo.attached?%>
+                  <%= cl_image_tag task.user.photo.key, class: "avatar" %>
+                <% else %>
+                  <%= image_tag "stock-profile.jpg", class: "avatar" %>
+                <% end  %>
               <p>
                 <%= grant.user.full_name%> - <%= grant.rank_level%> - <%= grant.user.user_skills%> - <%=  grant.department&.name %>
               </p>
@@ -27,7 +32,7 @@
 
       <%# </div> %>
 
-    </div>
+    <%# </div> %>
   </div>
 
   <div class="grants-new">
@@ -46,7 +51,7 @@
               <%= f.input :rank_level, collection: Grant::RANKS%>
             </div>
             <div class="form-actions">
-                <%= f.button :submit, "Submit user",  class: "new-film-btn" %>
+                <%= f.button :submit, "Submit user",  class: "new-film-btn new-grant-btn" %>
             </div>
           </div>
         <% end %>

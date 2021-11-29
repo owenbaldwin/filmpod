@@ -42,7 +42,7 @@
   margin-top: 8px;
   padding: 32px;
   width: 80%;
-  height: 400px;
+  height: 450px;
   border-radius: 10px;
   box-shadow: 4px 4px 10px #000000ad;
 }
@@ -111,6 +111,13 @@
   text-decoration: none;
 }
 
+.new-grant-btn {
+  background-color: $dark-gray !important;
+}
+
+.new-grant-btn:hover {
+  background-color: $middle-gray !important;
+}
 
 
 
@@ -124,5 +131,9 @@
   li {
     color: black !important;
   }
+}
+
+.select2-search__field {
+  color: black !important;
 
 }
