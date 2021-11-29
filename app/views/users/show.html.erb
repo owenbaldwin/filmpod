@@ -35,10 +35,17 @@
           <% if @films.length > 0 %>
             <% @recentfilms.reverse.each do |film|%>
               <%= link_to film_path(film), class: "to-each-film" do %>
+              <% if film.photo.present? %>
+                <div class="profile-movie-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path film.photo.key, crop: :fill %>')">
+                  <div class="film-title-background">
+                    <p><%= film.title %></p>
+                  </div>
+              <% else %>
                 <div class="profile-movie-card">
                   <div class="film-title-background">
                     <p><%= film.title %></p>
                   </div>
+              <% end %>
                 </div>
               <% end %>
             <% end %>
@@ -66,7 +73,7 @@
             <div class="notification-card">
               <div>
                 <% if task.user.photo.attached?%>
-                  <%= cl_image_tag task.user.photo.key, class: "avatar"   %>
+                  <%= cl_image_tag task.user.photo.key, class: "avatar" %>
                 <% else %>
                   <%= image_tag "stock-profile.jpg", class: "avatar" %>
                 <% end  %>
