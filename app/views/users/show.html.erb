@@ -1,7 +1,7 @@
 
 <div class="profile-page-container">
   <div class="row">
-    <div class = "sidebar col-2 pl-3 pr-0">
+    <div class = "sidebar col-2 pl-3 pr-0 border-right border-secondary">
        <div class="sidebar-inner">
         <div class="sidebar-film-title">
           <div>
@@ -66,13 +66,17 @@
           <% end %>
         </div>
       </div>
+      <div class="reflection-box">
+        <div class="reflection">
+        </div>
+      </div>
 
       <div class="profile-page-notifications-box">
         <p style="font-size: 20px;">Notifications</p>
         <div class="notification-cards">
         <% if @films.length > 0 %>
           <% @recent_tasks.reverse.each do |task| %>
-            <%= link_to task_path(task), class: "to-each-task" do %>
+            <%= link_to department_path(task.department), class: "to-each-task" do %>
             <div class="notification-card">
               <div>
                 <% if task.user.photo.attached?%>

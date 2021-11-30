@@ -1,7 +1,7 @@
 <div class="moodboard-ultra-container">
   <div class="moodboard-inner-container">
 
-    <div class = "sidebar col-2">
+    <div class = "sidebar col-2 border-right border-secondary">
        <div class="sidebar-inner">
         <div class="sidebar-film-title">
           <div>
@@ -40,6 +40,15 @@
 
 
     <div class= "moodboard-main-container col-10">
+     <div class="department-show-tabs">
+        <%# <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button> %>
+         <div class="tab-item tab-item-left">
+          <%= link_to "Moodboard", moodboard_department_path(@department) %>
+        </div>
+        <div class="tab-item">
+          <%= link_to "Tasks", department_path(@department) %>
+        </div>
+      </div>
     <div class = "moodboard-header">
       <div class = "moodboard-header-title">
         <h1><%= @department.name.capitalize  %> Moodboard </h1>
@@ -52,6 +61,7 @@
           <%= link_to submission_path(submission), class: "to-each-submission" do %>
             <div class="submission-card">
               <% if submission.photo.present? %>
+                <%# <%= cl_image_tag submission.photos.key, class: "submission-photo" %>
                 <%= cl_image_tag submission.photo.key, class: "submission-photo" %>
               <% else %>
                 <%= image_tag "stock-profile.jpg", class: "submission-photo" %>

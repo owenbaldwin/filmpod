@@ -59,7 +59,6 @@
   color: $basic-white-color;
   font-size: 14px;
   line-height: 18px;
-  max-width: 140px;
   flex-grow: 1;
 }
 .task-show-value .content-box em {
@@ -77,6 +76,7 @@
   border-radius: 8px;
   height: 200px;
   padding: 10px;
+  margin-bottom: 10px;
   color: $light-light-gray;
   box-shadow: 2px 2px 20px rgba(255, 255, 255, 0.041);
 }
@@ -86,22 +86,23 @@
   color: $basic-white-color;
   transition: 0.3s;
 }
-.add-submission-btn {
+.add-submission-btn a {
   border-radius: 8px;
   font-size: 13px;
   height: 28px;
   line-height: 28px;
-  padding: 0 16px;
+  padding: 6px 12px;
   font-family: $body-font;
-  color: $light-light-gray;
+  color: $basic-white-color;
   font-weight: bolder;
   text-decoration: none;
   justify-content: center;
   border: 1px solid $light-light-gray;
-  margin-top: 5px;
+  margin-top: 10px;
   text-align: center;
 }
-.add-submission-btn:hover {
+
+.add-submission-btn a:hover {
   background-color: $light-gray;
   border: 1px solid $basic-white-color;
   color: $basic-white-color;
@@ -126,4 +127,41 @@
     color: #ffffff7d;
     cursor: pointer;
   }
+}
+
+.task-show-submissions {
+  display: inline;
+}
+
+.single-submission {
+    display: flex;
+    border-radius: 8px;
+    padding: 8px 10px;
+    align-items: flex-start;
+    background-color: $light-gray;
+    font-family: $body-font;
+    color: $basic-white-color;
+    font-weight: bolder;
+    text-decoration: none;
+    justify-content: flex-start;
+    height: fit-content;
+    // border: 1px solid $light-gray;
+}
+
+.single-submission:hover {
+  color: $bright-white-color;
+  // border: 1px solid $basic-white-color;
+  padding: 8px 5px;
+  transition: 0.3s;
+  color: $bright-white-color;
+}
+
+.task-show-submissions a {
+  margin: 10px 4px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.single-submission-content {
+  color: $bright-white-color;
 }

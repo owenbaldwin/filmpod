@@ -1,6 +1,7 @@
 <div class="task-show-main-container">
   <div class="task-show-container">
     <div class="inner-task-show-container">
+
       <div class="close-modal">
         <p>X</p>
       </div>
@@ -19,10 +20,10 @@
       </div>
       <div class="task-show-task-type">
         <div class="task-show-label">
-          <p> :date: Due date </p>
+          <p> 📅 Due date </p>
         </div>
         <div class="task-show-value">
-          <p> 10 December 2021 </p>
+          <p> <%= task.created_at.strftime("%b %d, %Y") %> </p>
         </div>
       </div>
       <div class="task-show-task-type">
@@ -44,7 +45,7 @@
           <p> 👤 Assignee </p>
         </div>
         <div class="task-show-value">
-          <p> Zoe Bell </p>
+          <p> <%= task.user.first_name %> <%=  task.user.last_name %> </p>
         </div>
       </div>
       <div class="task-show-task-type">
@@ -67,21 +68,30 @@
           <%= link_to '+ Add submission', new_task_submission_path(task) %>
         </div>
       </div>
-      <div class="task-show-task-type">
+
+      <div class="task-show-submissions-main">
+          <br> <strong> <small> All submissions </small> </strong>
         <div class="task-show-submissions">
-          <p> submissions </p>
-          <ul>
             <% task.submissions.each do |submission|%>
-              <li> <%= link_to submission.title, submission_path(submission) %>
-              <p> submitted by: <%=submission.user.first_name %> </p>
-              <%= submission.status %> </li>
+              <%= link_to submission_path(submission) do %>
+                <div class = "single-submission">
+                  <div>
+                    <% if current_user.photo.present? %>
+                      <%= cl_image_tag current_user.photo.key, class: "avatar-comment"%>
+                    <% else %>
+                      <%= image_tag "stock-profile.jpg", class: "avatar-comment" %>
+                  <% end %>
+                  </div>
+                  <div class = "single-submission-content">
+                    <%= submission.title %> <br>
+                    <small> Submitted by <%= submission.user.first_name.capitalize %> <%=submission.user.last_name.capitalize %> on <i> on <%= submission.created_at.strftime("%a %b %e at %l:%M %p") %> </i> </small>
+                  </div>
+                </div>
+              <% end %>
             <% end %>
-          </ul>
         </div>
       </div>
-      <%= link_to 'Edit', edit_task_path(task) %>
-      <%= link_to 'Delete', task_path(action: :delete,id: task.id),method: :delete, data: {confirm: 'Are you sure?'} %>
-      <%= link_to 'Back', department_path(@department) %>
+
     </div>
   </div>
 </div>

@@ -60,6 +60,21 @@
   display: flex;
 }
 
-.moodboard-main-container h1 {
-  margin: 25px 0;
+.moodboard-main-container {
+  // margin: 25px 0;
+  h1 {
+    margin: 25px 0;
+  }
+}
+
+
+.department-show-tabs {
+  display: flex;
+  justify-content: space-around;
+}
+
+.department-show-tabs:hover {
+  a {
+    text-decoration: none;
+  }
 }
