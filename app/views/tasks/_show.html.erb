@@ -1,6 +1,7 @@
 <div class="task-show-main-container">
   <div class="task-show-container">
     <div class="inner-task-show-container">
+
       <div class="close-modal">
         <p>X</p>
       </div>
@@ -67,16 +68,27 @@
           <%= link_to '+ Add submission', new_task_submission_path(task) %>
         </div>
       </div>
-      <div class="task-show-task-type">
+
+      <div class="task-show-submissions-main">
+          <br> <strong> <small> All submissions </small> </strong>
         <div class="task-show-submissions">
-          <small> submissions </small>
-          <ul>
             <% task.submissions.each do |submission|%>
-              <li> <%= link_to submission.title, submission_path(submission) %>
-              <p> submitted by: <%=submission.user.first_name %> </p>
-              <%= submission.status %> </li>
+              <%= link_to submission_path(submission) do %>
+                <div class = "single-submission">
+                  <div>
+                    <% if current_user.photo.present? %>
+                      <%= cl_image_tag current_user.photo.key, class: "avatar-comment"%>
+                    <% else %>
+                      <%= image_tag "stock-profile.jpg", class: "avatar-comment" %>
+                  <% end %>
+                  </div>
+                  <div class = "single-submission-content">
+                    <%= submission.title %> <br>
+                    <small> Submitted by <%= submission.user.first_name.capitalize %> <%=submission.user.last_name.capitalize %> on <i> on <%= submission.created_at.strftime("%a %b %e at %l:%M %p") %> </i> </small>
+                  </div>
+                </div>
+              <% end %>
             <% end %>
-          </ul>
         </div>
       </div>
 
