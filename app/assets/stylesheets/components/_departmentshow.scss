@@ -5,12 +5,12 @@
   width: 100%;
 }
 .department-showpage-main-container {
-  padding-right: 30px;
-  position: relative;
-}
-.department-showpage-main-container h1 {
+  // margin: 25px 0;
+  h1 {
   margin: 25px 0;
+  }
 }
+
 .department-showpage-inner-container {
   width: 100%;
   justify-content: space-between;
@@ -235,6 +235,29 @@ h1 {
   text-decoration: none;
   margin-right: 10px;
   padding: 0 35px;
+  a {
+    color: $basic-white-color;
+  }
+}
+
+
+.department-show-tabs {
+  display: flex;
+  justify-content: space-around;
+}
+
+.department-show-tabs:hover {
+  a {
+    text-decoration: none;
+  }
+}
+
+
+.tab-item {
+  width: 100%;
+  background-color: $light-gray;
+  text-align: center;
+  padding: 20px 0;
   a {
     color: $basic-white-color;
   }
