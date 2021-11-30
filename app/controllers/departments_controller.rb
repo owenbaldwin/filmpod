@@ -19,7 +19,7 @@ class DepartmentsController < ApplicationController
     @department = Department.find(params[:id])
     @tasks = @department.tasks
     @film = @department.film
-    # @departments = Department.all
+    @departments = Department.all
 
     # @depfilm = Film.find(params[:id])
     # @departments = @depfilm.departments
@@ -47,6 +47,7 @@ class DepartmentsController < ApplicationController
   def moodboard
     @department = Department.find(params[:id])
     @tasks = @department.tasks
+    @film = @department.film
   end
 
   private

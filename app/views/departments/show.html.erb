@@ -1,19 +1,20 @@
 <div class="department-showpage-container">
   <div class="department-showpage-inner-container">
 
-    <div class = "sidebar">
+
+    <div class = "sidebar col-2">
        <div class="sidebar-inner">
+
         <div class="sidebar-film-title">
           <div>
             <h1><%= @film.title %></h1>
           </div>
         </div>
-
         <div class="departments-side-bar">
-          <% @film.departments.each do |department| %>
-          <div class="each-department-on-film-show">
-              <%=link_to department.name, department_path(department)%>
-          </div>
+          <% @departments.each do |department| %>
+            <div class="each-department-on-film-show">
+                <%=link_to department.name, department_path(department)%>
+            </div>
           <% end %>
           <div class="add-dpt-btn">
             <%= link_to "+ Add department", new_film_department_path(@film) %>
@@ -22,7 +23,6 @@
             <%= link_to "+ Add Grants", film_grants_path(@film) %>
           </div>
         </div>
-
         <div>
           <div class="sidebar-back-btn">
             <%= link_to 'Back', user_path %>
@@ -36,13 +36,12 @@
         </div>
       </div>
     </div>
-
-
     <div class="department-showpage-main-container col-10">
-
-
       <div class="modal-container">
         <div class="modal-container-task-new-card" id="modal-container">
+          <div class="close-modal">
+            <p>X</p>
+          </div>
           <h3> New Task </h3>
           <%= simple_form_for([@department, @new_task]) do |f| %>
             <%= f.input :title %>
@@ -52,86 +51,74 @@
           <% end %>
         </div>
       </div>
-
       <div class = "department-showpage-header">
         <div class = "department-showpage-header-title">
           <h1><%= @department.name.capitalize  %> Department </h1>
         </div>
         <div class="link-container">
           <div class="edit-link-button">
-          <%= link_to 'Edit', edit_department_path(@department)%>
+            <%= link_to 'Edit', edit_department_path(@department)%>
           </div>
           <div class="delete-link-button">
             <%= link_to 'Delete',department_path(action: :delete,id: @department.id),method: :delete, data: {confirm: "Are you sure?"} %>
           </div>
         </div>
       </div>
-
-
       <h3> Track your progress ⏳ </h3>
-
       <div class="department-showpage-timeline-container">
         <h4> Project timeline  </h4>
         <div class = "department-showpage-timeline">
         </div>
       </div>
-        <br>
-        <h4> Tasks ✔ </h4>
-
+      <br>
+      <h4> Tasks ✔️ </h4>
       <div data-controller="drag" data-drag-url="/tasks/:id/move" class="department-showpage-all-tasks-container">
-
         <div class="department-showpage-task-types to-do">
           <p> To-do 🔴 </p>
-            <div class="department-showpage-tasks">
-
-              <div class="single-task" id="to-do-new">
-                <button class="new-task-btn">New Task</button>
-              </div>
-
-              <div data-drag-target="tasks" data-status="to-do">
-                <% @tasks.order(position: :asc).each do |task| %>
-                  <% if task.status == "to-do"  %>
-                      <div data-id="<%= task.id %>" class="single-task">
-                        <%= link_to task.title, task_path(task) %>
-                      </div>
-                    <% end %>
+          <div class="department-showpage-tasks">
+            <div class="single-task" id="to-do-new">
+              <button class="new-task-btn">New Task</button>
+            </div>
+            <div data-drag-target="tasks" data-status="to-do">
+              <% @tasks.order(position: :asc).each do |task| %>
+                <% if task.status == "to-do"  %>
+                  <div data-id="<%= task.id %>" class="single-task">
+                    <button class="task-title-select"><%= task.title %></button>
+                    <%= render "tasks/show", task: task %>
+                  </div>
                 <% end %>
-              </div>
-
-          </div>
-        </div>
-
-        <div class="department-showpage-task-types in-progress">
-          <p> In-progress 🟠 </p>
-            <div data-drag-target="tasks" data-status="in-progress" class="department-showpage-tasks" id="itemlist">
-              <% @tasks.each do |task| %>
-                <% if task.status == "in-progress"  %>
-                    <div data-id="<%= task.id %>" class="single-task">
-                      <%= link_to task.title, task_path(task) %>
-                    </div>
-                  <% end %>
-
               <% end %>
             </div>
+          </div>
         </div>
-
-        <div class="department-showpage-task-types done">
-          <p> Done 🟢 </p>
-          <div data-drag-target="tasks" data-status="done" class="department-showpage-tasks">
+        <div class="department-showpage-task-types in-progress">
+        <p> In-progress 🟠 </p>
+          <div data-drag-target="tasks" data-status="in-progress" class="department-showpage-tasks" id="itemlist">
             <% @tasks.each do |task| %>
-              <% if task.status == "done"  %>
-                  <div data-id="<%= task.id %>" class="single-task">
-                    <%= link_to task.title, task_path(task) %>
-                  </div>
+              <% if task.status == "in-progress"  %>
+                <div data-id="<%= task.id %>" class="single-task">
+                  <button class="task-title-select"><%= task.title %></button>
+                    <%= render "tasks/show", task: task %>
+                </div>
               <% end %>
             <% end %>
           </div>
         </div>
-
+        <div class="department-showpage-task-types done">
+        <p> Done 🟢 </p>
+          <div data-drag-target="tasks" data-status="done" class="department-showpage-tasks">
+            <% @tasks.each do |task| %>
+              <% if task.status == "done"  %>
+                <div data-id="<%= task.id %>" class="single-task">
+                  <button class="task-title-select"><%= task.title %></button>
+                  <%= render "tasks/show", task: task %>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
       </div>
-
       <br>
-
     </div>
   </div>
 </div>

@@ -1,14 +1,12 @@
 <div class="film-moodboard-container">
   <div class="film-moodboard-inner-container">
-    <div class="sidebar">
+    <div class="sidebar col-2">
       <div class="sidebar-inner">
         <div class="sidebar-film-title">
           <div>
             <h1><%= @film.title %></h1>
           </div>
         </div>
-
-
 
         <div class="departments-side-bar">
           <% @departments.each do |department| %>
@@ -38,7 +36,7 @@
       </div>
     </div>
 
-    <div class="film-moodboard-main ">
+    <div class="film-moodboard-main col-10">
       <div class="film-moodboard-card-container">
         <% @departments.each do |department| %>
           <%=link_to department_path(department), class:"btn-card" do %>

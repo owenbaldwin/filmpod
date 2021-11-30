@@ -1,34 +1,87 @@
-<div class="moodboard-container">
-  <div class="moodboard-grid">
-    <% @tasks.each do |task| %>
-      <% task.submissions.each do |submission| %>
-        <div class="submission-card">
-          <% if submission.photo.present? %>
-            <%= cl_image_tag submission.photo.key, class: "submission-photo" %>
-          <% else %>
-            <%= image_tag "stock-profile.jpg", class: "submission-photo" %>
-          <% end %>
-          <div class="submission-card-text">
-            <div class="submission-card-top-line">
-              <p><%= submission.title.capitalize%></p>
-              <% if submission.status == "to-do" %>
-                <p><b style="color: rgba(180, 46, 46, 0.9);"><%= submission.status.capitalize %></b></p>
-              <% elsif submission.status == "in-progress" %>
-                <p ><b style="color: rgba(184, 114, 48, 0.9);"><%= submission.status.capitalize %></b></p>
-              <% elsif submission.status == "submitted" %>
-                <p ><b style="color: rgba(184, 114, 48, 0.9);"><%= submission.status.capitalize %></b></p>
-              <% else %>
-                <p ><b style="color: rgba(62, 180, 72, 0.9);"><%= submission.status.capitalize %></b></p>
-              <% end %>
-            </div>
-            <% if submission.content? %>
-              <div class="submission-content">
-                <p><%= submission.content %></p>
-              </div>
-            <% end %>
+<div class="moodboard-ultra-container">
+  <div class="moodboard-inner-container">
+
+    <div class = "sidebar col-2">
+       <div class="sidebar-inner">
+        <div class="sidebar-film-title">
+          <div>
+            <h1><%= @film.title %></h1>
           </div>
         </div>
+
+        <div class="departments-side-bar">
+          <% @film.departments.each do |department| %>
+          <div class="each-department-on-film-show">
+              <%=link_to department.name, department_path(department)%>
+          </div>
+          <% end %>
+          <div class="add-dpt-btn">
+            <%= link_to "+ Add department", new_film_department_path(@film) %>
+          </div>
+          <div class="add-dpt-btn">
+            <%= link_to "+ Add Grants", film_grants_path(@film) %>
+          </div>
+        </div>
+
+        <div>
+          <div class="sidebar-back-btn">
+            <%= link_to 'Back', user_path %>
+          </div>
+          <div class="sidebar-edit-btn">
+            <%= link_to 'Edit Film', edit_film_path(@film) %>
+          </div>
+          <div class="sidebar-danger-btn">
+            <%= link_to "Delete Film", film_path(@film), method: :delete %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class= "moodboard-main-container col-10">
+    <div class = "moodboard-header">
+      <div class = "moodboard-header-title">
+        <h1><%= @department.name.capitalize  %> Moodboard </h1>
+      </div>
+    </div>
+
+    <div class="moodboard-container">
+      <% @tasks.each do |task| %>
+        <% task.submissions.each do |submission| %>
+          <%= link_to submission_path(submission), class: "to-each-submission" do %>
+            <div class="submission-card">
+              <% if submission.photo.present? %>
+                <%= cl_image_tag submission.photo.key, class: "submission-photo" %>
+              <% else %>
+                <%= image_tag "stock-profile.jpg", class: "submission-photo" %>
+              <% end %>
+              <div class="submission-card-text">
+                <div class="submission-card-top-line">
+                  <p><%= submission.title.capitalize%></p>
+                  <% if submission.status == "to-do" %>
+                    <p><b style="color: rgba(180, 46, 46, 0.9);"><%= submission.status.capitalize %></b></p>
+                  <% elsif submission.status == "in-progress" %>
+                    <p ><b style="color: rgba(184, 114, 48, 0.9);"><%= submission.status.capitalize %></b></p>
+                  <% elsif submission.status == "submitted" %>
+                    <p ><b style="color: rgba(184, 114, 48, 0.9);"><%= submission.status.capitalize %></b></p>
+                  <% else %>
+                    <p ><b style="color: rgba(62, 180, 72, 0.9);"><%= submission.status.capitalize %></b></p>
+                  <% end %>
+                </div>
+                <% if submission.content? %>
+                  <div class="submission-content">
+                    <p><%= submission.content %></p>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
+  </div>
+
+
   </div>
 </div>
