@@ -1,5 +1,5 @@
 class Department < ApplicationRecord
-  DPTNAMES = ["Direction", "Production", "Art Department", "Camera Department", "Acting Department", "Electric Department", "Grip Department", "Make-Up Department", "Wardrobe Department", "Sound Department", "Music Department", "Catering Department", "Stunts Department", "VFX Department", "Editing Department"].freeze
+  DPTNAMES = ["Direction", "Production", "Art", "Camera", "Acting", "Electric", "Grip", "Make-Up", "Wardrobe", "Sound", "Music", "Catering", "Stunts", "VFX", "Editing"].freeze
   belongs_to :film
   has_many :tasks, dependent: :destroy
   has_many :departments_users
