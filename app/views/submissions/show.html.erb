@@ -1,18 +1,22 @@
 <div class="submission-show-main-container">
   <div class="submission-show-container">
     <div class="submission-show-inner-container">
-
-        <small> Submission for the task: <strong> "<%= @submission.task.title %>" </small> </strong> <br><br>
+        <div class ="submission-show-title sub">
+          <small> Submission for the task: <strong> "<%= @submission.task.title %>" </small> </strong>
+          <div class= "submission-show-back">
+            <%= link_to 'Back to task', task_path(@task), class: "submission-show-title sub " %>
+          </div>
+        </div>
         <div class="submission-show-title">
-          <div class ="submission-show-title-sub">
+          <div class ="submission-show-title sub">
             <h2> <%= @submission.title.capitalize %> </h2>
           </div>
-          <div class ="submission-show-title-sub">
+          <div class ="submission-show-title sub">
             <div class = "submission-show-edit">
-              <%= link_to 'Edit', edit_submission_path(@submission), class: "submission-show-title-sub-link" %>
+              <%= link_to 'Edit', edit_submission_path(@submission) %>
             </div>
             <div class = "submission-show-delete">
-              <%= link_to 'Delete',submission_path(action: :delete,id: @submission.id),method: :delete, data: {confirm: "Are you sure?"}, class: "task-show-title-sub-link" %>
+              <%= link_to 'Delete',submission_path(action: :delete,id: @submission.id),method: :delete, data: {confirm: "Are you sure?"} %>
             </div>
           </div>
         </div>
@@ -31,22 +35,10 @@
             <p> 🤔 Status </p>
           </div>
           <div class="submission-show-value">
-            <% status =  @submission.status %>
-              <% todo =  "to-do" %>
-              <% inprogress =  "in-progress" %>
-              <% submitted =  "submitted" %>
-              <% approved =  "approved" %>
-            <% case status %>
-              <% when todo %>
-                <p> <%= @submission.status.capitalize  %>  🔴</p>
-              <% when inprogress %>
+            <% if @submission.status == "submitted" %>
                 <p> <%= @submission.status.capitalize  %>  🟠 </p>
-              <% when submitted %>
-                <p> <%= @submission.status.capitalize  %>  🟣 </p>
-              <% when approved %>
-                <p> <%= @submisison.status.capitalize  %>  🟢 </p>
-              <% else %>
-                <p> <%= @submission.status.capitalize  %> </p>
+            <% else @submission.status == "approved" %>
+                <p> <%= @submission.status.capitalize  %>  🟢 </p>
             <%end%>
           </div>
         </div>

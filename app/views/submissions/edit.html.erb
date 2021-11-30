@@ -4,6 +4,6 @@
   <%= f.input :title %>
   <%= f.input :content%>
   <%= f.input :photo, as: :file %>
-  <%= f.input :status, :collection => %w[to-do in-progress submitted approved] %>
+  <%= f.input :status, :collection => %w[approved] %>
   <%= f.submit %>
 <% end %>

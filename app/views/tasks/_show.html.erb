@@ -19,10 +19,10 @@
       </div>
       <div class="task-show-task-type">
         <div class="task-show-label">
-          <p> :date: Due date </p>
+          <p> 📅 Due date </p>
         </div>
         <div class="task-show-value">
-          <p> 10 December 2021 </p>
+          <p> <%= task.created_at.strftime("%b %d, %Y") %> </p>
         </div>
       </div>
       <div class="task-show-task-type">
@@ -44,7 +44,7 @@
           <p> 👤 Assignee </p>
         </div>
         <div class="task-show-value">
-          <p> Zoe Bell </p>
+          <p> <%= task.user.first_name %> <%=  task.user.last_name %> </p>
         </div>
       </div>
       <div class="task-show-task-type">
@@ -69,7 +69,7 @@
       </div>
       <div class="task-show-task-type">
         <div class="task-show-submissions">
-          <p> submissions </p>
+          <small> submissions </small>
           <ul>
             <% task.submissions.each do |submission|%>
               <li> <%= link_to submission.title, submission_path(submission) %>
@@ -79,9 +79,7 @@
           </ul>
         </div>
       </div>
-      <%= link_to 'Edit', edit_task_path(task) %>
-      <%= link_to 'Delete', task_path(action: :delete,id: task.id),method: :delete, data: {confirm: 'Are you sure?'} %>
-      <%= link_to 'Back', department_path(@department) %>
+
     </div>
   </div>
 </div>

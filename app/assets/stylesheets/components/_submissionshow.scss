@@ -1,6 +1,6 @@
 .submission-show-container {
   background-color: $dark-gray;
-  width: 40%;
+  width:90%;
   height: 100%;
   margin: 20px auto;
   padding: 10px;
@@ -13,10 +13,15 @@
   background-color: $dark-gray;
 }
 
+.top-submission-div {
+  display: flex;
+  justify-content: space-between;
+}
+
 .submission-show-title {
   display: flex;
   margin-left: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   justify-content: space-between;
 }
 .submission-show-title-sub {
@@ -27,7 +32,7 @@
   margin-left: 5px;
 }
 
-.submission-show-title-sub a{
+.submission-show-title .sub a{
    border-radius: 8px;
     font-size: 13px;
     height: 28px;
