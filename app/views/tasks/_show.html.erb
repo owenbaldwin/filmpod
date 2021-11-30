@@ -1,0 +1,87 @@
+<div class="task-show-main-container">
+  <div class="task-show-container">
+    <div class="inner-task-show-container">
+      <div class="close-modal">
+        <p>X</p>
+      </div>
+      <div class="task-show-title">
+        <div class ="task-show-title-sub">
+          <h2> <%= task.title.capitalize %> </h2>
+        </div>
+        <div class ="task-show-title-sub">
+          <div class = "task-show-edit">
+            <%= link_to 'Edit', edit_task_path(task), class: "task-show-title-sub-link" %>
+          </div>
+          <div class = "task-show-delete">
+            <%= link_to 'Delete', task_path(action: :delete,id: task.id),method: :delete, data: {confirm: "Are you sure?"}, class: "task-show-title-sub-link" %>
+          </div>
+        </div>
+      </div>
+      <div class="task-show-task-type">
+        <div class="task-show-label">
+          <p> :date: Due date </p>
+        </div>
+        <div class="task-show-value">
+          <p> 10 December 2021 </p>
+        </div>
+      </div>
+      <div class="task-show-task-type">
+        <div class="task-show-label">
+          <p> 🤔 Status </p>
+        </div>
+        <div class="task-show-value">
+          <% if task.status == "to-do"%>
+            <p> <%= task.status  %>  🔴 </p>
+          <% elsif task.status == "in-progress"%>
+            <p> <%= task.status  %>  🟠 </p>
+          <% else task.status == "done"%>
+            <p> <%= task.status  %>  🟢 </p>
+          <%end%>
+        </div>
+      </div>
+      <div class="task-show-task-type">
+        <div class="task-show-label">
+          <p> 👤 Assignee </p>
+        </div>
+        <div class="task-show-value">
+          <p> Zoe Bell </p>
+        </div>
+      </div>
+      <div class="task-show-task-type">
+        <div class="task-show-label">
+          <p> 🖇️ Description </p>
+        </div>
+        <div class="task-show-value content-box"></div>
+      </div>
+      <div class = "description-box">
+        <div class="task-show-value content-box">
+          <% if task.content == '' %>
+            <p><em> Add a description </em> </p>
+          <% else %>
+            <%= task.content %>
+          <%end%>
+        </div>
+      </div>
+      <div class="task-show-task-type">
+        <div class="add-submission-btn">
+          <%= link_to '+ Add submission', new_task_submission_path(task) %>
+        </div>
+      </div>
+      <div class="task-show-task-type">
+        <div class="task-show-submissions">
+          <p> submissions </p>
+          <ul>
+            <% task.submissions.each do |submission|%>
+              <li> <%= link_to submission.title, submission_path(submission) %>
+              <p> submitted by: <%=submission.user.first_name %> </p>
+              <%= submission.status %> </li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+      <%= link_to 'Edit', edit_task_path(task) %>
+      <%= link_to 'Delete', task_path(action: :delete,id: task.id),method: :delete, data: {confirm: 'Are you sure?'} %>
+      <%= link_to 'Back', department_path(@department) %>
+    </div>
+  </div>
+</div>

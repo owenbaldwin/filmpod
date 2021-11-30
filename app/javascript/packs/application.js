@@ -27,11 +27,13 @@ import "bootstrap";
 
 // Internal imports, e.g:
 import { modalPopUp } from '../components/modal.js'
+import { modalTaskShow } from '../components/taskshow.js'
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   modalPopUp()
+  modalTaskShow()
 });
 
 import "controllers"
