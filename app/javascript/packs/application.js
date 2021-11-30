@@ -32,6 +32,7 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   modalPopUp()
+  // connect()
 });
 
 import "controllers"

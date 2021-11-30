@@ -1,35 +1,36 @@
-<div class="task-show-main-container">
-  <div class="task-show-container">
-    <div class="inner-task-show-container">
+<div class="submission-show-main-container">
+  <div class="submission-show-container">
+    <div class="submission-show-inner-container">
 
-        <div class="task-show-title">
-          <div class ="task-show-title-sub">
+        <small> Submission for the task: <strong> "<%= @submission.task.title %>" </small> </strong> <br><br>
+        <div class="submission-show-title">
+          <div class ="submission-show-title-sub">
             <h2> <%= @submission.title.capitalize %> </h2>
           </div>
-          <div class ="task-show-title-sub">
-            <div class = "task-show-edit">
-              <%= link_to 'Edit', edit_submission_path(@submission), class: "task-show-title-sub-link" %>
+          <div class ="submission-show-title-sub">
+            <div class = "submission-show-edit">
+              <%= link_to 'Edit', edit_submission_path(@submission), class: "submission-show-title-sub-link" %>
             </div>
-            <div class = "task-show-delete">
+            <div class = "submission-show-delete">
               <%= link_to 'Delete',submission_path(action: :delete,id: @submission.id),method: :delete, data: {confirm: "Are you sure?"}, class: "task-show-title-sub-link" %>
             </div>
           </div>
         </div>
 
-        <div class="task-show-task-type">
-          <div class="task-show-label">
+        <div class="submission-show-submission-type">
+          <div class="submission-show-label">
             <p> 📅 Submission date </p>
           </div>
-          <div class="task-show-value">
-            <p> 10 December 2021 </p>
+          <div class="submission-show-value">
+            <p> <%= @submission.created_at.strftime("%b %d, %Y") %> </p>
           </div>
         </div>
 
-        <div class="task-show-task-type">
-          <div class="task-show-label">
+        <div class="submission-show-submission-type">
+          <div class="submission-show-label">
             <p> 🤔 Status </p>
           </div>
-          <div class="task-show-value">
+          <div class="submission-show-value">
             <% status =  @submission.status %>
               <% todo =  "to-do" %>
               <% inprogress =  "in-progress" %>
@@ -37,37 +38,37 @@
               <% approved =  "approved" %>
             <% case status %>
               <% when todo %>
-                <p> <%= @submission.status  %>  🔴</p>
+                <p> <%= @submission.status.capitalize  %>  🔴</p>
               <% when inprogress %>
-                <p> <%= @submission.status  %>  🟠 </p>
+                <p> <%= @submission.status.capitalize  %>  🟠 </p>
               <% when submitted %>
-                <p> <%= @submission.status  %>  🟣 </p>
+                <p> <%= @submission.status.capitalize  %>  🟣 </p>
               <% when approved %>
-                <p> <%= @submisison.status  %>  🟢 </p>
+                <p> <%= @submisison.status.capitalize  %>  🟢 </p>
               <% else %>
-                <p> <%= @submission.status  %> </p>
+                <p> <%= @submission.status.capitalize  %> </p>
             <%end%>
           </div>
         </div>
 
-        <div class="task-show-task-type">
-          <div class="task-show-label">
+        <div class="submission-show-submission-type">
+          <div class="submission-show-label">
             <p> 👤 Submitted by  </p>
           </div>
-          <div class="task-show-value">
-            <p> <%= @submission.user.first_name.capitalize %> </p>
+          <div class="submission-show-value">
+            <p> <%= @submission.user.first_name.capitalize %> <%= @submission.user.last_name.capitalize %> </p>
           </div>
         </div>
 
-        <div class="task-show-task-type">
-          <div class="task-show-label">
+        <div class="submission-show-submission-type">
+          <div class="submission-show-label">
             <p> 🖇 Description </p>
           </div>
-          <div class="task-show-value content-box">
+          <div class="submission-show-value content-box">
           </div>
         </div>
         <div class = "description-box">
-          <div class="task-show-value content-box">
+          <div class="submission-show-value content-box">
             <% if @submission.content == "" %>
               <p><em> Add a description </em> </p>
             <% else %>
@@ -77,22 +78,38 @@
           </div>
         </div>
 
-        <div class = "container-comments-section"
-          data-controller="submission-subscription"
-          data-submission-subscription-submission-id-value="<%= @submission.id
-          %>" >
-          <% @submission.comments.each do |comment| %>
-            <%= render "comments/comment", comment: comment %>
-          <% end %>
-        </div>
 
-        <div>
-          <%= simple_form_for [@submission, @comments], remote: true do |f| %>
-            <%= f.input :content, label: false, placeholder: "Comment ##{@submission.title}" %>
-            <%= f.submit %>
-          <% end %>
-        </div>
+        <div class= "comments-section-main-container">
+          <div class = "comments-section-inner-container"
+            data-controller="submission-subscription"
+            data-submission-subscription-submission-id-value="<%= @submission.id
+            %>" >
+            <% @submission.comments.each do |comment| %>
+            <div class = "single-comment">
+              <%= render "comments/comment", comment: comment %>
+            </div>
+            <% end %>
+          </div>
 
+          <div class = "new-comment">
+
+            <div>
+              <% if current_user.photo.present? %>
+                <%= cl_image_tag current_user.photo.key, class: "avatar-comment"%>
+              <% else %>
+              <%= image_tag "stock-profile.jpg", class: "avatar-comment" %>
+             <% end %>
+            </div>
+
+            <div class ="new-comment content">
+              <%= simple_form_for [@submission, @comment], remote: true do |f| %>
+                <%= f.input :content, label: false, placeholder: "Add a comment for ##{@submission.title}" %>
+                <%= f.submit class: "comment-btn", value: "Comment" %>
+              <% end %>
+            </div>
+          </div>
+
+        </div>
 
    </div>
   </div>

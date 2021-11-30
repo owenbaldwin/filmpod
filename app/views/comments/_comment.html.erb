@@ -1,7 +1,22 @@
 <div id="comment-<%= comment.id %>">
-  <small>
-    <strong><%= comment.user.first_name %></strong>
-    <i><%= comment.created_at.strftime("%a %b %e at %l:%M %p") %></i>
-  </small>
-  <p><%= comment.content %></p>
+
+  <div class="single-comment-details">
+
+    <div>
+      <% if current_user.photo.present? %>
+          <%= cl_image_tag current_user.photo.key, class: "avatar-comment"%>
+        <% else %>
+          <%= image_tag "stock-profile.jpg", class: "avatar-comment" %>
+      <% end %>
+    </div>
+    <div class= "single-comment-content">
+      <small class="single-comment-user">
+        <strong><%= comment.user.first_name %> <%= comment.user.last_name %></strong>
+        <i> on <%= comment.created_at.strftime("%a %b %e at %l:%M %p") %></i>
+      </small>
+      <p class= "single-comment-content"><%= comment.content %></p>
+      </div>
+
+  </div>
+
 </div>
