@@ -36,52 +36,88 @@
         </div>
       </div>
     </div>
-    <div class="department-showpage-main-container col-10">
-      <div class="modal-container">
-        <div class="modal-container-task-new-card" id="modal-container">
-          <div class="close-modal">
-            <p>X</p>
-          </div>
-          <h3> New Task </h3>
-          <%= simple_form_for([@department, @new_task]) do |f| %>
-            <%= f.input :title %>
-            <%= f.input :content %>
-            <%= f.input :status, :collection => %w[to-do in-progress done] %>
-            <%= f.submit class: "new-film-btn" %>
-          <% end %>
+
+      <div class="department-showpage-main-container col-10">
+      <div class="department-show-tabs">
+        <div class="tab-item">
+          <%= link_to "Moodboard", moodboard_department_path(@department) %>
         </div>
-      </div>
-      <div class = "department-showpage-header">
-        <div class = "department-showpage-header-title">
-          <h1><%= @department.name.capitalize  %> Department </h1>
+        <div class="tab-item">
+          <%= link_to "Tasks", department_path(@department) %>
         </div>
-        <div class="link-container">
-          <div class="edit-link-button">
-            <%= link_to 'Edit', edit_department_path(@department)%>
-          </div>
-          <div class="delete-link-button">
-            <%= link_to 'Delete',department_path(action: :delete,id: @department.id),method: :delete, data: {confirm: "Are you sure?"} %>
-          </div>
-        </div>
-      </div>
-      <h3> Track your progress ⏳ </h3>
-      <div class="department-showpage-timeline-container">
-        <h4> Project timeline  </h4>
-        <div class = "department-showpage-timeline">
-        </div>
-      </div>
-      <br>
-      <h4> Tasks ✔️ </h4>
-      <div data-controller="drag" data-drag-url="/tasks/:id/move" class="department-showpage-all-tasks-container">
-        <div class="department-showpage-task-types to-do">
-          <p> To-do 🔴 </p>
-          <div class="department-showpage-tasks">
-            <div class="single-task" id="to-do-new">
-              <button class="new-task-btn">New Task</button>
+      </div class="beneath-tab">
+        <div class="modal-container">
+          <div class="modal-container-task-new-card" id="modal-container">
+            <div class="close-modal">
+              <p>X</p>
             </div>
-            <div data-drag-target="tasks" data-status="to-do">
-              <% @tasks.order(position: :asc).each do |task| %>
-                <% if task.status == "to-do"  %>
+            <h3> New Task </h3>
+            <%= simple_form_for([@department, @new_task]) do |f| %>
+              <%= f.input :title %>
+              <%= f.input :content %>
+              <%= f.input :status, :collection => %w[to-do in-progress done] %>
+              <%= f.submit class: "new-film-btn" %>
+            <% end %>
+          </div>
+        </div>
+        <div class = "department-showpage-header">
+          <div class = "department-showpage-header-title">
+            <h1><%= @department.name.capitalize  %> Department </h1>
+          </div>
+          <div class="link-container">
+            <div class="edit-link-button">
+              <%= link_to 'Edit', edit_department_path(@department)%>
+            </div>
+            <div class="delete-link-button">
+              <%= link_to 'Delete',department_path(action: :delete,id: @department.id),method: :delete, data: {confirm: "Are you sure?"} %>
+            </div>
+          </div>
+        </div>
+        <h3> Track your progress ⏳ </h3>
+        <div class="department-showpage-timeline-container">
+          <h4> Project timeline  </h4>
+          <div class = "department-showpage-timeline">
+          </div>
+        </div>
+        <br>
+        <h4> Tasks ✔️ </h4>
+        <div data-controller="drag" data-drag-url="/tasks/:id/move" class="department-showpage-all-tasks-container">
+          <div class="department-showpage-task-types to-do">
+            <p> To-do 🔴 </p>
+            <div class="department-showpage-tasks">
+              <div class="single-task" id="to-do-new">
+                <button class="new-task-btn">New Task</button>
+              </div>
+              <div data-drag-target="tasks" data-status="to-do">
+                <% @tasks.order(position: :asc).each do |task| %>
+                  <% if task.status == "to-do"  %>
+                    <div data-id="<%= task.id %>" class="single-task">
+                      <button class="task-title-select"><%= task.title %></button>
+                      <%= render "tasks/show", task: task %>
+                    </div>
+                  <% end %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+          <div class="department-showpage-task-types in-progress">
+          <p> In-progress 🟠 </p>
+            <div data-drag-target="tasks" data-status="in-progress" class="department-showpage-tasks" id="itemlist">
+              <% @tasks.each do |task| %>
+                <% if task.status == "in-progress"  %>
+                  <div data-id="<%= task.id %>" class="single-task">
+                    <button class="task-title-select"><%= task.title %></button>
+                      <%= render "tasks/show", task: task %>
+                  </div>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
+          <div class="department-showpage-task-types done">
+          <p> Done 🟢 </p>
+            <div data-drag-target="tasks" data-status="done" class="department-showpage-tasks">
+              <% @tasks.each do |task| %>
+                <% if task.status == "done"  %>
                   <div data-id="<%= task.id %>" class="single-task">
                     <button class="task-title-select"><%= task.title %></button>
                     <%= render "tasks/show", task: task %>
@@ -91,34 +127,7 @@
             </div>
           </div>
         </div>
-        <div class="department-showpage-task-types in-progress">
-        <p> In-progress 🟠 </p>
-          <div data-drag-target="tasks" data-status="in-progress" class="department-showpage-tasks" id="itemlist">
-            <% @tasks.each do |task| %>
-              <% if task.status == "in-progress"  %>
-                <div data-id="<%= task.id %>" class="single-task">
-                  <button class="task-title-select"><%= task.title %></button>
-                    <%= render "tasks/show", task: task %>
-                </div>
-              <% end %>
-            <% end %>
-          </div>
-        </div>
-        <div class="department-showpage-task-types done">
-        <p> Done 🟢 </p>
-          <div data-drag-target="tasks" data-status="done" class="department-showpage-tasks">
-            <% @tasks.each do |task| %>
-              <% if task.status == "done"  %>
-                <div data-id="<%= task.id %>" class="single-task">
-                  <button class="task-title-select"><%= task.title %></button>
-                  <%= render "tasks/show", task: task %>
-                </div>
-              <% end %>
-            <% end %>
-          </div>
-        </div>
+        <br>
       </div>
-      <br>
-    </div>
   </div>
 </div>

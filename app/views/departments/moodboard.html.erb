@@ -40,6 +40,15 @@
 
 
     <div class= "moodboard-main-container col-10">
+     <div class="department-show-tabs">
+        <%# <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button> %>
+         <div class="tab-item">
+          <%= link_to "Moodboard", moodboard_department_path(@department) %>
+        </div>
+        <div class="tab-item">
+          <%= link_to "Tasks", department_path(@department) %>
+        </div>
+      </div>
     <div class = "moodboard-header">
       <div class = "moodboard-header-title">
         <h1><%= @department.name.capitalize  %> Moodboard </h1>
