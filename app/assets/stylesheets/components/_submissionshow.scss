@@ -1,0 +1,166 @@
+.submisson-show-main-container {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.submisson-show-container {
+  background-color: $dark-gray;
+  width: 40%;
+  height: 600px;
+  margin: 20px auto;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 20px rgba(255, 255, 255, 0.041);
+}
+.inner-submisson-show-container {
+  padding: 10px;
+  background-color: $dark-gray;
+  position: relative;
+
+  .form-control {
+    background:rgba(255, 255, 255, 0.041);
+    color:  $basic-white-color;
+
+  }
+}
+.submisson-show-title {
+  display: flex;
+  margin-left: 10px;
+  margin-bottom: 20px;
+  justify-content: space-between;
+}
+.submisson-show-title-sub {
+  display: flex;
+}
+.submisson-show-delete {
+  margin-left: 5px;
+}
+.submisson-show-title-sub a {
+  border-radius: 8px;
+  font-size: 13px;
+  height: 28px;
+  line-height: 28px;
+  padding: 0 16px;
+  font-family: $body-font;
+  color: $basic-white-color;
+  font-weight: bolder;
+  text-decoration: none;
+  border: 1px solid $light-light-gray;
+  margin-top: 5px;
+  text-align: center;
+}
+.submisson-show-submisson-type {
+  display: flex;
+}
+.submisson-show-label {
+  color: $light-light-gray;
+  font-size: 13px;
+  line-height: 18px;
+  max-width: 140px;
+  overflow: hidden;
+  padding-top: 2px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+  margin-left: 10px;
+  flex-grow: 1;
+  font-weight: bolder;
+}
+.submisson-show-value {
+  color: $basic-white-color;
+  font-size: 14px;
+  line-height: 18px;
+  max-width: 140px;
+  flex-grow: 1;
+}
+.submisson-show-value .content-box em {
+  color: $light-gray;
+  font-size: 10px;
+}
+.submisson-show-value .content-box {
+  height: 50px;
+  background-color: $middle-gray;
+  margin-left: 10px;
+  color: $light-light-gray;
+}
+.description-box {
+  border: 1px solid $light-gray;
+  border-radius: 8px;
+  height: 200px;
+  padding: 10px;
+  color: $light-light-gray;
+  box-shadow: 2px 2px 20px rgba(255, 255, 255, 0.041);
+}
+.description-box:hover {
+  // background-color: $light-gray;
+  border: 1px solid $basic-white-color;
+  color: $basic-white-color;
+  transition: 0.3s;
+}
+.add-submission-btn {
+  border-radius: 8px;
+  font-size: 13px;
+  height: 28px;
+  line-height: 28px;
+  padding: 0 16px;
+  font-family: $body-font;
+  color: $light-light-gray;
+  font-weight: bolder;
+  text-decoration: none;
+  justify-content: center;
+  border: 1px solid $light-light-gray;
+  margin-top: 5px;
+  text-align: center;
+}
+.add-submission-btn:hover {
+  background-color: $light-gray;
+  border: 1px solid $basic-white-color;
+  color: $basic-white-color;
+  transition: 0.3s;
+}
+
+.comment-btn {
+  border-radius: 8px;
+  font-size: 13px;
+  height: 28px;
+  line-height: 28px;
+  padding: 0 16px;
+  font-family: $body-font;
+  color: $light-light-gray;
+  font-weight: bolder;
+  text-decoration: none;
+  justify-content: center;
+  border: 1px solid $light-light-gray;
+  margin-top: 5px;
+  text-align: center;
+  background-color: $light-gray;
+}
+
+.comment-btn:hover {
+  background-color: $light-gray;
+  border: 1px solid $basic-white-color;
+  color: $basic-white-color;
+  transition: 0.3s;
+}
+
+.test-class {
+  display: flex;
+}
+
+// .submisson-show-visible {
+//   position: absolute;
+//   width: 100%;
+//   top: 60px;
+//   display: block;
+//   left: 0;
+// }
+// .close-modal {
+//   p {
+//     position: absolute;
+//     top: 5px;
+//     left: 5px;
+//     font-size: 13px;
+//     color: #ffffff7d;
+//     cursor: pointer;
+//   }
