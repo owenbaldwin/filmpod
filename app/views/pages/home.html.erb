@@ -7,13 +7,17 @@
       <div class="homepage-text">
         <h4>MAKING GREAT FILMS TODAY</h4>
         <% if user_signed_in? %>
-          <%= link_to "SIGN UP", user_path(current_user), class: "home-su-btn" %>
+          <%= link_to "GO TO YOUR PROFILE", user_path(current_user), class: "home-su-btn" %>
         <% else %>
           <%= link_to "SIGN UP", new_user_session_path, class: "home-su-btn" %>
         <% end %>
       </div>
     </div>
 
+    <div class="reflection-box-home">
+      <div class="reflection-home">
+      </div>
+    </div>
 
     <div class="homecards">
       <div class="homecards-inner">
@@ -43,6 +47,7 @@
         </div>
       </div>
     </div>
+
 
   </div>
 

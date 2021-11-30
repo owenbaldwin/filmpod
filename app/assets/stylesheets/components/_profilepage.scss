@@ -4,11 +4,12 @@
 }
 
 .recent-films-box {
-  background-color: $light-gray;
+  // background-color: $light-gray;
+  background-color: transparent;
   border-radius: 8px;
-  padding: 20px 20px;
-  box-shadow: inset 0px 0px 20px #5c5b5b;
-
+  // padding: 20px 20px;
+  // box-shadow: inset 0px 0px 20px #5c5b5b;
+  // margin-bottom: 24px;
 }
 
 .profile-movie-cards {
@@ -131,7 +132,7 @@
 }
 
 .profile-page-notifications-box {
-  background-color: $light-gray;
+  background-color: $middle-gray;
   margin: 20px 0;
   border-radius: 8px;
   padding: 20px 20px;
@@ -176,3 +177,22 @@
 // b {
 //   color: purple;
 // }
+
+.reflection-box {
+  display: flex;
+  justify-content: center;
+  background: $dark-gray;
+
+}
+
+.reflection {
+  margin-top: 40px;
+  background-color: #d60225;
+  // background-color: linear-gradient(rgb(245, 6, 6),rgb(179, 3, 3));
+  height: 30px;
+  width: 600px;
+  border-radius: 50%;
+  transform: perspective(1em) rotateX(45deg) scale(1, 0.3);
+  filter: blur(1.5em);
+  margin-bottom: 64px;
+}

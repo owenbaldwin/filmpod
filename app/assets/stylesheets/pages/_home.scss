@@ -1,6 +1,8 @@
 // Specific CSS for your home-page
 .general-background{
-  background-color: $background;
+  // background-color: $background;
+  background: $dark-gray;
+
 }
 
 .container {
@@ -21,10 +23,13 @@
   background-position: center;
   // background-repeat: no-repeat;
   height: 680px;
+  border-bottom: 1px solid #8d031a;
+  box-shadow: 0 0 20px #c203298c;;
   display: flex;
   align-items: flex-end;
   justify-content: center;
   text-shadow: 4px 4px 10px #000000;
+  z-index: 100;
   h4 {
     margin: 0;
     padding-bottom: 15px;
@@ -91,8 +96,9 @@
 }
 
 .homecards{
-padding: 20px;
-background-color: $middle-gray;
+  padding: 20px;
+  // background-color: $middle-gray;
+  background: $dark-gray;
 
 }
 
@@ -122,4 +128,24 @@ background-color: $middle-gray;
   p {
     color: $basic-white-color;
   }
+}
+
+
+.reflection-box-home {
+  display: flex;
+  justify-content: center;
+  background: $dark-gray;
+
+}
+
+.reflection-home {
+  margin-top: 40px;
+  background-color: #d60225;
+  // background-color: linear-gradient(rgb(245, 6, 6),rgb(179, 3, 3));
+  height: 30px;
+  width: 80%;
+  border-radius: 50%;
+  transform: perspective(0.7em) rotateX(35deg) scale(1, 0.3);
+  filter: blur(1.6em);
+  margin-bottom: 64px;
 }
