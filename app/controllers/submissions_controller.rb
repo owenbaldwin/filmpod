@@ -10,7 +10,7 @@ class SubmissionsController < ApplicationController
     @submission.task = @task
     @submission.user = current_user
     if @submission.save
-      redirect_to task_path(@task)
+      redirect_to submission_path(@submission)
     else
       render :new
     end
