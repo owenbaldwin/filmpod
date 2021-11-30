@@ -1,93 +1,96 @@
-.submisson-show-main-container {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-}
 
-.submisson-show-container {
+
+.submission-show-container {
   background-color: $dark-gray;
   width: 40%;
-  height: 600px;
+  height: 100%;
   margin: 20px auto;
   padding: 10px;
   border-radius: 8px;
   box-shadow: 2px 2px 20px rgba(255, 255, 255, 0.041);
 }
-.inner-submisson-show-container {
+
+.submission-show-inner-container {
   padding: 10px;
   background-color: $dark-gray;
-  position: relative;
-
-  .form-control {
-    background:rgba(255, 255, 255, 0.041);
-    color:  $basic-white-color;
-
-  }
 }
-.submisson-show-title {
+
+.submission-show-title {
   display: flex;
   margin-left: 10px;
   margin-bottom: 20px;
   justify-content: space-between;
 }
-.submisson-show-title-sub {
+.submission-show-title-sub {
   display: flex;
 }
-.submisson-show-delete {
+
+.submission-show-delete {
   margin-left: 5px;
 }
-.submisson-show-title-sub a {
-  border-radius: 8px;
-  font-size: 13px;
-  height: 28px;
-  line-height: 28px;
-  padding: 0 16px;
-  font-family: $body-font;
-  color: $basic-white-color;
-  font-weight: bolder;
-  text-decoration: none;
-  border: 1px solid $light-light-gray;
-  margin-top: 5px;
-  text-align: center;
+
+.submission-show-title-sub a{
+   border-radius: 8px;
+    font-size: 13px;
+    height: 28px;
+    line-height: 28px;
+    padding: 0 16px;
+    font-family: $body-font;
+    color: $basic-white-color;
+    font-weight: bolder;
+    text-decoration: none;
+    border: 1px solid $light-light-gray;
+    margin-top: 5px;
+    text-align: center;
 }
-.submisson-show-submisson-type {
-  display: flex;
+
+
+
+.submission-show-submission-type {
+  display:flex;
+  margin: 8px 0;
 }
-.submisson-show-label {
-  color: $light-light-gray;
-  font-size: 13px;
-  line-height: 18px;
-  max-width: 140px;
-  overflow: hidden;
-  padding-top: 2px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  display: inline-block;
-  margin-left: 10px;
-  flex-grow: 1;
-  font-weight: bolder;
+
+.submission-show-label {
+    color: $light-light-gray;
+    font-size: 13px;
+    line-height: 18px;
+    max-width: 140px;
+    overflow: hidden;
+    padding-top: 2px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+    margin-left: 10px;
+    flex-grow: 1;
+    font-weight: bolder;
 }
-.submisson-show-value {
+
+.submission-show-value {
   color: $basic-white-color;
   font-size: 14px;
   line-height: 18px;
   max-width: 140px;
   flex-grow: 1;
 }
-.submisson-show-value .content-box em {
+
+.submission-show-value .content-box em {
   color: $light-gray;
   font-size: 10px;
+
 }
-.submisson-show-value .content-box {
+
+.submission-show-value .content-box {
   height: 50px;
   background-color: $middle-gray;
   margin-left: 10px;
   color: $light-light-gray;
 }
+
 .description-box {
   border: 1px solid $light-gray;
   border-radius: 8px;
-  height: 200px;
+  height: 100px;
   padding: 10px;
   color: $light-light-gray;
   box-shadow: 2px 2px 20px rgba(255, 255, 255, 0.041);
@@ -98,69 +101,94 @@
   color: $basic-white-color;
   transition: 0.3s;
 }
-.add-submission-btn {
-  border-radius: 8px;
-  font-size: 13px;
-  height: 28px;
-  line-height: 28px;
-  padding: 0 16px;
-  font-family: $body-font;
-  color: $light-light-gray;
-  font-weight: bolder;
-  text-decoration: none;
-  justify-content: center;
-  border: 1px solid $light-light-gray;
-  margin-top: 5px;
-  text-align: center;
+
+.comments-section-main-container  {
 }
-.add-submission-btn:hover {
-  background-color: $light-gray;
-  border: 1px solid $basic-white-color;
-  color: $basic-white-color;
+
+.comments-section-inner-container {
+  // background-color: $middle-gray;
+}
+
+.new-comment {
+  width: auto;
+}
+
+.single-comment {
+  border-radius: 8px;
+  background-color: $middle-gray;
+  padding: 5px;
+  margin: 10px 0;
+  border: 1px solid $light-gray;
+  box-shadow: 1px 1px 10px $dark-gray;
+}
+
+.single-comment:hover {
+  border: 1px solid $light-light-gray;
+}
+
+.single-comment small  {
+  color: $light-gray;
   transition: 0.3s;
 }
 
-.comment-btn {
-  border-radius: 8px;
-  font-size: 13px;
-  height: 28px;
-  line-height: 28px;
-  padding: 0 16px;
-  font-family: $body-font;
-  color: $light-light-gray;
-  font-weight: bolder;
-  text-decoration: none;
-  justify-content: center;
-  border: 1px solid $light-light-gray;
-  margin-top: 5px;
-  text-align: center;
-  background-color: $light-gray;
+
+.avatar-comment {
+  border-radius: 50%;
+  width: 30px;
+  margin-right: 8px;
+  margin-top: 8px;
 }
 
-.comment-btn:hover {
-  background-color: $light-gray;
-  border: 1px solid $basic-white-color;
-  color: $basic-white-color;
-  transition: 0.3s;
-}
-
-.test-class {
+.single-comment-details {
+  margin-left: 5px;
   display: flex;
 }
 
-// .submisson-show-visible {
-//   position: absolute;
-//   width: 100%;
-//   top: 60px;
-//   display: block;
-//   left: 0;
-// }
-// .close-modal {
-//   p {
-//     position: absolute;
-//     top: 5px;
-//     left: 5px;
-//     font-size: 13px;
-//     color: #ffffff7d;
-//     cursor: pointer;
-//   }
+.single-comment-content {
+  i {
+  color: $very-light-gray;
+  }
+  small {
+    color: $basic-white-color;
+  }
+  p {
+    font-size: 14px;
+    padding-top: 6px;
+  }
+}
+
+
+
+.new-comment {
+  display: flex;
+}
+
+
+.new-comment {
+  .form-control {
+    background-color: transparent;
+    min-height: 32px;
+    // padding:8px;
+    max-height: none;
+    transition: min-height 250ms;
+    border-radius: 8px;
+    font-style: $body-font;
+    color: $basic-white-color;
+    width: auto;
+  }
+}
+
+.comment-btn {
+  background-color: rgba(45, 73, 231, 0.801);
+  color: $basic-white-color;
+  border-radius: 8px;
+  border: 1px solid $light-gray;
+  padding: 8px 16px;
+  justify-content: flex-end;
+}
+
+.comment-btn:hover {
+  color: $bright-white-color;
+  background-color: rgba(45, 73, 231, 0.9);
+  border: 1px solid  rgba(14, 47, 233, 0.9)
+}

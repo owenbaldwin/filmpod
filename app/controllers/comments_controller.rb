@@ -8,7 +8,7 @@ class CommentsController < ApplicationController
     if @comment.save
       SubmissionChannel.broadcast_to(
         @submission,
-        render_to_string(partial: "comment", locals: {comment: @comment})
+        render_to_string(partial: "comment", locals: { comment: @comment })
       )
       redirect_to submission_path(@submission, anchor: "comment-#{@comment.id}")
     else
