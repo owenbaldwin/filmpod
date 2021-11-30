@@ -76,7 +76,7 @@
         <div class="notification-cards">
         <% if @films.length > 0 %>
           <% @recent_tasks.reverse.each do |task| %>
-            <%= link_to task_path(task), class: "to-each-task" do %>
+            <%= link_to department_path(task.department), class: "to-each-task" do %>
             <div class="notification-card">
               <div>
                 <% if task.user.photo.attached?%>

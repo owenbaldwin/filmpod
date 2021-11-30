@@ -59,7 +59,6 @@
   color: $basic-white-color;
   font-size: 14px;
   line-height: 18px;
-  max-width: 140px;
   flex-grow: 1;
 }
 .task-show-value .content-box em {
@@ -94,7 +93,7 @@
   line-height: 28px;
   padding: 6px 12px;
   font-family: $body-font;
-  color: $light-light-gray;
+  color: $basic-white-color;
   font-weight: bolder;
   text-decoration: none;
   justify-content: center;
@@ -131,5 +130,38 @@
 }
 
 .task-show-submissions {
+  display: inline;
+}
 
+.single-submission {
+    display: flex;
+    border-radius: 8px;
+    padding: 8px 10px;
+    align-items: flex-start;
+    background-color: $light-gray;
+    font-family: $body-font;
+    color: $basic-white-color;
+    font-weight: bolder;
+    text-decoration: none;
+    justify-content: flex-start;
+    height: fit-content;
+    // border: 1px solid $light-gray;
+}
+
+.single-submission:hover {
+  color: $bright-white-color;
+  // border: 1px solid $basic-white-color;
+  padding: 8px 5px;
+  transition: 0.3s;
+  color: $bright-white-color;
+}
+
+.task-show-submissions a {
+  margin: 10px 4px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.single-submission-content {
+  color: $bright-white-color;
 }
