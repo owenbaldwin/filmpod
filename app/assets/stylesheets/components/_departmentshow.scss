@@ -257,8 +257,13 @@ h1 {
   width: 100%;
   background-color: $light-gray;
   text-align: center;
-  padding: 20px 0;
+  padding: 15px 0;
+  border-radius: 0 0 8px 8px;
   a {
     color: $basic-white-color;
   }
+}
+
+.tab-item-left {
+  margin-right: 15px;
 }
