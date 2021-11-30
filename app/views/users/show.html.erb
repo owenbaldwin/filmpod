@@ -1,26 +1,28 @@
 
 <div class="profile-page-container">
   <div class="row">
-    <div class="sidebar col-2 pl-3 pr-0">
-      <div class="sidebar-inner">
-          <div class="sidebar-films-title">
-            <div>
-              <h1>Films</h1>
-            </div>
-          </div>
-        <div class=" departments-side-bar">
+    <div class = "sidebar col-2 pl-3 pr-0">
+       <div class="sidebar-inner">
+        <div class="sidebar-film-title">
           <div>
-            <% @films.reverse.each do |film| %>
-              <div class="each-film-on-profile-show">
+            <h1> Films </h1>
+          </div>
+        </div>
+
+        <div class="departments-side-bar">
+          <% @films.reverse.each do |film| %>
+            <div class="each-department-on-film-show">
                 <%=link_to film.title, film_path(film)%>
-              </div>
-            <% end %>
-            <div class="add-dpt-btn">
-              <%= link_to "+ New Project", new_film_path %>
             </div>
-            <div class="sidebar-back-btn">
-              <%= link_to 'Back', films_path %>
-            </div>
+          <% end %>
+          <div class="add-dpt-btn">
+            <%= link_to "+ New Project", new_film_path %>
+          </div>
+        </div>
+
+        <div>
+          <div class="sidebar-back-btn">
+            <%= link_to 'Back', films_path %>
           </div>
         </div>
       </div>
@@ -35,18 +37,19 @@
           <% if @films.length > 0 %>
             <% @recentfilms.reverse.each do |film|%>
               <%= link_to film_path(film), class: "to-each-film" do %>
-              <% if film.photo.present? %>
-                <div class="profile-movie-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path film.photo.key, crop: :fill %>')">
-                  <div class="film-title-background">
-                    <p><%= film.title %></p>
+                <% if film.photo.present? %>
+                  <div class="profile-movie-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path film.photo.key, crop: :fill %>')">
+                    <div class="film-title-background">
+                      <p><%= film.title %></p>
+                    </div>
                   </div>
-              <% else %>
-                <div class="profile-movie-card">
-                  <div class="film-title-background">
-                    <p><%= film.title %></p>
+                <% else %>
+                  <div class="profile-movie-card">
+                    <div class="film-title-background">
+                      <p><%= film.title %></p>
+                    </div>
                   </div>
-              <% end %>
-                </div>
+                <% end %>
               <% end %>
             <% end %>
           <% end %>
@@ -77,7 +80,6 @@
                 <% else %>
                   <%= image_tag "stock-profile.jpg", class: "avatar" %>
                 <% end  %>
-
               </div>
               <div>
                 <div class="d-flex notification-message">
