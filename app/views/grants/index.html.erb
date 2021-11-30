@@ -13,7 +13,7 @@
             <div class="grants-each-member">
 
               <% if grant.user.photo.attached?%>
-                  <%= cl_image_tag task.user.photo.key, class: "avatar" %>
+                  <%= cl_image_tag grant.user.photo.key, class: "avatar" %>
                 <% else %>
                   <%= image_tag "stock-profile.jpg", class: "avatar" %>
                 <% end  %>
