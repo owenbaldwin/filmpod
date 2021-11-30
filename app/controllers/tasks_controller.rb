@@ -20,6 +20,7 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
     @submissions = @task.submissions
     @department = @task.department
+
   end
 
   def index
