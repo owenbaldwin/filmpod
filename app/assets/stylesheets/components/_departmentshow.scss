@@ -267,3 +267,14 @@ h1 {
 .tab-item-left {
   margin-right: 15px;
 }
+
+.back-to-film-btn {
+  color: $basic-white-color;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.back-to-film-btn:hover {
+  color: $bright-white-color;
+  text-decoration: none;
+}

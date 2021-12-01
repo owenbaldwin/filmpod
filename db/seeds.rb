@@ -201,3 +201,39 @@ iceclubcostumestask = Task.create(department_id: "2", user_id: "1", title: "Ice 
 extrascostumestask = Task.create(department_id: "2", user_id: "1", title: "Extras' Costumes", content: "please come up with more costumes for extras", status: "to-do")
 
 puts "costumes to do tasks created"
+
+# jcameron =
+
+user6 = User.create(email: "floydbenson@email.com", password: "123123", first_name: "Floyd", last_name: "Benson", skills: "Actor")
+user6grant = Grant.create(rank_level: "Crew member", user_id: "6", film_id: "1", department_id: "4")
+
+user7 = User.create(email: "benirwin@email.com", password: "123123", first_name: "Ben", last_name: "Irwin", skills: "Actor")
+user7grant = Grant.create(rank_level: "Crew member", user_id: "7", film_id: "1", department_id: "4")
+
+user8 = User.create(email: "aprilbarnett@email.com", password: "123123", first_name: "April", last_name: "Barnett", skills: "Actor")
+user8grant = Grant.create(rank_level: "Crew member", user_id: "8", film_id: "1", department_id: "4")
+
+user9 = User.create(email: "noraberry@email.com", password: "123123", first_name: "Nora", last_name: "Berry", skills: "Costume designer")
+user9grant = Grant.create(rank_level: "Crew member", user_id: "9", film_id: "1", department_id: "2")
+
+user10 = User.create(email: "leonaeverett@email.com", password: "123123", first_name: "Leona", last_name: "Everett", skills: "Prop designer")
+user10grant = Grant.create(rank_level: "Crew member", user_id: "10", film_id: "1", department_id: "3")
+
+user11 = User.create(email: "royheath@email.com", password: "123123", first_name: "Roy", last_name: "Heath", skills: "Carpenter")
+user11grant = Grant.create(rank_level: "Crew member", user_id: "11", film_id: "1", department_id: "3")
+
+
+prodftcome = Department.create(name: "Production", film_id: "1")
+
+user12 = User.create(email: "matthewfreeman@email.com", password: "123123", first_name: "Matthew", last_name: "Freeman", skills: "Producer")
+user12grant = Grant.create(rank_level: "Direction", user_id: "12", film_id: "1", department_id: "5")
+
+user13 = User.create(email: "abbygreene@email.com", password: "123123", first_name: "Abby", last_name: "Greene", skills: "Producer")
+user13grant = Grant.create(rank_level: "Direction", user_id: "13", film_id: "1", department_id: "5")
+
+cameraftcome = Department.create(name: "Camera", film_id: "1")
+
+user14 = User.create(email: "velmagriffin@email.com", password: "123123", first_name: "Velma", last_name: "Griffin", skills: "Director of photography")
+user14grant = Grant.create(rank_level: "Head of department", user_id: "14", film_id: "1", department_id: "6")
+
+puts "bunch of crew member created"

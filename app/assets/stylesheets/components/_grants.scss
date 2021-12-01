@@ -1,5 +1,6 @@
 .grants-container {
-  height: 90vh;
+  // height: 100vh;
+  height: auto;
   width: 100vw;
   background-color: $dark-gray;
   display: flex;
@@ -27,7 +28,7 @@
   padding: 32px;
   border-radius: 10px;
   box-shadow: 4px 4px 10px #000000ad;
-
+  height: auto;
 }
 
 .grants-new {
@@ -35,6 +36,8 @@
   display: flex;
   justify-content: center;
   margin-top: 32px;
+  height: 500px;
+
 }
 
 .grants-new-inner {
@@ -42,7 +45,7 @@
   margin-top: 8px;
   padding: 32px;
   width: 80%;
-  height: 450px;
+  height: 500px;
   border-radius: 10px;
   box-shadow: 4px 4px 10px #000000ad;
 }
