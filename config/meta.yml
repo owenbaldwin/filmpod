@@ -1,5 +1,5 @@
 meta_product_name: "Filmpod"
 meta_title: "Filmpod - Make great films today"
 meta_description: "Bring your vision to life with Filmpod. Manage tasks and create moodboards to get your whole team working in the right direction!"
-meta_image: "FilmPod.png" # should exist in `app/assets/images/`
+meta_image: "ogimagefilmpod.png" # should exist in `app/assets/images/`
 # twitter_account: "@product_twitter_account"   # required for Twitter Cards
