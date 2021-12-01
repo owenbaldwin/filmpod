@@ -5,6 +5,7 @@
   width: 100%;
 }
 .department-showpage-main-container {
+  width: 100%;
   padding: 0 10px
   h1 {
   margin: 25px 0;
@@ -52,7 +53,7 @@
   font-weight: bolder;
   font-family: $body-font;
   height: auto;
-  min-height: 400px;
+  min-height: 60%;
   box-shadow: 2px 2px 2px rgba(250, 250, 250, 0.041);
   p {
     color: $bright-white-color;
@@ -69,6 +70,7 @@
 
 .department-showpage-tasks {
   display: flex;
+  flex-grow: 1;
   flex-direction: column;
   justify-content: space-evenly;
   min-height: 400px;
@@ -77,20 +79,20 @@
 
 .single-task {
   button {
-    display: flex;
+    display: block;
     border-radius: 8px;
-    padding: 16px 8px;
+    padding: 4px;
     align-items: flex-start;
     margin: 6px 5px;
-    background-color: $light-gray;
+    background-color: $light-light-gray;
     font-family: $body-font;
-    color: $basic-white-color;
+    color: $bright-white-color;
     font-weight: bolder;
     text-decoration: none;
     justify-content: center;
     height: 75px;
     width: 97%;
-    border: 1px rgba(255, 255, 255, 0.363);
+    border: 1px solid $light-light-gray;
   }
 }
 
@@ -98,16 +100,25 @@
   color: $bright-white-color;
   text-decoration: none;
   background-color: $light-light-gray;
-  transition: 0.5s;
+  transition: 0.3s;
+  border: 1px solid $bright-white-color;
+  height: 80px;
 }
-#to-do-new a {
-  background-color: transparent;
-  border: 1px solid $light-gray;
+
+#new-task-btn {
+  display: blocks;
+  border: 1px solid $light-light-gray;
+  background-color: transparent !important;
+  justify-content: center;
+  font-size: 15px;
 }
-#to-do-new a:hover {
-  background-color: $light-gray;
+
+#new-task-btn:hover {
+  background-color: $light-gray !important;
+  border: 1px solid $basic-white-color;
   transition: 0.3s;
 }
+
 
 .department-showpage-header-title h1 {
   font-family: $headers-font;
