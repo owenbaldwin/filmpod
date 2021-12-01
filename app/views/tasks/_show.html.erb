@@ -3,7 +3,7 @@
     <div class="inner-task-show-container">
 
       <div class="close-modal">
-        <p>X</p>
+        <p> x </p>
       </div>
       <div class="task-show-title">
         <div class ="task-show-title-sub">
@@ -23,7 +23,11 @@
           <p> 📅 Due date </p>
         </div>
         <div class="task-show-value">
-          <p> <%= task.created_at.strftime("%b %d, %Y") %> </p>
+          <% if task.due_date !=""%>
+            <p> <%= task.due_date%> </p>
+          <% else %>
+            <p> not available </p>
+          <% end %>
         </div>
       </div>
       <div class="task-show-task-type">

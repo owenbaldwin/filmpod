@@ -58,6 +58,7 @@
             <%= simple_form_for([@department, @new_task]) do |f| %>
               <%= f.input :title %>
               <%= f.input :content %>
+              <%= f.input :due_date %>
               <%= f.input :status, :collection => %w[to-do in-progress done] %>
               <%= f.submit class: "new-film-btn" %>
             <% end %>

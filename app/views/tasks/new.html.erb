@@ -9,10 +9,10 @@
                <%= f.input :title %>
              </div>
              <div class="task-content">
-             <%= f.input :content %>
+              <%= f.input :content %>
              </div>
              <div class="task-status">
-             <%= f.input :status, :collection => %w[to-do in-progress done] %>
+              <%= f.input :status, :collection => %w[to-do in-progress done] %>
              </div>
              <%= f.submit class: "new-film-btn" %>
            <% end %>
