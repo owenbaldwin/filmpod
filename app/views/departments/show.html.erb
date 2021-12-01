@@ -40,59 +40,66 @@
       </div>
     </div>
 
-      <div class="department-showpage-main-container col-10">
-      <div class="department-show-tabs">
-        <div class="tab-item tab-item-left">
-          <%= link_to "Tasks", department_path(@department) %>
-        </div>
-        <div class="tab-item">
-          <%= link_to "Moodboard", moodboard_department_path(@department) %>
-        </div>
-      </div class="beneath-tab">
-        <div class="modal-container">
-          <div class="modal-container-task-new-card" id="modal-container">
-            <div class="close-modal">
-              <p>X</p>
+    <% dptphoto = "#{@department.name}.jpg" %>
+    <div class="department-showpage-main-container col-10" >
+      <div class="department-background-image" style= "background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,1)), url('<%= asset_path dptphoto  %>');">
+        <div class="department-padding">
+          <div class="department-show-tabs">
+            <div class="tab-item tab-item-left">
+              <%= link_to "Tasks", department_path(@department) %>
             </div>
-            <h3> New Task </h3>
-            <%= simple_form_for([@department, @new_task]) do |f| %>
-              <%= f.input :title %>
-              <%= f.input :content %>
-              <%= f.input :due_date %>
-              <%= f.input :status, :collection => %w[to-do in-progress done] %>
-              <%= f.submit class: "new-film-btn" %>
-            <% end %>
-          </div>
-        </div>
-        <div class = "department-showpage-header">
-          <div class = "department-showpage-header-title">
-            <h1><%= @department.name.capitalize  %> Department </h1>
-          </div>
-          <div class="link-container">
-            <div class="edit-link-button">
-              <%= link_to 'Edit', edit_department_path(@department)%>
+            <div class="tab-item">
+              <%= link_to "Moodboard", moodboard_department_path(@department) %>
             </div>
-            <div class="delete-link-button">
-              <%= link_to 'Delete',department_path(action: :delete,id: @department.id),method: :delete, data: {confirm: "Are you sure?"} %>
-            </div>
-          </div>
-        </div>
-        <h3> Track your progress ⏳ </h3>
-        <div class="department-showpage-timeline-container">
-          <h4> Project timeline  </h4>
-          <div class = "department-showpage-timeline">
-            <div class="timeline-photo">
-              <%= image_tag "timeline1.png", class:"timeline-png" %>
-              <div class="timeline-tasks">
-                <% @tasks.each do |task| %>
-                  <div class="timeline-task-point">
-                  </div>
+          </div class="beneath-tab">
+            <div class="modal-container">
+              <div class="modal-container-task-new-card" id="modal-container">
+                <div class="close-modal">
+                  <p>X</p>
+                </div>
+                <h3> New Task </h3>
+                <%= simple_form_for([@department, @new_task]) do |f| %>
+                  <%= f.input :title %>
+                  <%= f.input :content %>
+                  <%= f.input :due_date %>
+                  <%= f.input :status, :collection => %w[to-do in-progress done] %>
+                  <%= f.submit class: "new-film-btn" %>
                 <% end %>
               </div>
             </div>
+            <div class = "department-showpage-header">
+              <div class = "department-showpage-header-title">
+                <h1><%= @department.name.capitalize  %> Department </h1>
+              </div>
+              <div class="link-container">
+                <div class="edit-link-button">
+                  <%= link_to 'Edit', edit_department_path(@department)%>
+                </div>
+                <div class="delete-link-button">
+                  <%= link_to 'Delete',department_path(action: :delete,id: @department.id),method: :delete, data: {confirm: "Are you sure?"} %>
+                </div>
+              </div>
+            </div>
+            <h3> Track your progress ⏳ </h3>
+            <div class="department-showpage-timeline-container">
+              <h4> Project timeline  </h4>
+              <div class = "department-showpage-timeline">
+                <div class="timeline-photo">
+                  <%= image_tag "timeline1.png", class:"timeline-png" %>
+                  <div class="timeline-tasks">
+                    <% @tasks.each do |task| %>
+                      <div class="timeline-task-point">
+                      </div>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-        <br>
+          <br>
+
+      </div>
+      <div class="department-second-background">
         <h4> Tasks ✔️ </h4>
         <div data-controller="drag" data-drag-url="/tasks/:id/move" class="department-showpage-all-tasks-container">
           <div class="department-showpage-task-types to-do">
@@ -142,5 +149,6 @@
         </div>
         <br>
       </div>
+    </div>
   </div>
 </div>

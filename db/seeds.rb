@@ -239,3 +239,10 @@ user14grant = Grant.create(rank_level: "Head of department", user_id: "14", film
 puts "bunch of crew member created"
 
 user15 = User.create(email: "lrobbins@gmail.com", password: "123123", first_name: "Louis", last_name: "Robbins", skills: "Sound Engineer")
+
+puts "louis created"
+
+user16 = User.create(email: "johnmay@gmail.com", password: "123123", first_name: "John", last_name: "May", skills: "Director")
+btflday = Film.create(title: "Beautiful Days", synopsis: "A funny romance.", genre: "Comedy", estimated_release_date: "Mon, 30 Dec 2023")
+dirjohn = Department.create(name: "Direction", film_id: "2")
+johndirgrant = Grant.create(rank_level: "Direction", user_id: "16", film_id: "2", department_id: "1")

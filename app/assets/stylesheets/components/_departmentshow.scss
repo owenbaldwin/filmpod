@@ -6,9 +6,25 @@
 }
 .department-showpage-main-container {
   // margin: 25px 0;
+  padding: 0;
   h1 {
   margin: 25px 0;
   }
+}
+
+.department-background-image {
+  background-size: cover;
+}
+
+.department-padding {
+  padding-left: 15px;
+  padding-right: 15px;
+
+}
+
+.department-second-background {
+  background-color: black;
+  // background-color: $dark-gray;
 }
 
 .department-showpage-inner-container {
