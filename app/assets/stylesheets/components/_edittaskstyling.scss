@@ -12,4 +12,13 @@
     color: rgba(255, 255, 255, 0.7);
     // border-color: none;
   }
+
+}
+
+ .was-validated .form-control:valid, .form-control.is-valid {
+  border-color: none !important;
+}
+
+.is-valid {
+  border-color: white !important;
 }
