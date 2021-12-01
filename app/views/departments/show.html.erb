@@ -1,3 +1,5 @@
+<%= javascript_pack_tag 'timeline', 'data-turbolinks-track': 'reload', defer: true %>
+
 <!-- app/views/offers/show.html.erb -->
 <% content_for :meta_title, "Filmpod - #{@department.name}" %>
 
@@ -83,15 +85,16 @@
         <%# <h3> Track your progress  </h3> %>
         <div class="department-showpage-timeline-container">
           <h4> Project timeline  </h4>
-            <div class = "department-showpage-timeline">
-              <div class="timeline-photo">
-                <%= image_tag "timeline1.png", class:"timeline-png" %>
-                <div class="timeline-tasks">
-                  <% @tasks.each do |task| %>
-                    <div class="timeline-task-point">
-                    </div>
-                  <% end %>
-                </div>
+          <div class = "department-showpage-timeline">
+            <div class="timeline-photo">
+              <%= image_tag "timeline1.png", class:"timeline-png" %>
+              <div class="timeline-tasks">
+                <% @tasks.each do |task| %>
+                  <div class="task-on-timeline">
+                    <div class="timeline-task-point" data-task-id= "<%= task.id %>"></div>
+                    <div class="task-title-timeline"><%= task.title %></div>
+                  </div>
+                <% end %>
               </div>
             </div>
           </div>
@@ -105,7 +108,7 @@
           <div class="department-showpage-task-types to-do">
             <p> To-do 🔴 </p>
             <div class="department-showpage-tasks">
-              <div class="single-task" id="to-do-new">
+              <div class="single-task" id="to-do-new" data-id="0">
                 <button class="new-task-btn">New Task</button>
               </div>
               <div data-drag-target="tasks" data-status="to-do">

@@ -148,16 +148,33 @@
 .timeline-tasks {
   position: absolute;
   display: flex;
-  width: 85%;
+  width: 80%;
   justify-content: space-around;
-  .timeline-task-point {
-    background-color: #ffff;
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
+  .task-on-timeline {
+    margin-top: 18px;
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .timeline-task-point {
+      // position: relative;
+      background-color: #ffff;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+    }
   }
 }
 
+
+
+.task-title-timeline {
+  opacity:0;
+}
+
+.timeline-title-with-opacity {
+    opacity:1 !important;
+}
 .edit-link-button {
   height: 35px;
   display: flex;
