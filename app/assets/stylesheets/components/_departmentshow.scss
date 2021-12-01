@@ -121,15 +121,11 @@ h1 {
   width: 85%;
   justify-content: space-around;
   .timeline-task-point {
-    background-color: $basic-white-color;
+    background-color: #ffff;
     width: 25px;
     height: 25px;
     border-radius: 50%;
   }
-}
-
-.timeline-task-point:hover {
-  background-color: $bright-white-color;
 }
 
 

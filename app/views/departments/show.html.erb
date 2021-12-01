@@ -84,10 +84,8 @@
               <%= image_tag "timeline1.png", class:"timeline-png" %>
               <div class="timeline-tasks">
                 <% @tasks.each do |task| %>
-                  <%= link_to task_path(task) do %>
-                    <div class="timeline-task-point">
-                    </div>
-                  <% end %>
+                  <div class="timeline-task-point">
+                  </div>
                 <% end %>
               </div>
             </div>
