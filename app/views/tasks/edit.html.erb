@@ -1,9 +1,15 @@
-
-<h3> Edit your task </h3>
-
-<%= simple_form_for(@task) do |f| %>
-  <%= f.input :title %>
-  <%= f.input :content%>
-  <%= f.input :status, :collection => %w[to-do in-progress done] %>
-  <%= f.submit %>
-<% end %>
+<div class="container">
+  <div class="row justify-content-container">
+    <div class="edit-task-card-container">
+      <div class="edit-task-card">
+       <h3> Edit your task </h3>
+        <%= simple_form_for(@task) do |f| %>
+          <%= f.input :title %>
+          <%= f.input :content%>
+          <%= f.input :status, :collection => %w[to-do in-progress done] %>
+          <%= f.submit class: "new-film-btn" %>
+        <% end %>
+       </div>
+    </div>
+  </div>
+</div>
