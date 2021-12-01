@@ -20,7 +20,6 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
     @submissions = @task.submissions
     @department = @task.department
-
   end
 
   def index
@@ -35,7 +34,7 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
     @task.update(task_params)
     @department = @task.department
-    redirect_to task_path(@task)
+    redirect_to department_path(@department) #this was task_path(@task)
   end
 
   def destroy
