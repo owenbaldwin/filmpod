@@ -3,6 +3,7 @@
 }
 
 .submission-show-container {
+  display: flex;
   background-color: $dark-gray;
   // width:90%;
   // height: 100%;
@@ -15,10 +16,9 @@
 
 .submission-show-inner-container {
 background-color: $dark-gray;
-  width:100%;
-  height: 100%;
+  // width:100%;
   margin: 0 auto;
-  padding: 10px;
+  padding: 20px 25px;
   border-radius: 8px;
   border: 1px solid $middle-gray;
   box-shadow: 2px 2px 20px rgba(255, 255, 255, 0.267);
@@ -31,7 +31,6 @@ background-color: $dark-gray;
 
 .submission-show-title {
   display: flex;
-  margin-left: 10px;
   margin-bottom: 10px;
   justify-content: space-between;
 }
@@ -63,6 +62,9 @@ background-color: $dark-gray;
 .submission-show-submission-type {
   display:flex;
   margin: 8px 0;
+  justify-content: space-between;
+  width: 65%;
+  align-content: center;
 }
 
 .submission-show-label {
@@ -91,7 +93,6 @@ background-color: $dark-gray;
 .submission-show-value .content-box em {
   color: $light-gray;
   font-size: 10px;
-
 }
 
 .submission-show-value .content-box {
@@ -99,13 +100,13 @@ background-color: $dark-gray;
   background-color: $middle-gray;
   margin-left: 10px;
   color: $light-light-gray;
+  // padding: 10px;
 }
 
 .description-box {
   border: 1px solid $light-gray;
   border-radius: 8px;
-  height: 100px;
-  padding: 10px;
+  height: fit-content;
   color: $light-light-gray;
   box-shadow: 2px 2px 20px rgba(255, 255, 255, 0.041);
 }
@@ -118,7 +119,7 @@ background-color: $dark-gray;
 
 .comments-section-main-container  {
 }
-
+n
 .comments-section-inner-container {
   // background-color: $middle-gray;
 }
@@ -132,6 +133,7 @@ background-color: $dark-gray;
   background-color: $middle-gray;
   padding: 5px;
   margin: 10px 0;
+  margin-right: 5px;
   border: 1px solid $light-gray;
   box-shadow: 1px 1px 10px $dark-gray;
 }
@@ -171,12 +173,9 @@ background-color: $dark-gray;
   }
 }
 
-
-
 .new-comment {
   display: flex;
 }
-
 
 .new-comment {
   .form-control {
@@ -188,7 +187,7 @@ background-color: $dark-gray;
     border-radius: 8px;
     font-style: $body-font;
     color: $basic-white-color;
-    width: 83vw;
+    width: 75vw;
   }
 }
 
@@ -205,4 +204,30 @@ background-color: $dark-gray;
   color: $bright-white-color;
   background-color: rgba(45, 73, 231, 0.9);
   border: 1px solid  rgba(14, 47, 233, 0.9)
+}
+
+.submission-show-all-details {
+  display: flex;
+  width: 80vw;
+  justify-content: space-between;
+  height: 50%;
+  height: fit-content;
+  max-height: 50%;
+}
+
+.submission-show-details-1 {
+  width: 60%;
+  padding-right: 15px;
+
+}
+
+.submission-show-details-2 {
+  // height: 50%;
+  padding-right: 25px;
+
+}
+.submission-show-picture {
+  width: 38vw;
+  height: auto;
+  border-radius: 8px;
 }

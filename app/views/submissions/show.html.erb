@@ -1,8 +1,43 @@
 <div class="submission-show-main-container">
   <div class="submission-show-container">
-    <div class="submission-show-inner-container">
+    <div class = "sidebar col-2">
+       <div class="sidebar-inner">
+
+        <div class="sidebar-film-title">
+          <div>
+            <h1> <%=link_to @film.title, film_path(@film), class:"back-to-film-btn"%> </h1>
+          </div>
+        </div>
+        <div class="departments-side-bar">
+          <% @departments.each do |department| %>
+            <div class="each-department-on-film-show">
+                <%=link_to department.name, department_path(department)%>
+            </div>
+          <% end %>
+          <div class="add-dpt-btn">
+            <%= link_to "+ Add department", new_film_department_path(@film) %>
+          </div>
+          <div class="add-dpt-btn">
+            <%= link_to "+ Add Grants", film_grants_path(@film) %>
+          </div>
+        </div>
+        <div>
+          <div class="sidebar-back-btn">
+            <%= link_to 'Back', user_path %>
+          </div>
+          <div class="sidebar-edit-btn">
+            <%= link_to 'Edit Film', edit_film_path(@film) %>
+          </div>
+          <div class="sidebar-danger-btn">
+            <%= link_to "Delete Film", film_path(@film), method: :delete %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="submission-show-inner-container col-10">
         <div class ="submission-show-title sub">
-          <small> Submission for the task: <strong> "<%= @submission.task.title %>" </small> </strong>
+          <p> Submission for the task: <strong> "<%= @submission.task.title %>" </p> </strong>
           <div class= "submission-show-back">
             <%= link_to 'Back to task', task_path(@task), class: "submission-show-title sub " %>
           </div>
@@ -21,52 +56,63 @@
           </div>
         </div>
 
-        <div class="submission-show-submission-type">
-          <div class="submission-show-label">
-            <p> 📅 Submission date </p>
-          </div>
-          <div class="submission-show-value">
-            <p> <%= @submission.created_at.strftime("%b %d, %Y") %> </p>
-          </div>
-        </div>
+        <div class = "submission-show-all-details">
+          <div class = "submission-show-details-1">
+            <div class="submission-show-submission-type">
+              <div class="submission-show-label">
+                <p> 📅 Submission date </p>
+              </div>
+              <div class="submission-show-value">
+                <p> <%= @submission.created_at.strftime("%b %d, %Y") %> </p>
+              </div>
+            </div>
 
-        <div class="submission-show-submission-type">
-          <div class="submission-show-label">
-            <p> 🤔 Status </p>
-          </div>
-          <div class="submission-show-value">
-            <% if @submission.status == "submitted" %>
-                <p> <%= @submission.status.capitalize  %>  🟠 </p>
-            <% else @submission.status == "approved" %>
-                <p> <%= @submission.status.capitalize  %>  🟢 </p>
-            <%end%>
-          </div>
-        </div>
+            <div class="submission-show-submission-type">
+              <div class="submission-show-label">
+                <p> 🤔 Status </p>
+              </div>
+              <div class="submission-show-value">
+                <% if @submission.status == "submitted" %>
+                    <p> <%= @submission.status.capitalize  %>  🟠 </p>
+                <% else @submission.status == "approved" %>
+                    <p> <%= @submission.status.capitalize  %>  🟢 </p>
+                <%end%>
+              </div>
+            </div>
 
-        <div class="submission-show-submission-type">
-          <div class="submission-show-label">
-            <p> 👤 Submitted by  </p>
-          </div>
-          <div class="submission-show-value">
-            <p> <%= @submission.user.first_name.capitalize %> <%= @submission.user.last_name.capitalize %> </p>
-          </div>
-        </div>
+            <div class="submission-show-submission-type">
+              <div class="submission-show-label">
+                <p> 👤 Submitted by  </p>
+              </div>
+              <div class="submission-show-value">
+                <p> <%= @submission.user.first_name.capitalize %> <%= @submission.user.last_name.capitalize %> </p>
+              </div>
+            </div>
 
-        <div class="submission-show-submission-type">
-          <div class="submission-show-label">
-            <p> 🖇 Description </p>
+            <div class="submission-show-submission-type">
+              <div class="submission-show-label">
+                <p> 🖇 Description </p>
+              </div>
+              <div class="submission-show-value content-box">
+              </div>
+            </div>
+            <div class = "description-box">
+              <div class="submission-show-value content-box">
+                <% if @submission.content == "" %>
+                  <p><em> Add a description </em> </p>
+                <% else %>
+                  <%= @submission.content %>
+                  <%end%>
+                </p>
+              </div>
+            </div>
           </div>
-          <div class="submission-show-value content-box">
-          </div>
-        </div>
-        <div class = "description-box">
-          <div class="submission-show-value content-box">
-            <% if @submission.content == "" %>
-              <p><em> Add a description </em> </p>
+          <div class = "submission-show-details-2">
+            <% if @submission.photo.present? %>
+              <%= cl_image_tag @submission.photo.key, class: "submission-show-picture"%>
             <% else %>
-              <%= @submission.content %>
-              <%end%>
-            </p>
+              <p> <em> no image was submitted </em> <p>
+             <% end %>
           </div>
         </div>
 
