@@ -103,6 +103,36 @@ h1 {
   height: 150px;
   padding: 8px 10px 10px;
 }
+
+.timeline-photo {
+  .timeline-png {
+    width: 100%;
+    height: 130px;
+  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.timeline-tasks {
+  position: absolute;
+  display: flex;
+  width: 85%;
+  justify-content: space-around;
+  .timeline-task-point {
+    background-color: $basic-white-color;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+  }
+}
+
+.timeline-task-point:hover {
+  background-color: $bright-white-color;
+}
+
+
 .edit-link-button {
   height: 35px;
   display: flex;

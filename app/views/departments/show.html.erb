@@ -77,6 +77,17 @@
         <div class="department-showpage-timeline-container">
           <h4> Project timeline  </h4>
           <div class = "department-showpage-timeline">
+            <div class="timeline-photo">
+              <%= image_tag "timeline1.png", class:"timeline-png" %>
+              <div class="timeline-tasks">
+                <% @tasks.each do |task| %>
+                  <%= link_to task_path(task) do %>
+                    <div class="timeline-task-point">
+                    </div>
+                  <% end %>
+                <% end %>
+              </div>
+            </div>
           </div>
         </div>
         <br>
