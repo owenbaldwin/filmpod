@@ -71,18 +71,18 @@
                 <%= image_tag "stock-profile.jpg", class: "submission-photo" %>
               <% end %>
               <div class="submission-card-text">
-                <div class="submission-card-top-line">
-                  <p><%= submission.title.capitalize%></p>
-                  <% if submission.status == "to-do" %>
-                    <p><b style="color: rgba(180, 46, 46, 0.9);"><%= submission.status.capitalize %></b></p>
-                  <% elsif submission.status == "in-progress" %>
-                    <p ><b style="color: rgba(184, 114, 48, 0.9);"><%= submission.status.capitalize %></b></p>
-                  <% elsif submission.status == "submitted" %>
-                    <p ><b style="color: rgba(184, 114, 48, 0.9);"><%= submission.status.capitalize %></b></p>
+                  <div class="submission-card-task-name">
+                    <p><%= submission.title.capitalize %></p>
+                  </div>
+                  <% if submission.status == "submitted" %>
+                    <div>
+                      <p ><b style="color: rgba(184, 114, 48, 0.9);"><%= submission.status.capitalize %></b></p>
+                    </div>
                   <% else %>
-                    <p ><b style="color: rgba(62, 180, 72, 0.9);"><%= submission.status.capitalize %></b></p>
+                    <div>
+                      <p ><b style="color: rgba(62, 180, 72, 0.9);"><%= submission.status.capitalize %></b></p>
+                    </div>
                   <% end %>
-                </div>
               </div>
             </div>
           <% end %>
