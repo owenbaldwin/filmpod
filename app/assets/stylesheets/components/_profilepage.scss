@@ -143,9 +143,10 @@
 .notification-card {
   display: flex;
   border-top: 1px solid $basic-white-color;
-  margin: 8px 0;
-  padding: 8px 10px;
+  // margin: 8px 0;
+  padding: 10px 10px;
   transition: 0.3s;
+  align-items: center;
   p {
     margin: 0;
     padding: 0 12px;
@@ -153,8 +154,12 @@
 }
 
 .notification-message {
-  font-size: 18px;
+  font-size: 16px;
   margin: 0;
+}
+
+.notification-film {
+  font-size: 12px;
 }
 
 .notification-message-time {
