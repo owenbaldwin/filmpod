@@ -295,6 +295,7 @@
   backdrop-filter:blur(10px);
   position: absolute;
   display: none;
+  z-index: 5;
   justify-content: center;
 }
 .modal-show {
