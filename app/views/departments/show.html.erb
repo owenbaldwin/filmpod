@@ -40,7 +40,10 @@
       </div>
     </div>
 
-      <div class="department-showpage-main-container col-10">
+    <% dptphoto = "#{@department.name}.jpg" %>
+    <div class="department-showpage-main-container col-10" >
+      <div class="department-background-image" style= "background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,1)), url('<%= asset_path dptphoto  %>');">
+        <div class="department-padding">
       <div class="department-show-tabs">
         <div class="tab-item tab-item-left">
           <%= link_to "Tasks", department_path(@department) %>
@@ -75,14 +78,27 @@
               <%= link_to 'Delete',department_path(action: :delete,id: @department.id),method: :delete, data: {confirm: "Are you sure?"} %>
             </div>
           </div>
-        </div>
+        </div>⏳
         <%# <h3> Track your progress  </h3> %>
         <div class="department-showpage-timeline-container">
-          <h4> Project timeline ⏳ </h4>
-          <div class = "department-showpage-timeline">
+          <h4> Project timeline  </h4>
+            <div class = "department-showpage-timeline">
+              <div class="timeline-photo">
+                <%= image_tag "timeline1.png", class:"timeline-png" %>
+                <div class="timeline-tasks">
+                  <% @tasks.each do |task| %>
+                    <div class="timeline-task-point">
+                    </div>
+                  <% end %>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <br>
+
+      </div>
+      <div class="department-second-background">
         <h4> Tasks ✔️ </h4>
         <div data-controller="drag" data-drag-url="/tasks/:id/move" class="department-showpage-all-tasks-container">
           <div class="department-showpage-task-types to-do">
@@ -132,5 +148,6 @@
         </div>
         <br>
       </div>
+    </div>
   </div>
 </div>
