@@ -6,6 +6,7 @@ const modalPopUp = () => {
   const newTaskBtn = document.querySelector(".new-film-btn")
   const closeButton = document.querySelector(".closeButton")
 
+
   if(newTaskButton){
     newTaskButton.addEventListener("click", () => {
       modalBox.classList.add("modal-show")
