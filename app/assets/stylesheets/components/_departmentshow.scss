@@ -208,7 +208,8 @@ h1 {
 .modal-container {
   width: 100%;
   height: 100%;
-  background-color: #7979798c;
+  background-color: rgba(27, 27, 27, 0.8);
+  backdrop-filter:blur(10px);
   position: absolute;
   display: none;
   justify-content: center;
