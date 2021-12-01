@@ -81,20 +81,21 @@
               <%= link_to 'Delete',department_path(action: :delete,id: @department.id),method: :delete, data: {confirm: "Are you sure?"} %>
             </div>
           </div>
-        </div>⏳
+        </div>
         <%# <h3> Track your progress  </h3> %>
         <div class="department-showpage-timeline-container">
-          <h4> Project timeline  </h4>
-          <div class = "department-showpage-timeline">
-            <div class="timeline-photo">
-              <%= image_tag "timeline1.png", class:"timeline-png" %>
-              <div class="timeline-tasks">
-                <% @tasks.each do |task| %>
-                  <div class="task-on-timeline">
-                    <div class="timeline-task-point" data-task-id= "<%= task.id %>"></div>
-                    <div class="task-title-timeline"><%= task.title %></div>
-                  </div>
-                <% end %>
+
+          <h4> Project timeline ⏳ </h4>
+            <div class = "department-showpage-timeline">
+              <div class="timeline-photo">
+                <%= image_tag "timeline1.png", class:"timeline-png" %>
+                <div class="timeline-tasks">
+                  <% @tasks.each do |task| %>
+                    <div class="timeline-task-point">
+                    </div>
+                  <% end %>
+                </div>
+
               </div>
             </div>
           </div>
@@ -103,13 +104,13 @@
 
       </div>
       <div class="department-second-background">
-        <h4> Tasks ✔️ </h4>
+        <h4> Tasks ⚡️ </h4>
         <div data-controller="drag" data-drag-url="/tasks/:id/move" class="department-showpage-all-tasks-container">
           <div class="department-showpage-task-types to-do">
             <p> To-do 🔴 </p>
             <div class="department-showpage-tasks">
               <div class="single-task" id="to-do-new" data-id="0">
-                <button class="new-task-btn">New Task</button>
+                <button id="new-task-btn"> + new task </button>
               </div>
               <div data-drag-target="tasks" data-status="to-do">
                 <% @tasks.order(position: :asc).each do |task| %>

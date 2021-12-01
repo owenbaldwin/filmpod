@@ -1,6 +1,6 @@
 
 const modalPopUp = () => {
-  const newTaskButton = document.querySelector(".new-task-btn")
+  const newTaskButton = document.querySelector("#new-task-btn")
   const modalBox = document.querySelector(".modal-container-task-new-card")
   const modalContainer = document.querySelector(".modal-container")
   const newTaskBtn = document.querySelector(".new-film-btn")
