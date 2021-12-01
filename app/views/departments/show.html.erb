@@ -1,3 +1,5 @@
+<%= javascript_pack_tag 'timeline', 'data-turbolinks-track': 'reload', defer: true %>
+
 <!-- app/views/offers/show.html.erb -->
 <% content_for :meta_title, "Filmpod - #{@department.name}" %>
 
@@ -40,7 +42,10 @@
       </div>
     </div>
 
-      <div class="department-showpage-main-container col-10">
+    <% dptphoto = "#{@department.name}.jpg" %>
+    <div class="department-showpage-main-container col-10" >
+      <div class="department-background-image" style= "background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,1)), url('<%= asset_path dptphoto  %>');">
+        <div class="department-padding">
       <div class="department-show-tabs">
         <div class="tab-item tab-item-left">
           <%= link_to "Tasks", department_path(@department) %>
@@ -77,29 +82,37 @@
             </div>
           </div>
         </div>
-        <h3> Track your progress ⏳ </h3>
+        <%# <h3> Track your progress  </h3> %>
         <div class="department-showpage-timeline-container">
+
           <h4> Project timeline  </h4>
           <div class = "department-showpage-timeline">
             <div class="timeline-photo">
               <%= image_tag "timeline1.png", class:"timeline-png" %>
               <div class="timeline-tasks">
                 <% @tasks.each do |task| %>
-                  <div class="timeline-task-point">
+                  <div class="task-on-timeline">
+                    <div class="timeline-task-point" data-task-id= "<%= task.id %>"></div>
+                    <div class="task-title-timeline"><%= task.title %></div>
                   </div>
                 <% end %>
+                </div>
+
               </div>
             </div>
           </div>
         </div>
         <br>
-        <h4> Tasks ✔️ </h4>
+
+      </div>
+      <div class="department-second-background">
+        <h4> Tasks ⚡️ </h4>
         <div data-controller="drag" data-drag-url="/tasks/:id/move" class="department-showpage-all-tasks-container">
           <div class="department-showpage-task-types to-do">
             <p> To-do 🔴 </p>
             <div class="department-showpage-tasks">
-              <div class="single-task" id="to-do-new">
-                <button class="new-task-btn">New Task</button>
+              <div class="single-task" id="to-do-new" data-id="0">
+                <button id="new-task-btn"> + new task </button>
               </div>
               <div data-drag-target="tasks" data-status="to-do">
                 <% @tasks.order(position: :asc).each do |task| %>
@@ -142,5 +155,6 @@
         </div>
         <br>
       </div>
+    </div>
   </div>
 </div>

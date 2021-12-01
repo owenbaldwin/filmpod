@@ -36,11 +36,11 @@
         </div>
         <div class="task-show-value">
           <% if task.status == "to-do"%>
-            <p> <%= task.status  %>  🔴 </p>
+            <p> 🔴 <%= task.status  %> </p>
           <% elsif task.status == "in-progress"%>
-            <p> <%= task.status  %>  🟠 </p>
+            <p> 🟠 <%= task.status  %> </p>
           <% else task.status == "done"%>
-            <p> <%= task.status  %>  🟢 </p>
+            <p> 🟢 <%= task.status  %> </p>
           <%end%>
         </div>
       </div>
@@ -95,7 +95,6 @@
             <% end %>
         </div>
       </div>
-
     </div>
   </div>
 </div>
