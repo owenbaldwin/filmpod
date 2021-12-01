@@ -39,7 +39,8 @@
         <div class ="submission-show-title sub">
           <p> Submission for the task: <strong> "<%= @submission.task.title %>" </p> </strong>
           <div class= "submission-show-back">
-            <%= link_to 'Back to task', task_path(@task), class: "submission-show-title sub " %>
+          <%= link_to 'back to task', :back %>
+            <%# <%= link_to 'Back to task', task_path(@task), class: "submission-show-title sub " %>
           </div>
         </div>
         <div class="submission-show-title">
