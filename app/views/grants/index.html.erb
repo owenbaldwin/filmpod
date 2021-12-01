@@ -46,7 +46,7 @@
               <%# <%= f.input :user, id: "usersearch"%>
                 <%# <ul id="userresults"> %>
                 <%# </ul> %>
-              <%= f.association :user, collection: User.all, label_method: :full_name, input_html: { data: { controller: 'select2' }} %>
+              <%= f.association :user, collection: User.all, label_method: :email, input_html: { data: { controller: 'select2' }}, class: "grant-user-input" %>
               <%= f.input :department, collection: Department::DPTNAMES %>
               <%= f.input :rank_level, collection: Grant::RANKS%>
             </div>

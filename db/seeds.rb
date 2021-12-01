@@ -237,3 +237,5 @@ user14 = User.create(email: "velmagriffin@email.com", password: "123123", first_
 user14grant = Grant.create(rank_level: "Head of department", user_id: "14", film_id: "1", department_id: "6")
 
 puts "bunch of crew member created"
+
+user15 = User.create(email: "lrobbins@gmail.com", password: "123123", first_name: "Louis", last_name: "Robbins", skills: "Sound Engineer")
