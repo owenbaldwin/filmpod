@@ -85,15 +85,17 @@
         <%# <h3> Track your progress  </h3> %>
         <div class="department-showpage-timeline-container">
 
-          <h4> Project timeline ⏳ </h4>
-            <div class = "department-showpage-timeline">
-              <div class="timeline-photo">
-                <%= image_tag "timeline1.png", class:"timeline-png" %>
-                <div class="timeline-tasks">
-                  <% @tasks.each do |task| %>
-                    <div class="timeline-task-point">
-                    </div>
-                  <% end %>
+          <h4> Project timeline  </h4>
+          <div class = "department-showpage-timeline">
+            <div class="timeline-photo">
+              <%= image_tag "timeline1.png", class:"timeline-png" %>
+              <div class="timeline-tasks">
+                <% @tasks.each do |task| %>
+                  <div class="task-on-timeline">
+                    <div class="timeline-task-point" data-task-id= "<%= task.id %>"></div>
+                    <div class="task-title-timeline"><%= task.title %></div>
+                  </div>
+                <% end %>
                 </div>
 
               </div>
