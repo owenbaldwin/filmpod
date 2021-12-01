@@ -10,10 +10,19 @@
  padding: 0 64px;
 
 }
+
+.moodboard-header-title h1 {
+  font-family: $headers-font;
+  color: $bright-white-color;
+  font-size: 40px;
+  padding-top: 15px;
+  padding-left: 15px;
+}
+
 .submission-card {
  display: inline-block;
  width: 100%;
- padding: 10px;
+ padding: 10px 10px 0;
  margin: 10px 0;
  background-color: $light-gray;
  border-radius: 8px;
@@ -25,12 +34,19 @@
   margin-bottom: 10px;
   transition: 0.3s;
  }
- .submission-card-top-line {
+ .submission-card-text {
     display: flex;
     justify-content: space-between;
-    padding: 18px 0 0 0;
+    padding: 10px 0 0 0;
     border-top: 1px solid $light-light-gray;
-    line-height: 0.3;
+    // line-height: 0.3;
+    .submission-card-text p {
+      max-width: 40px;
+      max-height: 10px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
  }
 }
 
@@ -58,13 +74,6 @@
   width: 100%;
   justify-content: space-between;
   display: flex;
-}
-
-.moodboard-main-container {
-  // margin: 25px 0;
-  h1 {
-    margin: 25px 0;
-  }
 }
 
 
