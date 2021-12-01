@@ -43,10 +43,10 @@
      <div class="department-show-tabs">
         <%# <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button> %>
          <div class="tab-item tab-item-left">
-          <%= link_to "Moodboard", moodboard_department_path(@department) %>
+          <%= link_to "Tasks", department_path(@department) %>
         </div>
         <div class="tab-item">
-          <%= link_to "Tasks", department_path(@department) %>
+          <%= link_to "Moodboard", moodboard_department_path(@department) %>
         </div>
       </div>
     <div class = "moodboard-header">
@@ -79,11 +79,6 @@
                     <p ><b style="color: rgba(62, 180, 72, 0.9);"><%= submission.status.capitalize %></b></p>
                   <% end %>
                 </div>
-                <% if submission.content? %>
-                  <div class="submission-content">
-                    <p><%= submission.content %></p>
-                  </div>
-                <% end %>
               </div>
             </div>
           <% end %>
