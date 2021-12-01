@@ -1,9 +1,16 @@
-<h3> Edit your submission </h3>
-
-<%= simple_form_for(@submission) do |f| %>
-  <%= f.input :title %>
-  <%= f.input :content%>
-  <%= f.input :photo, as: :file %>
-  <%= f.input :status, :collection => %w[approved] %>
-  <%= f.submit %>
-<% end %>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="edit-submission-card-container">
+      <div class="edit-submission-card">
+        <h3> Edit your submission </h3>
+          <%= simple_form_for(@submission) do |f| %>
+            <%= f.input :title %>
+            <%= f.input :content%>
+            <%= f.input :photo, as: :file %>
+            <%= f.input :status, :collection => %w[approved] %>
+            <%= f.submit class: "new-film-btn" %>
+          <% end %>
+      </div>
+    </div>
+  </div>
+</div>
