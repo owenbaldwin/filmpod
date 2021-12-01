@@ -20,6 +20,10 @@
 
 }
 
+.sidebar-film-title h1 {
+  font-size: 30px;
+}
+
 .each-department-on-film-show {
   height: 50px;
   display: flex;
@@ -48,6 +52,7 @@
 
 .sidebar-inner {
   width: 100%;
+  // padding: 8px;
   // position: sticky;
   // top: 10px;
   // height: 400px;

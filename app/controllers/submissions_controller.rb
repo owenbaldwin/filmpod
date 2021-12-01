@@ -21,6 +21,9 @@ class SubmissionsController < ApplicationController
     @task = @submission.task
     @submission.user = current_user
     @comment = Comment.new
+    @department = @task.department
+    @film = @department.film
+    @departments = @film.departments
   end
 
   def edit
