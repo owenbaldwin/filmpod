@@ -92,8 +92,16 @@
               <div class="timeline-tasks">
                 <% @tasks.each do |task| %>
                   <div class="task-on-timeline">
-                    <div class="timeline-task-point" data-task-id= "<%= task.id %>"></div>
-                    <div class="task-title-timeline"><%= task.title %></div>
+                    <% if task.status == "to-do" %>
+                      <div class="timeline-task-point red-point" data-task-id= "<%= task.id %>"></div>
+                      <div class="task-title-timeline"><%= task.title %></div>
+                    <% elsif task.status == "in-progress orange-point" %>
+                      <div class="timeline-task-point" data-task-id= "<%= task.id %>"></div>
+                      <div class="task-title-timeline"><%= task.title %></div>
+                    <% else %>
+                      <div class="timeline-task-point green-point" data-task-id= "<%= task.id %>"></div>
+                      <div class="task-title-timeline"><%= task.title %></div>
+                    <% end %>
                   </div>
                 <% end %>
                 </div>

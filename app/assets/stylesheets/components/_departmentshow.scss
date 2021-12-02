@@ -170,10 +170,11 @@
     align-items: center;
     .timeline-task-point {
       // position: relative;
-      background-color: #ffff;
+      // background-color: #ffff;
       width: 20px;
       height: 20px;
       border-radius: 50%;
+      border: 1px solid #ffff;
     }
   }
 }
@@ -363,4 +364,16 @@
 .back-to-film-btn:hover {
   color: $bright-white-color;
   text-decoration: none;
+}
+
+.red-point {
+  background-color: rgb(180, 46, 46);
+}
+
+.orange-point {
+  background-color: rgb(184, 114, 48);
+}
+
+.green-point {
+  background-color: rgb(62, 180, 72);
 }
