@@ -61,9 +61,13 @@
             </div>
             <h3> New Task </h3>
             <%= simple_form_for([@department, @new_task]) do |f| %>
-              <%= f.input :title %>
-              <%= f.input :content %>
-              <%= f.input :due_date %>
+              <%= f.input :title, placeholder: 'Task Title' %>
+              <%= f.input :content, placeholder: 'Add a description of the task' %>
+              <label for="Due-date">Due Date:</label>
+              <input type="date" id="due" name="trip-start"
+                     value="2021-12-03"
+                     min="2021-12-03" max="2025-12-31">
+              <%# <%= f.input :due_date %>
               <%= f.input :status, :collection => %w[to-do in-progress done] %>
               <%= f.submit class: "new-film-btn" %>
             <% end %>
