@@ -16,7 +16,12 @@
   color: $bright-white-color;
   font-size: 40px;
   padding-top: 15px;
-  padding-left: 15px;
+}
+
+.moodboard-header {
+  display: flex;
+  justify-content: space-between;
+  height: 120px;
 }
 
 .submission-card {

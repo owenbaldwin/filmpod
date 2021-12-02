@@ -42,55 +42,57 @@
     </div>
 
 
-
+    <% dptphoto = "#{@department.name}.jpg" %>
     <div class= "moodboard-main-container col-10">
-     <div class="department-show-tabs">
-        <%# <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button> %>
-         <div class="tab-item tab-item-left">
-          <%= link_to "Tasks", department_path(@department) %>
-        </div>
-        <div class="tab-item">
-          <%= link_to "Moodboard", moodboard_department_path(@department) %>
-        </div>
-      </div>
-    <div class = "moodboard-header">
-      <div class = "moodboard-header-title">
-        <h1><%= @department.name.capitalize  %> Moodboard </h1>
-      </div>
-    </div>
-
-    <div class="moodboard-container">
-      <% @tasks.each do |task| %>
-        <% task.submissions.each do |submission| %>
-          <%= link_to submission_path(submission), class: "to-each-submission" do %>
-            <div class="submission-card">
-              <% if submission.photo.present? %>
-                <%# <%= cl_image_tag submission.photos.key, class: "submission-photo" %>
-                <%= cl_image_tag submission.photo.key, class: "submission-photo" %>
-              <% else %>
-                <%= image_tag "stock-profile.jpg", class: "submission-photo" %>
-              <% end %>
-              <div class="submission-card-text">
-                  <div class="submission-card-task-name">
-                    <p><%= submission.title.capitalize %></p>
-                  </div>
-                  <% if submission.status == "submitted" %>
-                    <div>
-                      <p ><b style="color: rgba(184, 114, 48, 0.9);"><%= submission.status.capitalize %></b></p>
-                    </div>
-                  <% else %>
-                    <div>
-                      <p ><b style="color: rgba(62, 180, 72, 0.9);"><%= submission.status.capitalize %></b></p>
-                    </div>
-                  <% end %>
-              </div>
+      <div class="department-background-image" style= "background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,1)), url('<%= asset_path dptphoto  %>');">
+        <div class="department-padding">
+          <div class="department-show-tabs">
+            <div class="tab-item tab-item-left">
+              <%= link_to "Tasks", department_path(@department) %>
             </div>
+            <div class="tab-item">
+              <%= link_to "Moodboard", moodboard_department_path(@department) %>
+            </div>
+          </div>
+          <div class = "moodboard-header">
+            <div class = "moodboard-header-title">
+              <h1><%= @department.name.capitalize  %> Moodboard </h1>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="department-second-background">
+        <div class="moodboard-container">
+          <% @tasks.each do |task| %>
+            <% task.submissions.each do |submission| %>
+              <%= link_to submission_path(submission), class: "to-each-submission" do %>
+                <div class="submission-card">
+                  <% if submission.photo.present? %>
+                    <%# <%= cl_image_tag submission.photos.key, class: "submission-photo" %>
+                    <%= cl_image_tag submission.photo.key, class: "submission-photo" %>
+                  <% else %>
+                    <%= image_tag "stock-profile.jpg", class: "submission-photo" %>
+                  <% end %>
+                  <div class="submission-card-text">
+                    <div class="submission-card-task-name">
+                      <p><%= submission.title.capitalize %></p>
+                    </div>
+                    <% if submission.status == "submitted" %>
+                      <div>
+                        <p ><b style="color: rgba(184, 114, 48, 0.9);"><%= submission.status.capitalize %></b></p>
+                      </div>
+                    <% else %>
+                      <div>
+                        <p ><b style="color: rgba(62, 180, 72, 0.9);"><%= submission.status.capitalize %></b></p>
+                      </div>
+                    <% end %>
+                  </div>
+                </div>
+              <% end %>
+            <% end %>
           <% end %>
-        <% end %>
-      <% end %>
+        </div>
+      </div>
     </div>
-  </div>
-
-
   </div>
 </div>
