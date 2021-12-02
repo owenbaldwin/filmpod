@@ -90,7 +90,7 @@
                   <% if task.status == "to-do" %>
                     <p><b style="color: rgba(180, 46, 46, 0.9);"><%= task.status.capitalize %></b> 🔴</p>
                   <% elsif task.status == "in-progress" %>
-                    <p ><b style="color: rgba(184, 114, 48, 0.9);"><%= task.status.capitalize %></b></p>
+                    <p ><b style="color: rgba(184, 114, 48, 0.9);"><%= task.status.capitalize %></b> 🟠</p>
                   <% else %>
                     <p ><b style="color: rgba(62, 180, 72, 0.9);"><%= task.status.capitalize %></b> 🟢</p>
                   <% end %>
