@@ -11,17 +11,21 @@
 
 
             <div class="grants-each-member">
-
-              <% if grant.user.photo.attached?%>
+              <div class="grant-avatars">
+                <% if grant.user.photo.attached?%>
                   <%= cl_image_tag grant.user.photo.key, class: "avatar" %>
                 <% else %>
                   <%= image_tag "stock-profile.jpg", class: "avatar" %>
                 <% end  %>
-              <p>
-                <%= grant.user.full_name%> - <%= grant.rank_level%> - <%= grant.user.user_skills%> - <%=  grant.department&.name %>
-              </p>
+              </div>
+              <%# <div> %>
+              <div class="grant-member-text">
+                <p>
+                  <%= grant.user.full_name%> - <%= grant.rank_level%> - <%=  grant.department&.name %> (<%= grant.user.user_skills%>)
+                </p>
+              </div>
+              <%# </div> %>
             </div>
-
           <% end %>
         <% else %>
           <p>No members yet</p>
