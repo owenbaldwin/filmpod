@@ -302,7 +302,7 @@ sleep(2)
 
 puts "bunch of crew member created"
 
-user15 = User.create(email: "lrobbins@gmail.com", password: "123123", first_name: "Louis", last_name: "Robbins", skills: "Sound Engineer")
+user15 = User.create(email: "lrobbins@gmail.com", password: "123123", first_name: "Louis", last_name: "Robbins", skills: "Actor")
 avatar15 = URI.open("https://res.cloudinary.com/dpr9f2iyl/image/upload/v1638437047/user15_isbzhm.jpg")
 user15.photo.attach(io: avatar15, filename: 'user15_isbzhm.jpg', content_type: 'image/jpg')
 sleep(2)
@@ -323,3 +323,25 @@ btflday.photo.attach(io: dayphoto, filename: 'winter-1358373-1917x524_i9ya00.jpg
 paulprodgrant = Grant.create(rank_level: "Direction", user_id: user16.id, film_id: btflday.id, department_id: dirjohn.id)
 
 puts "beautiful days film created"
+
+cmctask = Task.create(department_id: wardrobeftcome.id, user_id: paulh.id, title: "Celid Muan Clansmen Costumes", content: "Please send me photos of the latest version of the Celid Muan Clansmen costumes and make-up.", status: "done")
+user2 = User.create(email: "ericaharmon@email.com", password: "123123", first_name: "Erica", last_name: "Harmon", skills: "costume designer")
+avatar2 = URI.open("https://res.cloudinary.com/dpr9f2iyl/image/upload/v1638436329/user2_vycowh.jpg")
+user2.photo.attach(io: avatar2, filename: 'user2_vycowh.jpg', content_type: 'image/jpg')
+
+user2grant = Grant.create(rank_level: "Head of department", user_id: user2.id, film_id: ftcome.id, department_id: wardrobeftcome.id)
+cmcsub1 = Submission.create(task_id: cmctask.id, user_id: user2.id, title: "Celid Muan Clansmen Costumes 1", content: "Here are the photos of the clansmen in their costumes and make-up, let me know what you think.", status: "approved")
+# ADD IMAGES
+cmcsubimage1 = URI.open("https://res.cloudinary.com/dpr9f2iyl/image/upload/v1638284592/celid1_h4bd7b.jpg")
+cmcsub1.photo.attach(io: cmcsubimage1, filename: 'celid1_h4bd7b.jpg', content_type: 'image/jpg')
+sleep(2)
+
+cmcsub2 = Submission.create(task_id: cmctask.id, user_id: user2.id, title: "Celid Muan Clansmen Costumes 2", content: "Here are the photos of the clansmen in their costumes and make-up, let me know what you think.", status: "approved")
+cmcsubimage2 = URI.open("https://res.cloudinary.com/dpr9f2iyl/image/upload/v1638284709/celid2_i5rp2h.jpg")
+cmcsub2.photo.attach(io: cmcsubimage2, filename: 'celid2_i5rp2h.jpg', content_type: 'image/jpg')
+sleep(2)
+
+cmcsub3 = Submission.create(task_id: cmctask.id, user_id: user2.id, title: "Celid Muan Clansmen Costumes 3", content: "Here are the photos of the clansmen in their costumes and make-up, let me know what you think.", status: "approved")
+cmcsubimage3 = URI.open("https://res.cloudinary.com/dpr9f2iyl/image/upload/v1638284711/celid3_hdv7il.jpg")
+cmcsub3.photo.attach(io: cmcsubimage3, filename: 'celid3_hdv7il.jpg', content_type: 'image/jpg')
+sleep(2)
