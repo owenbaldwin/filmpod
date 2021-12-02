@@ -52,7 +52,7 @@
                 <%# </ul> %>
               <%= f.association :user, collection: User.all, label_method: :email, input_html: { data: { controller: 'select2' }}, class: "grant-user-input" %>
               <%= f.input :department, collection: Department::DPTNAMES %>
-              <%= f.input :rank_level, collection: Grant::RANKS%>
+              <%= f.input :rank_level, collection: Grant::RANKS, as: :radio_buttons%>
             </div>
             <div class="form-actions">
                 <%= f.button :submit, "Submit user",  class: "new-film-btn new-grant-btn" %>

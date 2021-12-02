@@ -7,7 +7,7 @@
             <%= f.input :title %>
             <%= f.input :content%>
             <%= f.input :photo, as: :file %>
-            <%= f.input :status, :collection => %w[approved] %>
+            <%= f.input :status, :collection => %w[approved], as: :radio_buttons %>
             <%= f.submit class: "new-film-btn" %>
           <% end %>
       </div>
