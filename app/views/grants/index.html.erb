@@ -7,6 +7,7 @@
           <h3>Team members:</h3>
           <% @grants.reverse.each do |grant| %>
 
+
             <%# <%= grant.user.users_dept(@film.id).first&.name</p> %>
 
 
@@ -55,12 +56,12 @@
               <%= f.input :rank_level, collection: Grant::RANKS, as: :radio_buttons%>
             </div>
             <div class="form-actions">
-                <%= f.button :submit, "Submit user",  class: "new-film-btn new-grant-btn" %>
+                <%= f.button :submit, "Add",  class: "new-film-btn new-grant-btn" %>
             </div>
           </div>
         <% end %>
       <div class="grants-links">
-        <p><%= link_to 'Film homepage', film_path(@film),  class: "to-film-btn" %></p>
+        <p><%= link_to 'Back to Film', film_path(@film),  class: "to-film-btn" %></p>
       </div>
     </div>
   </div>
