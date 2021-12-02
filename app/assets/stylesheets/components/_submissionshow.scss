@@ -58,6 +58,9 @@ background-color: $dark-gray;
     border: 1px solid $light-light-gray;
     margin-top: 5px;
     text-align: center;
+  p {
+    color: $bright-white-color;
+  }
 }
 .submission-show-title .sub a:hover {
   background-color: $light-gray;
@@ -152,7 +155,7 @@ background-color: $dark-gray;
 }
 n
 .comments-section-inner-container {
-  overflow: scroll;
+  // overflow: scroll;
   // background-color: $middle-gray;
 }
 
@@ -224,7 +227,8 @@ n
     font-style: $body-font;
     color: $basic-white-color;
     margin-top: 10px;
-    width: 60vw;
+    width: 45vw;
+    max-width: 95%;
   }
 }
 
@@ -247,20 +251,20 @@ n
   display: flex;
   width: 80vw;
   justify-content: space-between;
-  height: 50%;
   height: fit-content;
-  max-height: 50%;
 }
 
 .submission-show-details-1 {
   width: 60%;
   padding-right: 15px;
+  overflow: scroll;
 
 }
 
 .submission-show-details-2 {
   // height: 50%;
   padding-right: 25px;
+  max-height: fit-content;
 
 }
 .submission-show-picture {
