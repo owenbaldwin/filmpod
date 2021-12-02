@@ -2,7 +2,7 @@
   background-color: $middle-gray;
   display: flex;
   justify-content: center;
-  padding: 7px;
+  // padding: 7px;
   width: 15%;
   box-shadow: inset -2px 2px 15px 0px rgba(255, 255, 255, 0.192), inset 0.5px -0.5px 1px 0px rgba(204, 204, 204, 0.082);
   position: relative;
@@ -20,8 +20,28 @@
 
 }
 
+.sidebar-film-title {
+  margin: 15px 5px;
+  justify-content: center;
+}
+
+.sidebar-film-title a {
+  font-size: 25px;
+  margin-bottom: 10px;
+  font-family: $headers-font;
+  justify-content: center;
+  color: $bright-white-color;
+  text-decoration: none;
+  justify-content: center;
+}
 .sidebar-film-title h1 {
-  font-size: 30px;
+  font-size: 25px;
+  margin-bottom: 10px;
+  font-family: $headers-font;
+  justify-content: center;
+  color: $bright-white-color;
+  text-decoration: none;
+  justify-content: center;
 }
 
 .each-department-on-film-show {
@@ -33,10 +53,13 @@
   margin-bottom: 8px;
   background-color: $light-gray;
   border-radius: 5px;
-  border: 1px solid $basic-white-color;
+  border: 1px solid $light-light-gray;
   a {
     color: $basic-white-color;
     transition: 0.3s;
+    padding: 5px;
+    font-family: $body-font;
+    font-weight: bold;
 
   }
   transition: 0.3s;
@@ -44,6 +67,7 @@
 
 .each-department-on-film-show:hover {
   border: 1px solid $bright-white-color;
+  background-color: $light-light-gray;
   a {
     color: $bright-white-color;
     text-decoration: none;
@@ -52,17 +76,10 @@
 
 .sidebar-inner {
   width: 100%;
-  // padding: 8px;
+  padding: 5px 10px;
   // position: sticky;
   // top: 10px;
   // height: 400px;
-}
-
-.sidebar-film-title {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-  margin-bottom: 24px;
 }
 
 .add-dpt-btn {
@@ -78,6 +95,8 @@
   a {
     color: $basic-white-color;
     transition: 0.3s;
+    font-family: $body-font;
+     font-weight: bold;
 
   }
   transition: 0.3s;
@@ -85,8 +104,9 @@
 
 .add-dpt-btn:hover {
   border: 1px solid $color-new;
+  background-color: $light-gray;
   a {
-    color: $color-new;
+    // color: $color-new;
     text-decoration: none;
   }
 }
@@ -104,6 +124,7 @@
   a {
     color: $basic-white-color;
     transition: 0.3s;
+    font-family: $body-font;
 
   }
   transition: 0.3s;
@@ -112,7 +133,7 @@
 .sidebar-danger-btn:hover {
   border: 1px solid $color-to-do;
   a {
-    color: $color-to-do;
+    // color: $color-to-do;
     text-decoration: none;
   }
 }
@@ -122,7 +143,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 32px;
+  margin-top: 50px;
   margin-bottom: 8px;
   background-color: $dark-gray;
   border-radius: 5px;
@@ -130,6 +151,7 @@
   a {
     color: $basic-white-color;
     transition: 0.3s;
+    font-family: $body-font;
 
   }
   transition: 0.3s;
@@ -137,8 +159,9 @@
 
 .sidebar-back-btn:hover {
   border: 1px solid $color-done;
+  background-color: $light-gray;
   a {
-    color: $color-done;
+    // color: $color-done;
     text-decoration: none;
   }
 }
@@ -156,6 +179,7 @@
   a {
     color: $basic-white-color;
     transition: 0.3s;
+    font-family: $body-font;
 
   }
   transition: 0.3s;
@@ -163,8 +187,8 @@
 
 .sidebar-edit-btn:hover {
   border: 1px solid $color-in-progress;
+  background-color: $light-gray;
   a {
-    color: $color-in-progress;
     text-decoration: none;
   }
 }

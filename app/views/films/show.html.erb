@@ -4,10 +4,10 @@
 <div class="film-moodboard-container">
   <div class="film-moodboard-inner-container">
     <div class="sidebar col-2 border-right border-secondary ">
-      <div class="sidebar-inner">
+      <div class="sidebar-inner-n">
         <div class="sidebar-film-title">
           <div>
-            <h1><%= @film.title %></h1>
+            <%=link_to @film.title, film_path(@film) %>
           </div>
         </div>
 
