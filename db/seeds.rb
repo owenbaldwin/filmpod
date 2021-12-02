@@ -19,7 +19,7 @@ Comment.destroy_all
 
 puts "clean db"
 
-paulh = User.create(email: "paulh@email.com", password: "123123", first_name: "Paul", last_name: "Harrison", skills: "filmmaker")
+paulh = User.create(email: "qt@email.com", password: "123123", first_name: "Quentin", last_name: "Tarentino", skills: "filmmaker")
 avatar1 = URI.open("https://res.cloudinary.com/dpr9f2iyl/image/upload/v1638437207/90186455_m7yiq9.png")
 paulh.photo.attach(io: avatar1, filename: '90186455_m7yiq9.png', content_type: 'image/png')
 sleep(2)
@@ -302,7 +302,7 @@ sleep(2)
 
 puts "bunch of crew member created"
 
-user15 = User.create(email: "lrobbins@gmail.com", password: "123123", first_name: "Louis", last_name: "Robbins", skills: "Actor")
+user15 = User.create(email: "leo@gmail.com", password: "123123", first_name: "Leonardo", last_name: "DiCaprio", skills: "Actor")
 avatar15 = URI.open("https://res.cloudinary.com/dpr9f2iyl/image/upload/v1638437047/user15_isbzhm.jpg")
 user15.photo.attach(io: avatar15, filename: 'user15_isbzhm.jpg', content_type: 'image/jpg')
 sleep(2)
