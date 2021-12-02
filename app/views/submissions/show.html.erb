@@ -40,7 +40,7 @@
           <p> Submission for the task: <strong> "<%= @submission.task.title %>" </p> </strong>
           <div class= "submission-show-back">
           <%# <%= link_to 'back to task', :back %>
-            <%= link_to 'Back to task', department_path(@submission.task.department), class: "submission-show-title sub " %>%
+            <%= link_to 'Back to task', department_path(@submission.task.department), class: "submission-show-title sub " %>
           </div>
         </div>
         <div class="submission-show-title">
@@ -74,9 +74,9 @@
               </div>
               <div class="submission-show-value">
                 <% if @submission.status == "submitted" %>
-                    <p> <%= @submission.status.capitalize  %>  🟠 </p>
+                    <p> 🟠 <%= @submission.status.capitalize  %>  </p>
                 <% else @submission.status == "approved" %>
-                    <p> <%= @submission.status.capitalize  %>  🟢 </p>
+                    <p> 🟢 <%= @submission.status.capitalize  %>  </p>
                 <%end%>
               </div>
             </div>
