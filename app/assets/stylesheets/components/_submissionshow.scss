@@ -34,16 +34,38 @@ background-color: $dark-gray;
   margin-bottom: 10px;
   justify-content: space-between;
 }
-.submission-show-title-sub {
+.submission-show-title sub {
   display: flex;
+  h2 {
+    color: $bright-white-color
+  }
 }
 
 .submission-show-delete {
   margin-left: 5px;
 }
 
-.submission-show-title .sub a{
-   border-radius: 8px;
+.submission-show-title .sub a {
+   border-radius: 12px;
+    font-size: 13px;
+    height: 28px;
+    line-height: 28px;
+    padding: 0 16px;
+    font-family: $body-font;
+    color: $basic-white-color;
+    font-weight: bolder;
+    text-decoration: none;
+    border: 1px solid $light-light-gray;
+    margin-top: 5px;
+    text-align: center;
+}
+.submission-show-title .sub a:hover {
+  background-color: $light-gray;
+  transition: 0.3s;
+}
+
+.submission-show-back a {
+     border-radius: 12px;
     font-size: 13px;
     height: 28px;
     line-height: 28px;
@@ -57,6 +79,11 @@ background-color: $dark-gray;
     text-align: center;
 }
 
+.submission-show-back a:hover {
+  background-color: $light-gray;
+  transition: 0.3s;
+}
+
 
 
 .submission-show-submission-type {
@@ -67,7 +94,7 @@ background-color: $dark-gray;
   align-content: center;
 }
 
-.submission-show-label {
+.submission-show-label p {
     color: $bright-white-color;
     font-size: 16px;
     line-height: 18px;
@@ -76,18 +103,19 @@ background-color: $dark-gray;
     padding-top: 2px;
     text-overflow: ellipsis;
     white-space: nowrap;
-    display: inline-block;
+    // display: inline-block;
     margin-left: 10px;
     flex-grow: 1;
     font-weight: bolder;
     font-family: $body-font;
 }
 
-.submission-show-value {
-  color: $basic-white-color;
+.submission-show-value p{
+  color: $bright-white-color;
   font-size: 17px;
   line-height: 18px;
   justify-content: flex-start;
+  max-width: 140px;
   flex-grow: 1;
   font-weight: bolder;
   font-family: $body-font;
@@ -102,6 +130,7 @@ background-color: $dark-gray;
   max-width: auto !important;
   color: $basic-white-color !important;
 }
+
 
 .description-box {
   border: 1px solid $light-gray;
@@ -139,7 +168,7 @@ n
   margin-right: 5px;
   border: 1px solid $light-gray;
   box-shadow: 1px 1px 10px $dark-gray;
-  color: $bright-white-color
+  color: $bright-white-color;
 }
 
 .single-comment:hover {
@@ -163,6 +192,7 @@ n
 .single-comment-details {
   margin-left: 5px;
   display: flex;
+
 }
 
 .single-comment-content {
@@ -193,7 +223,8 @@ n
     border-radius: 8px;
     font-style: $body-font;
     color: $basic-white-color;
-    width: 75vw;
+    margin-top: 10px;
+    width: 60vw;
   }
 }
 

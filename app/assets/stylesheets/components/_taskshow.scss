@@ -19,6 +19,9 @@
 }
 .task-show-title-sub {
   display: flex;
+  h2 {
+      color: $bright-white-color;
+  }
 }
 .task-show-delete {
   margin-left: 5px;
