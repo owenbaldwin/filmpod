@@ -5,6 +5,7 @@ class UsersController < ApplicationController
     @tasks = Task.all
     @recent_tasks = @tasks.last(5)
     @recentfilms = @films.last(3)
+    @submissions = Submission.all
   end
 
   def create
