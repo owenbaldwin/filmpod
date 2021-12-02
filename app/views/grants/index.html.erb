@@ -5,7 +5,7 @@
 
         <% if @grants %>
           <h3>Team members:</h3>
-          <% @grants.each do |grant| %>
+          <% @grants.reverse.each do |grant| %>
 
             <%# <%= grant.user.users_dept(@film.id).first&.name</p> %>
 
