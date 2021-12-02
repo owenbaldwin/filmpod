@@ -15,10 +15,12 @@
 
 }
 
- .was-validated .form-control:valid, .form-control.is-valid {
-  border-color: none !important;
-}
+//  .was-validated .form-control:valid, .form-control.is-valid {
+//   border-color: none !important;
+// }
 
 .is-valid {
   border-color: white !important;
+  background-image: none !important;
+
 }
