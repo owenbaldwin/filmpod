@@ -49,7 +49,7 @@
   margin-top: 8px;
   padding: 32px;
   width: 80%;
-  height: 500px;
+  height: 600px;
   border-radius: 10px;
   box-shadow: 4px 4px 10px #000000ad;
 }
@@ -94,11 +94,13 @@
     margin-left: 10px;
     display:flex;
     align-items: center;
+    margin: 0;
   }
 }
 
 .grant-avatars {
   width: 50px;
+  margin-left: 10px;
 }
 
 .grant-member-text {
