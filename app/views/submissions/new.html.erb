@@ -4,8 +4,8 @@
       <div class="new-submission-card">
         <h3> New Submission</h3>
           <%= simple_form_for ([@task, @submission]) do |f| %>
-            <%= f.input :title %>
-            <%= f.input :content %>
+            <%= f.input :title, placeholder: 'Submission Title' %>
+            <%= f.input :content, placeholder: 'Describe your submission here' %>
             <%= f.input :photo, as: :file %>
             <%= f.submit value:"Submit", class: "new-film-btn" %>
           <% end %>

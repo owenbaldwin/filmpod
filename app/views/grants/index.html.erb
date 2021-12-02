@@ -4,8 +4,9 @@
       <div class="grants-index-inner">
 
         <% if @grants %>
-          <h3>Team Members:</h3>
-          <% @grants.each do |grant| %>
+          <h3>Team members:</h3>
+          <% @grants.reverse.each do |grant| %>
+
 
             <%# <%= grant.user.users_dept(@film.id).first&.name</p> %>
 

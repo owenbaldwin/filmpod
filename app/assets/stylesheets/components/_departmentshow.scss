@@ -285,6 +285,7 @@
   font-family: $headers-font;
   color: rgba(255, 255, 255, 0.7);
   display: none;
+  width: 50%;
   .form-control {
     background-color: rgb(51, 51, 51);
     color: rgba(255, 255, 255, 0.7);
@@ -305,8 +306,11 @@
   display: block;
   z-index: 5;
   // left: 35%;
-  width: 40%;
-  height: 68vh;
+  width: 50%;
+  height: 70vh;
+  text-align: left;
+  color: $bright-white-color;
+
 }
 .modal-button {
   height: 35px;
@@ -366,6 +370,7 @@
   text-decoration: none;
 }
 
+
 .red-point {
   background-color: rgb(180, 46, 46);
 }
@@ -376,4 +381,7 @@
 
 .green-point {
   background-color: rgb(62, 180, 72);
+
+#due {
+  background-color: $light-gray;
 }

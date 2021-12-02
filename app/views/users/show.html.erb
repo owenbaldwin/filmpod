@@ -75,11 +75,13 @@
             <%= link_to department_path(task.department), class: "to-each-task" do %>
             <div class="notification-card">
               <div>
-                <% if task.user.photo.attached?%>
+                <% if task.submissions.empty? && task.user.photo.attached?%>
                   <%= cl_image_tag task.user.photo.key, class: "avatar" %>
+                <% elsif task.submissions && task.submissions.last.user.photo.attached? %>
+                  <%= cl_image_tag task.submissions.last.user.photo.key, class: "avatar" %>
                 <% else %>
                   <%= image_tag "stock-profile.jpg", class: "avatar" %>
-                <% end  %>
+                <% end %>
               </div>
               <div>
                 <div class="notification-film">
