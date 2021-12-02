@@ -6,7 +6,7 @@
 }
 .department-showpage-main-container {
   width: 100%;
-  padding: 0 10px
+  // padding: 0 10px
   h1 {
   margin: 25px 0;
   }
@@ -17,13 +17,16 @@
   }
 }
 
+.department-showpage-main-container .col-10 {
+  margin: 0 -10px !important;
+}
+
 .department-background-image {
   background-size: cover;
 }
 
 .department-padding {
-  padding-left: 15px;
-  padding-right: 15px;
+  padding: 0 15px;
 
 }
 
@@ -341,9 +344,10 @@
 
 .tab-item {
   width: 100%;
-  background-color: $light-gray;
+  background-color: $middle-gray;
+  border: 1px solid $light-light-gray;
   text-align: center;
-  padding: 15px 0;
+  padding: 10px 0;
   border-radius: 0 0 8px 8px;
   a {
     color: $basic-white-color;
@@ -351,7 +355,7 @@
 }
 
 .tab-item-left {
-  margin-right: 15px;
+  margin-right: 5px;
 }
 
 .back-to-film-btn {

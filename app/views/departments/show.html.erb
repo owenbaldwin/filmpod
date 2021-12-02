@@ -43,6 +43,7 @@
     </div>
 
     <% dptphoto = "#{@department.name}.jpg" %>
+
     <div class="department-showpage-main-container col-10" >
       <div class="department-background-image" style= "background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,1)), url('<%= asset_path dptphoto  %>');">
         <div class="department-padding">
@@ -50,7 +51,7 @@
             <div class="tab-item tab-item-left">
               <%= link_to "Tasks", department_path(@department) %>
             </div>
-          <div class="tab-item">
+          <div class="tab-item tab-moodboard">
             <%= link_to "Moodboard", moodboard_department_path(@department) %>
           </div>
         </div>

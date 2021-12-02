@@ -107,23 +107,13 @@
                 </p>
               </div>
             </div>
-          </div>
-          <div class = "submission-show-details-2">
-            <% if @submission.photo.present? %>
-              <%= cl_image_tag @submission.photo.key, class: "submission-show-picture"%>
-            <% else %>
-              <p> <em> no image was submitted </em> <p>
-             <% end %>
-          </div>
-        </div>
-
-
-        <div class= "comments-section-main-container">
-          <div class = "comments-section-inner-container"
-            data-controller="submission-subscription"
-            data-submission-subscription-submission-id-value="<%= @submission.id
-            %>" >
-            <% @submission.comments.each do |comment| %>
+            <div class= "comments-section-main-container">
+              <div class = "comments-section-inner-container"
+                data-controller="submission-subscription"
+                data-submission-subscription-submission-id-value="<%= @submission.id
+                %>" >
+                <small>  Comments  </small>
+              <% @submission.comments.each do |comment| %>
             <div class = "single-comment">
               <%= render "comments/comment", comment: comment %>
             </div>
@@ -148,6 +138,15 @@
             </div>
           </div>
 
+        </div>
+          </div>
+          <div class = "submission-show-details-2">
+            <% if @submission.photo.present? %>
+              <%= cl_image_tag @submission.photo.key, class: "submission-show-picture"%>
+            <% else %>
+              <p> <em> no image was submitted </em> <p>
+             <% end %>
+          </div>
         </div>
 
    </div>
