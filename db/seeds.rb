@@ -20,8 +20,8 @@ Comment.destroy_all
 puts "clean db"
 
 paulh = User.create(email: "qt@email.com", password: "123123", first_name: "Quentin", last_name: "Tarentino", skills: "filmmaker")
-avatar1 = URI.open("https://res.cloudinary.com/dpr9f2iyl/image/upload/v1638437207/90186455_m7yiq9.png")
-paulh.photo.attach(io: avatar1, filename: '90186455_m7yiq9.png', content_type: 'image/png')
+avatar1 = URI.open("https://res.cloudinary.com/dpr9f2iyl/image/upload/v1638526259/quentin-tarantino-9502086-1-402_hz6k97.jpg")
+paulh.photo.attach(io: avatar1, filename: 'quentin-tarantino-9502086-1-402_hz6k97.jpg', content_type: 'image/jpg')
 sleep(2)
 
 ftcome = Film.create(title: "From The Corner Of My Eye", synopsis: "A dark, cerebral, supernatural thriller set in a mythic northern wilderness.", genre: "thriller", estimated_release_date: "Mon, 30 Dec 2023")
@@ -260,7 +260,7 @@ user9.photo.attach(io: avatar9, filename: 'user9_pkwohy.jpg', content_type: 'ima
 user9grant = Grant.create(rank_level: "Crew member", user_id: user9.id, film_id: ftcome.id, department_id: wardrobeftcome.id)
 sleep(2)
 
-user10 = User.create(email: "leonaeverett@email.com", password: "123123", first_name: "Leona", last_name: "Everett", skills: "Prop designer")
+user10 = User.create(email: "everett@email.com", password: "123123", first_name: "Leona", last_name: "Everett", skills: "Prop designer")
 avatar10 = URI.open("https://res.cloudinary.com/dpr9f2iyl/image/upload/v1638436348/user10_vudpsq.jpg")
 user10.photo.attach(io: avatar10, filename: 'user10_vudpsq.jpg', content_type: 'image/jpg')
 
@@ -303,8 +303,8 @@ sleep(2)
 puts "bunch of crew member created"
 
 user15 = User.create(email: "leo@gmail.com", password: "123123", first_name: "Leonardo", last_name: "DiCaprio", skills: "Actor")
-avatar15 = URI.open("https://res.cloudinary.com/dpr9f2iyl/image/upload/v1638437047/user15_isbzhm.jpg")
-user15.photo.attach(io: avatar15, filename: 'user15_isbzhm.jpg', content_type: 'image/jpg')
+avatar15 = URI.open("https://res.cloudinary.com/dpr9f2iyl/image/upload/v1638526283/American-actor-Leonardo-DiCaprio-2016_q7qnxq.jpg")
+user15.photo.attach(io: avatar15, filename: 'American-actor-Leonardo-DiCaprio-2016_q7qnxq.jpg', content_type: 'image/jpg')
 sleep(2)
 
 puts "louis created"
