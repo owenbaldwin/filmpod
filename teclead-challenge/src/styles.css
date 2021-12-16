@@ -1,0 +1,43 @@
+.master-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.radio-player {
+  border-radius: 40px;
+  height: 400px;
+  width: 300px;
+}
+
+.player-top {
+  background-color: #EDAE62;
+  width: 300px;
+  height: 50px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  align-items: center;
+
+}
+
+h4, i {
+  color: white;
+}
+
+.player-body {
+  background-color: #2F2F39;
+  width: 300px;
+  height: 300px;
+
+}
+
+.player-bottom {
+  background-color: #22222A;
+  width: 300px;
+  height: 50px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
