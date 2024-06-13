@@ -1,0 +1,21 @@
+{
+    "name": "owenbaldwin/spitfire-audio",
+    "description": "Spitfire Audio interview challenge",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Owenbaldwin\\SpitfireAudio\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Owen Baldwin",
+            "email": "owenabaldwin@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require-dev": {
+        "phpunit/phpunit": "^10.5"
+    }
+}
